@@ -21,7 +21,7 @@ if (isset($_GET["register"])) {
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Khan Store</a>
+				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
@@ -37,7 +37,7 @@ if (isset($_GET["register"])) {
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8" id="signup_msg">
-				<!--Alert from signup form-->
+		
 			</div>
 			<div class="col-md-2"></div>
 		</div>

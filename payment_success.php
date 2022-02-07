@@ -39,7 +39,7 @@ if (isset($_GET["st"])) {
 					<html>
 						<head>
 							<meta charset="UTF-8">
-							<title>Khan Store</title>
+							<title>Hardcore Motorshop</title>
 							<link rel="stylesheet" href="css/bootstrap.min.css"/>
 							<script src="js/jquery2.js"></script>
 							<script src="js/bootstrap.min.js"></script>
