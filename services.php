@@ -16,7 +16,6 @@ if(isset($_SESSION["uid"])){
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-		<link rel="stylesheet"
 
 		<style>
 			body{
@@ -157,13 +156,13 @@ font-size: 30px;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                <a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
