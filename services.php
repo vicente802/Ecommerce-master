@@ -132,7 +132,7 @@ font-size: 30px;
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Service</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
