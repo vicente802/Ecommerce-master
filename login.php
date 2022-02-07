@@ -52,7 +52,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 			echo "login_success";
 			exit();
 		}else{
-			echo "<span style='color:red;'>Please register before login..!</span>";
+			echo "<span style='color:red;'>There was an error</span>";
 			exit();
 		}
 	
