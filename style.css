@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .overlay {
     display: none;
     position: fixed;
@@ -29,7 +28,7 @@
     }
 }
 
-=======
+
 /* -------------  CSS Loader  ----------- */
 
 .overlay {
@@ -62,7 +61,6 @@
     }
 }
 
->>>>>>> 3c1cd3b6848082f9805bd6547f52fdc887e53f6e
 .loader:after {
     content: "";
     width: 35px;
@@ -85,11 +83,4 @@
     transform: rotate(-90deg);
     top: -10px;
     left: 39px;
-<<<<<<< HEAD
 }
-=======
-}
-
-
-/* --------- CSS Loader End Here ------------*/
->>>>>>> 3c1cd3b6848082f9805bd6547f52fdc887e53f6e
