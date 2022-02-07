@@ -19,7 +19,7 @@ if(isset($_SESSION["uid"])){
 		
 		<style>
 			body{
-    margin: 0;
+    margin: 20px;
     padding: 0;
     background-color:white;
     -webkit-background-size: cover;
@@ -141,6 +141,8 @@ font-size: 30px;
 }
 footer{
 	background: rgb(0, 91, 143);
+	position: relative;
+	alignment: bottom;
 }
 a:link{
 	color: #fff;
@@ -157,6 +159,7 @@ a:hover{
 a:active{
 	color: #fff;
 	text-decoration: none
+
 }
 }
 
@@ -299,90 +302,20 @@ Complete Auto Repair Service
 <br>
 </div>
 
-<div class="single-service">
-      <div class="social">
-	  <i class="fa fa-cogs"></i></div>
-<span></span>
-       <h3>
-	   TIRE
-	 <br>  
-	   SALES</h3>
-<p>
-Your Best Choice For All Major Brands of New Tires For Your Vehicle!
-The tire specialists at (shop) proudly offer all major brands of new tires for our customers.
-We keep a variety of popular tire brands for motorcycle tires at our tire service location in.
-Ask us about any of your favorite tire brands.
-<br><br>
-Why Choose (shop) For Your New Tires?
-AAA Approved Auto Repair Shop
-FREE Shuttle
-Friendly Staff
-Complete Auto Repair Service
-</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
-<br>
-</div>
 
-<div class="single-service">
-      <div class="social">
-	  <i class="fa fa-cogs"></i></div>
-<span></span>
-       <h3>
-	   TIRE
-	 <br>  
-	   SALES</h3>
-<p>
-Your Best Choice For All Major Brands of New Tires For Your Vehicle!
-The tire specialists at (shop) proudly offer all major brands of new tires for our customers.
-We keep a variety of popular tire brands for motorcycle tires at our tire service location in.
-Ask us about any of your favorite tire brands.
-<br><br>
-Why Choose (shop) For Your New Tires?
-AAA Approved Auto Repair Shop
-FREE Shuttle
-Friendly Staff
-Complete Auto Repair Service
-</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
 <br>
-</div>
-
-<div class="single-service">
-      <div class="social">
-	  <i class="fa fa-cogs"></i></div>
-<span></span>
-       <h3>
-	   TIRE
-	 <br>  
-	   SALES</h3>
-<p>
-Your Best Choice For All Major Brands of New Tires For Your Vehicle!
-The tire specialists at (shop) proudly offer all major brands of new tires for our customers.
-We keep a variety of popular tire brands for motorcycle tires at our tire service location in.
-Ask us about any of your favorite tire brands.
-<br><br>
-Why Choose (shop) For Your New Tires?
-AAA Approved Auto Repair Shop
-FREE Shuttle
-Friendly Staff
-Complete Auto Repair Service
-</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
 <br>
-</div>
-<div>
-</div>
-
+<br>
 
 			<div class="col-md-5"></div>
 		</div>
 	</div>
+	<br>
+	<br>
 	<footer>
+		
 		<div class="container" style="padding: 80px;" align="bottom">
-		<a href="#">
+		<a href="https://www.facebook.com/HardcoreMotor">
 			<i class=" fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
 		</a>
 		<a href="#">
