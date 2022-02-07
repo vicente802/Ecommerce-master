@@ -35,8 +35,6 @@
 </div>
 
 
-
-<!-- Modal -->
 <div class="modal fade" id="add_brand_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -66,9 +64,7 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
 
-<!-- Edit brand Modal -->
 <div class="modal fade" id="edit_brand_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -99,7 +95,7 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
+  
 
 <?php include_once("./templates/footer.php"); ?>
 
