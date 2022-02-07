@@ -30,14 +30,13 @@ include "./templates/top.php";
             </tr>
           </thead>
           <tbody id="admin_list">
-              <!-- <tr>
+            <tr>
               <td>1,001</td>
               <td>Lorem</td>
               <td>ipsum</td>
               <td>dolor</td>
               <td>sit</td>
             </tr>
-            -->
           </tbody>
         </table>
       </div>
