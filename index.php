@@ -36,6 +36,10 @@ if(isset($_SESSION["uid"])){
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+<<<<<<< HEAD
+				
+=======
+>>>>>>> 76b4f3e7cf8d4d789c4e8fbc357130189d5f8873
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
