@@ -1,13 +1,8 @@
 <?php
 
 session_start();
+session_destroy();
 
-if (isset($_SESSION["admin_id"])) {
-	session_destroy();
-	header("location:login.php");
-}else{
-	header("location:index.php");
-}
-
+header("location:index.php");
 
 ?>

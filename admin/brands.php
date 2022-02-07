@@ -26,7 +26,15 @@
             </tr>
           </thead>
           <tbody id="brand_list">
-        
+            <!-- <tr>
+              <td>1</td>
+              <td>ABC</td>
+              <td>FDGR.JPG</td>
+              <td>122</td>
+              <td>eLECTRONCS</td>
+              <td>aPPLE</td>
+              <td><a class="btn btn-sm btn-info"></a><a class="btn btn-sm btn-danger">Delete</a></td>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -35,6 +43,8 @@
 </div>
 
 
+
+<!-- Modal -->
 <div class="modal fade" id="add_brand_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -64,7 +74,9 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
 
+<!-- Edit brand Modal -->
 <div class="modal fade" id="edit_brand_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -95,7 +107,7 @@
     </div>
   </div>
 </div>
-  
+<!-- Modal -->
 
 <?php include_once("./templates/footer.php"); ?>
 
