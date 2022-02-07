@@ -21,7 +21,7 @@ if(isset($_SESSION["uid"])){
 			body{
     margin: 0;
     padding: 0;
-    background-image: url(https://i.postimg.cc/dQZssk2d/1.jpg);
+    background-color:white;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -45,7 +45,7 @@ if(isset($_SESSION["uid"])){
 position: relative;
 width: 31%;
 height: 320px;
-background: #fff;
+background: #A0E7E5;
 box-sizing: border-box;
 padding: 0 15px;
 transition: .5s;
@@ -61,7 +61,7 @@ background: #fff;
 margin: 0 auto 60px auto;
 }
 .single-service p{            
-    color: #262626;
+   
     font-size: 14px;
 }
 .single-service h3 {
@@ -69,19 +69,18 @@ margin: 0 auto 60px auto;
     text-transform: uppercase;
     font-family: poppins;
     letter-spacing: 1px;
-    color: #262626;
+    
 }
 .social {
 width: 60px;
 height: 60px;
-background: #262626;
 border-radius: 50%;
 margin: 5% auto;
 }
 .social i {
 font-size: 30px;
 padding: 15px;
-    color: #fff;
+
 }
 .single-service:hover{
     box-shadow: 0 30px 35px rgba(0,0,0,0.7);
@@ -92,7 +91,6 @@ top: 0;
 left: -110%;
 width: 100%;
 height: 100%;
-background: rgba(0,0,0,0.7);
 transition: .7s;
 transform: skewX(10deg);
 }
@@ -187,43 +185,47 @@ font-size: 30px;
 		</div>
 	</div>
 </div>	
-	<p><br/></p>
-	<p><br/></p>
-	<p><br/></p>
 	<div class="wrapper">
-  <h2>
-Services</h2>
 <div class="line">
+	<h1>SERVICES</h1>
 </div>
 <div class="single-service">
       <div class="social">
-<i class="fa fa-codepen"></i></div>
+	  <i class="fa fa-cogs"></i></div>
 <span></span>
        <h3>
-Web Design</h3>
+	   BATTERY REPLACEMENT/INSTALL</h3>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur. Natus.</p>
+How Long Does a Car Battery Last For your Vehicle?
+When your motor doesn't start it often seems at the most inconvenient of times.  As you know, motor batteries only last so long.
+Avoid this trouble of your vehicle not starting and contact (SHOP) if you need motorcycle battery replacement.
+We will recycle your old battery and install a new, high-quality leading-brand battery.</p>
 </div>
 <div class="single-service">
       <div class="social">
 <i class="fa fa-cogs"></i></div>
 <span></span>
        <h3>
-ui / ux design</h3>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur. Natus.</p>
+	   MUFFLER & EXHAUST SYSTEMS</h3>
+<p>Why is Muffler and Exhaust Systems Important For Your Vehicle?
+Your motor is not only has to help keep you safe, but it should also help maintain our environment with limited pollution.
+Most people think exhaust systems are only for reducing noise pollution, but they are also installed to reduce harmful emissions into our atmosphere.
+Keep in mind that a properly functioning muffler and exhaust system should not only be quieter,
+but it should also help with these primary 
+</p>
 </div>
 <div class="single-service">
       <div class="social">
-<i class="fa fa-diamond"></i></div>
+	  <i class="fa fa-cogs"></i></div>
 <span></span>
        <h3>
-Graphics design</h3>
+	   TIRE SALES</h3>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur. Natus.</p>
-</div>
+Your Best Choice For All Major Brands of New Tires For Your Vehicle!
+The tire specialists at (shop) proudly offer all major brands of new tires for our customers.
+We keep a variety of popular tire brands for motorcycle tires at our tire service location in.
+Ask us about any of your favorite tire brands.
 </div>		
-					<div class="panel-footer">&copy; 2022</div>
 				</div>
 			</div>
 			<div class="col-md-1"></div>

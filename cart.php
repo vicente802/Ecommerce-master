@@ -7,7 +7,7 @@ require "config/constants.php";
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Hardcore Motorshop</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -27,7 +27,11 @@ require "config/constants.php";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+<<<<<<< HEAD
 				<a href="#" class="navbar-brand">Hardcore Motorcycle</a>
+=======
+				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
+>>>>>>> 3c1cd3b6848082f9805bd6547f52fdc887e53f6e
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 		<ul class="nav navbar-nav">
@@ -64,24 +68,7 @@ require "config/constants.php";
 							<div class="col-md-2 col-xs-2"><b>Price in <?php echo CURRENCY; ?></b></div>
 						</div>
 						<div id="cart_checkout"></div>
-						<!--<div class="row">
-							<div class="col-md-2">
-								<div class="btn-group">
-									<a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-									<a href="" class="btn btn-primary"><span class="glyphicon glyphicon-ok-sign"></span></a>
-								</div>
-							</div>
-							<div class="col-md-2"><img src='product_images/imges.jpg'></div>
-							<div class="col-md-2">Product Name</div>
-							<div class="col-md-2"><input type='text' class='form-control' value='1' ></div>
-							<div class="col-md-2"><input type='text' class='form-control' value='5000' disabled></div>
-							<div class="col-md-2"><input type='text' class='form-control' value='5000' disabled></div>
-						</div> -->
-						<!--<div class="row">
-							<div class="col-md-8"></div>
-							<div class="col-md-4">
-								<b>Total $500000</b>
-							</div> -->
+						
 						</div> 
 					</div>
 					<div class="panel-footer"></div>
