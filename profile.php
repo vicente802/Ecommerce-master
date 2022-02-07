@@ -9,7 +9,7 @@ if(!isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Hardcore Motorshop</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -31,12 +31,13 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home" style="margin-left:50px;"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
@@ -66,11 +67,11 @@ if(!isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php echo "Hi,".$_SESSION["name"]; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "Welcome".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;">Orders</a></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
 						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
 						<li class="divider"></li>
