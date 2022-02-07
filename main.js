@@ -269,13 +269,7 @@ $(document).ready(function() {
     })
     checkOutDetails();
     net_total();
-    /*
-    	checkOutDetails() function work for two purposes
-    	First it will enable php isset($_POST["Common"]) in action.php page and inside that
-    	there is two isset funtion which is isset($_POST["getCartItem"]) and another one is isset($_POST["checkOutDetials"])
-    	getCartItem is used to show the cart item into dropdown menu 
-    	checkOutDetails is used to show cart item into Cart.php page
-    */
+
     function checkOutDetails() {
         $('.overlay').show();
         $.ajax({

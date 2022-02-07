@@ -1,25 +1,6 @@
 <?php 
 session_start();
-/**
- * ALTER TABLE products ADD product_qty INT(11) NOT NULL AFTER `product_price`;
- 	UPDATE `products` SET product_qty = 1000 WHERE 1;
 
-	CREATE TABLE `products` (
- `product_id` int(100) NOT NULL AUTO_INCREMENT,
- `product_cat` int(11) NOT NULL,
- `product_brand` int(100) NOT NULL,
- `product_title` varchar(255) NOT NULL,
- `product_price` int(100) NOT NULL,
- `product_qty` int(11) NOT NULL,
- `product_desc` text NOT NULL,
- `product_image` text NOT NULL,
- `product_keywords` text NOT NULL,
-  CONSTRAINT fk_product_cat FOREIGN KEY fk_product_cat (product_cat) REFERENCES categories(cat_id),
-    CONSTRAINT fk_product_brand FOREIGN KEY fk_product_brand (product_brand) REFERENCES brands(brand_id),
- PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
- 	
- */
 class Products
 {
 	
@@ -40,7 +21,7 @@ class Products
 			while($row = $q->fetch_assoc()){
 				$products[] = $row;
 			}
-			//return ['status'=> 202, 'message'=> $ar];
+	
 			$_DATA['products'] = $products;
 		}
 
@@ -50,7 +31,7 @@ class Products
 			while($row = $q->fetch_assoc()){
 				$categories[] = $row;
 			}
-			//return ['status'=> 202, 'message'=> $ar];
+			
 			$_DATA['categories'] = $categories;
 		}
 
@@ -60,7 +41,7 @@ class Products
 			while($row = $q->fetch_assoc()){
 				$brands[] = $row;
 			}
-			//return ['status'=> 202, 'message'=> $ar];
+			
 			$_DATA['brands'] = $brands;
 		}
 
@@ -138,7 +119,7 @@ class Products
 			if ($file['size'] > (1024 * 2)) {
 				
 				$uniqueImageName = time()."_".$file['name'];
-				if (move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/KhanStore/product_images/".$uniqueImageName)) {
+				if (move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/Ecommerce-master/product_images/".$uniqueImageName)) {
 					
 					$q = $this->con->query("UPDATE `products` SET 
 										`product_cat` = '$category_id', 
