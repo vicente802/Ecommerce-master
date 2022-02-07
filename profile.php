@@ -9,7 +9,7 @@ if(!isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Hardcore Motorshop</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -66,11 +66,11 @@ if(!isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php echo "Hi,".$_SESSION["name"]; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "Welcome".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;">Orders</a></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
 						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
 						<li class="divider"></li>
