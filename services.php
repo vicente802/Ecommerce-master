@@ -157,13 +157,13 @@ font-size: 30px;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
+                <a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">

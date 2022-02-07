@@ -36,7 +36,10 @@ if(isset($_SESSION["uid"])){
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 84f7d78260b8a0e12ffb3191c7d9611d79220d51
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
@@ -70,15 +73,20 @@ if(isset($_SESSION["uid"])){
 					<ul class="dropdown-menu">
 						<div style="width:300px;">
 							<div class="panel panel-primary">
-								<div class="panel-heading">Login</div>
+								<div class="panel-heading" style="text-align: center; font-weight:bold; font-size:large">Login</div>
 								<div class="panel-heading">
-									<form onsubmit="return false" id="login">
+									<form onsubmit="return false" id="login" style="text-align: center;">
 										<label for="email">Email</label>
 										<input type="email" class="form-control" name="email" id="email" required/>
 										<label for="email">Password</label>
 										<input type="password" class="form-control" name="password" id="password" required/>
 										<p><br/></p>
-										<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" name="submit" class="btn btn-success" style="float:right;">
+										<a href="#" style="color:white; list-style:none;">Forgotten Password</a>
+										<br>
+										<input type="submit" name="submit" class="btn btn-success" style="float:center;">
+										<br>
+										<br>
+										<a href="customer_registration.php?register=1" style="text-align: center; text-decoration:none; color:white;">Register Now</a>
 									</form>
 								</div>
 								<div class="panel-footer" id="e_msg"></div>
@@ -93,16 +101,29 @@ if(isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
+	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-2 col-xs-12">
 				<div id="get_category">
 				</div>
-			
+				<!--<div class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#"><h4>Categories</h4></a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+				</div> -->
 				<div id="get_brand">
 				</div>
-				
+				<!--<div class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#"><h4>Brand</h4></a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+				</div> -->
 			</div>
 			<div class="col-md-8 col-xs-12">
 				<div class="row">
@@ -113,14 +134,15 @@ if(isset($_SESSION["uid"])){
 					<div class="panel-heading">Products</div>
 					<div class="panel-body">
 						<div id="get_product">
-							
+							<!--Here we get product jquery Ajax Request-->
 						</div>
 						
 					</div>
-					<div class="panel-footer">&copy; 2022</div>
+					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 				</div>
 			</div>
-			<div class="col-md-1"></div>
+			<div class="col-md-1"></div></div>
+			
 		</div>
 	</div>
 </body>
