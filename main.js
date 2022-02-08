@@ -2,6 +2,7 @@ $(document).ready(function() {
     cat();
     brand();
     product();
+    page();
     //cat() is a funtion fetching category record from database whenever page is load
     function cat() {
         $.ajax({
@@ -302,7 +303,6 @@ $(document).ready(function() {
 
     //remove product from cart
 
-    page();
 
     function page() {
         $.ajax({
@@ -313,16 +313,17 @@ $(document).ready(function() {
                 $("#pageno").html(data);
             }
         })
-    }
-    $("body").delegate("#page", "click", function() {
-        var pn = $(this).attr("page");
-        $.ajax({
-            url: "action.php",
-            method: "POST",
-            data: { getProduct: 1, setPage: 1, pageNumber: pn },
-            success: function(data) {
-                $("#get_product").html(data);
-            }
+
+        $("body").delegate("#page", "click", function() {
+            var pn = $(this).attr("page");
+            $.ajax({
+                url: "action.php",
+                method: "POST",
+                data: { getProduct: 1, setPage: 1, pageNumber: pn },
+                success: function(data) {
+                    $("#get_product").html(data);
+                }
+            })
         })
-    })
+    }
 })

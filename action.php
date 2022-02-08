@@ -39,8 +39,8 @@ if(isset($_POST["brand"])){
 	}
 }
 if(isset($_POST["page"])){
-	$sql = "SELECT * FROM products";
-	$run_query = mysqli_query($con,$sql);
+	$page = "SELECT * FROM products";
+	$run_query = mysqli_query($con,$page);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
 	for($i=1;$i<=$pageno;$i++){

@@ -132,7 +132,7 @@ if(!isset($_SESSION["uid"])){
 							</div>
 						</div> -->
 					</div>
-					<div class="panel-footer">&copy; 2016</div>
+					<div class="panel-footer">&copy; 2022</div>
 				</div>
 			</div>
 			<div class="col-md-1"></div>
@@ -142,6 +142,7 @@ if(!isset($_SESSION["uid"])){
 				<center>
 					<ul class="pagination" id="pageno">
 						<li><a href="#">1</a></li>
+						
 					</ul>
 				</center>
 			</div>
