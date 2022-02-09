@@ -27,11 +27,7 @@ require "config/constants.php";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-<<<<<<< HEAD
 				<a href="#" class="navbar-brand">Hardcore Motorcycle</a>
-=======
-				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
->>>>>>> 29004631b31555144e89568715adb81af2c0f22b
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 		<ul class="nav navbar-nav">
@@ -53,16 +49,18 @@ require "config/constants.php";
 			</div>
 			<div class="col-md-2"></div>
 		</div>
-		<div class="row">
+		
+		<div class="row" style="width: auto; text-align:center;">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-primary">
 					<div class="panel-heading">Cart Checkout</div>
 					<div class="panel-body">
 						<div class="row">
+							
 							<div class="col-md-2 col-xs-2"><b>Action</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Image</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Name</b></div>
+							<div class="col-md-2 col-xs-2"><b>Product :</b></div>
+							<div class="col-md-2 col-xs-2"><b>Description</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
 							

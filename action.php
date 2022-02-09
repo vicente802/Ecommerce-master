@@ -3,7 +3,7 @@ session_start();
 $ip_add = getenv("REMOTE_ADDR");
 include "db.php";
 if(isset($_POST["category"])){
-	$category_query = "SELECT * FROM categories";
+	$category_query = "SELECT * FROM categories limit 9";
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
@@ -21,7 +21,7 @@ if(isset($_POST["category"])){
 	}
 }
 if(isset($_POST["brand"])){
-	$brand_query = "SELECT * FROM brands";
+	$brand_query = "SELECT * FROM brands order by brand_id asc";
 	$run_query = mysqli_query($con,$brand_query);
 	echo "
 		<div class='nav nav-pills nav-stacked'>
@@ -67,10 +67,12 @@ if(isset($_POST["getProduct"])){
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
+			$pro_desc = $row['product_desc'];
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
+							
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:160px;'/>
 								</div>
@@ -103,10 +105,12 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
+			$pro_desc = $row['product_desc'];
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
+								
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:160px;'/>
 								</div>
@@ -207,10 +211,10 @@ if (isset($_POST["Common"])) {
 
 	if (isset($_SESSION["uid"])) {
 		//When user is logged in this query will execute
-		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty,product_desc FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
 	}else{
 		//When user is not logged in this query will execute
-		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
+		$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty,product_desc FROM products a,cart b WHERE a.product_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
 	}
 	$query = mysqli_query($con,$sql);
 	if (isset($_POST["getCartItem"])) {
@@ -223,6 +227,7 @@ if (isset($_POST["Common"])) {
 				$product_title = $row["product_title"];
 				$product_price = $row["product_price"];
 				$product_image = $row["product_image"];
+				$product_desc = $row["product_desc"];
 				$cart_item_id = $row["id"];
 				$qty = $row["qty"];
 				echo '
@@ -230,7 +235,7 @@ if (isset($_POST["Common"])) {
 						<div class="col-md-3">'.$n.'</div>
 						<div class="col-md-3"><img class="img-responsive" src="product_images/'.$product_image.'" /></div>
 						<div class="col-md-3">'.$product_title.'</div>
-						<div class="col-md-3">'.CURRENCY.''.$product_price.'</div>
+						<div class="col-md-3">'.CURRENCY.' '.$product_price.'</div>
 					</div>';
 				
 			}
@@ -251,6 +256,7 @@ if (isset($_POST["Common"])) {
 					$product_title = $row["product_title"];
 					$product_price = $row["product_price"];
 					$product_image = $row["product_image"];
+					$product_desc = $row["product_desc"];
 					$cart_item_id = $row["id"];
 					$qty = $row["qty"];
 
@@ -264,8 +270,8 @@ if (isset($_POST["Common"])) {
 								</div>
 								<input type="hidden" name="product_id[]" value="'.$product_id.'"/>
 								<input type="hidden" name="" value="'.$cart_item_id.'"/>
-								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'"></div>
-								<div class="col-md-2">'.$product_title.'</div>
+								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
+								<div class="col-md-2">'.$product_desc.'</div>
 								<div class="col-md-2"><input type="text" class="form-control qty" value="'.$qty.'" ></div>
 								<div class="col-md-2"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
@@ -273,14 +279,17 @@ if (isset($_POST["Common"])) {
 				}
 				
 				echo '<div class="row">
-							<div class="col-md-8"></div>
-							<div class="col-md-4">
+							<div class="col-md-9"></div>
+							<div class="col-md-3">
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
+					?>
+					<div class="col md-3" style="margin:-70px;"><?php
 				if (!isset($_SESSION["uid"])) {
 					echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
 							</form>';
-					
+					?></div>
+					<?php
 				}else if(isset($_SESSION["uid"])){
 					//Paypal checkout form
 					echo '

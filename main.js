@@ -226,7 +226,7 @@ $(document).ready(function() {
             $('.total').each(function() {
                 net_total += ($(this).val() - 0);
             })
-            $('.net_total').html("Total : $ " + net_total);
+            $('.net_total').html("Total : Php " + net_total);
 
         })
         //Change Quantity end here 
@@ -293,6 +293,7 @@ $(document).ready(function() {
             var row = $(this).parent().parent();
             var price = row.find('.price').val();
             var total = price * $(this).val() - 0;
+
             row.find('.total').val(total);
         })
         $('.total').each(function() {

@@ -93,7 +93,10 @@ class Products
 				if (move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/Ecommerce-master/product_images/".$uniqueImageName)) {
 					
 					$q = $this->con->query("INSERT INTO `products`(`product_cat`, `product_brand`, `product_title`, `product_qty`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES ('$category_id', '$brand_id', '$product_name', '$product_qty', '$product_price', '$product_desc', '$uniqueImageName', '$product_keywords')");
-
+					echo "<div class='alert alert-info'>
+						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+						<b>Product is updated</b>
+				</div>";
 					if ($q) {
 						return ['status'=> 202, 'message'=> 'Product Added Successfully..!'];
 					}else{
