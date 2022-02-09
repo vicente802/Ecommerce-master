@@ -133,21 +133,25 @@ if(!isset($_SESSION["uid"])){
 							</div>
 						</div> -->
 					</div>
-					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
-				</div>
-			</div>
-			<div class="col-md-1"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
+					<div class="row">
+			<div class="col-md-16">
 				<center>
 					<ul class="pagination" id="pageno">
 						<li><a href="#">1</a></li>
 						
 					</ul>
 				</center>
+			
+		
+				
 			</div>
 		</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 	</div>
 </body>
 </html>
