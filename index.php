@@ -32,12 +32,14 @@ if(isset($_SESSION["uid"])){
 				</button>
 				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
+			<div class=""
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 	
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
+			
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">

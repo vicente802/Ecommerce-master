@@ -1,32 +1,7 @@
 <?php
-require "../config/constants.php";
-session_start();
-    if(isset($_POST['submit'])){
-
-        $full = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['number'];
-        $message = $_POST['message'];
-        $error = "There's Something Wrong";
-        
-            if(empty($full) || empty($email) || empty($phone) || empty($message)){
-                $error = "There's Something Wrong";
-            }
-            else{
-                $to_email = "handayanv@gmail.com";
-                $subject = "Hardcore Motorshop Concern";
-                $body = $message;
-                $headers = $email;
-        
-        if (mail($to_email, $subject, $body, $headers)) {
-            echo "Email successfully sent...";
-        } else {
-            echo "Email sending failed...";
-        }
-        
-        
-            }
-        }
+  if(isset($_POST['submit'])){
+	  echo'<script>alert("Login first")</script>';
+  }
 
 ?>
 <!DOCTYPE html>
@@ -34,11 +9,11 @@ session_start();
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Hardcore Motorshop</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="bootstrap.css"/>
-		<script src="../js/jquery2.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../main.js"></script>
+		<script src="js/jquery2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
 		<style></style>
 	</head>
 <body>
