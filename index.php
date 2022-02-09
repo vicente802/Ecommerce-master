@@ -132,9 +132,9 @@ if(isset($_SESSION["uid"])){
 				<div class="panel panel-info">
 					<div class="panel-heading">Products</div>
 					<div class="panel-body">
-						<div id="get_product">
+						<dv id="get_product">
 							<!--Here we get product jquery Ajax Request-->
-						</div>
+						</dv>
 						
 					</div>
 					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
