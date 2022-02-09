@@ -120,7 +120,7 @@ $(document).ready(function() {
                 data: $("#login").serialize(),
                 success: function(data) {
                     if (data == "login_success") {
-                        window.location.href = "profile.php";
+                        window.location.href = "index.php";
                     } else if (data == "cart_login") {
                         window.location.href = "cart.php";
                     } else {

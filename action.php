@@ -39,7 +39,7 @@ if(isset($_POST["brand"])){
 	}
 }
 if(isset($_POST["page"])){
-	$page = "SELECT * FROM products order by product_qty desc";
+	$page = "SELECT * FROM products order by product_id desc";
 	$run_query = mysqli_query($con,$page);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
@@ -88,10 +88,10 @@ if(isset($_POST["getProduct"])){
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["cat_id"];
-		$sql = "SELECT * FROM products WHERE product_cat = '$id' order by product_qty desc";
+		$sql = "SELECT * FROM products WHERE product_cat = '$id' order by product_id desc";
 	}else if(isset($_POST["selectBrand"])){
 		$id = $_POST["brand_id"];
-		$sql = "SELECT * FROM products WHERE product_brand = '$id'";
+		$sql = "SELECT * FROM products WHERE product_brand = '$id' order by product_id desc";
 	}else {
 		$keyword = $_POST["keyword"];
 		$sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";

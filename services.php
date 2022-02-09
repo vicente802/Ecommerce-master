@@ -2,7 +2,7 @@
 require "config/constants.php";
 session_start();
 if(isset($_SESSION["uid"])){
-	header("location:profile.php");
+	header("location:services.php");
 }
 ?>
 <!DOCTYPE html>
@@ -183,7 +183,7 @@ a:active{
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
