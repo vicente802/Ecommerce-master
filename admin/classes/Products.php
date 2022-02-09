@@ -364,8 +364,8 @@ if (isset($_POST['add_product'])) {
 	&& !empty($product_keywords)
 	&& !empty($_FILES['product_image']['name'])) {
 		
-
 		$p = new Products();
+		
 		$result = $p->addProduct($product_name,
 								$brand_id,
 								$category_id,
@@ -374,13 +374,12 @@ if (isset($_POST['add_product'])) {
 								$product_price,
 								$product_keywords,
 								$_FILES['product_image']);
-		
 		header("Content-type: application/json");
 		echo json_encode($result);
 		http_response_code($result['status']);
 		exit();
 
-
+	
 	}else{
 		echo json_encode(['status'=> 303, 'message'=> 'Empty fields']);
 		exit();
