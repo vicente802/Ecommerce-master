@@ -42,7 +42,7 @@ if(isset($_POST["page"])){
 	$page = "SELECT * FROM products order by product_id desc";
 	$run_query = mysqli_query($con,$page);
 	$count = mysqli_num_rows($run_query);
-	$pageno = ceil($count-9);
+	$pageno = ceil($count/9);
 	for($i=1;$i<=$pageno;$i++){
 		echo "
 			<li><a href='#' page='$i' id='page'>$i</a></li>
