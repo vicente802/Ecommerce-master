@@ -28,6 +28,10 @@ require "config/constants.php";
 					<span class="icon-bar"></span>
 				</button>
 				<a href="#" class="navbar-brand">Hardcore Motorcycle</a>
+<<<<<<< HEAD
+=======
+				
+>>>>>>> 61e7acac216e45ed7676d8dee4df2d35c179020a
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 		<ul class="nav navbar-nav">

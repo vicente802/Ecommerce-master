@@ -132,7 +132,7 @@ if(!isset($_SESSION["uid"])){
 							</div>
 						</div> -->
 					</div>
-					<div class="panel-footer">&copy; 2022</div>
+					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 				</div>
 			</div>
 			<div class="col-md-1"></div>
