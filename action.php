@@ -3,7 +3,7 @@ session_start();
 $ip_add = getenv("REMOTE_ADDR");
 include "db.php";
 if(isset($_POST["category"])){
-	$category_query = "SELECT * FROM categories limit 9";
+	$category_query = "SELECT * FROM categories ";
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
@@ -21,7 +21,7 @@ if(isset($_POST["category"])){
 	}
 }
 if(isset($_POST["brand"])){
-	$brand_query = "SELECT * FROM brands order by brand_id asc";
+	$brand_query = "SELECT * FROM brands";
 	$run_query = mysqli_query($con,$brand_query);
 	echo "
 		<div class='nav nav-pills nav-stacked'>
@@ -39,7 +39,7 @@ if(isset($_POST["brand"])){
 	}
 }
 if(isset($_POST["page"])){
-	$page = "SELECT * FROM products";
+	$page = "SELECT * FROM products order by product_qty desc";
 	$run_query = mysqli_query($con,$page);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
@@ -57,7 +57,7 @@ if(isset($_POST["getProduct"])){
 	}else{
 		$start = 0;
 	}
-	$product_query = "SELECT * FROM products LIMIT $start,$limit";
+	$product_query = "SELECT * FROM products order by product_id desc LIMIT $start,$limit";
 	$run_query = mysqli_query($con,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -88,7 +88,7 @@ if(isset($_POST["getProduct"])){
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["cat_id"];
-		$sql = "SELECT * FROM products WHERE product_cat = '$id'";
+		$sql = "SELECT * FROM products WHERE product_cat = '$id' order by product_qty desc";
 	}else if(isset($_POST["selectBrand"])){
 		$id = $_POST["brand_id"];
 		$sql = "SELECT * FROM products WHERE product_brand = '$id'";
