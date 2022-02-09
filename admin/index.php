@@ -43,7 +43,8 @@ include "./templates/top.php";
     </main>
   </div>
 </div>
-
+<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 <?php include "./templates/footer.php"; ?>
+
 
 <script type="text/javascript" src="./js/admin.js"></script>

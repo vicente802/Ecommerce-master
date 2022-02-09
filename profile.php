@@ -38,6 +38,7 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="index.php"><span class="glyphicon glyphicon-home" style="margin-left:50px;"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="services/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
@@ -132,21 +133,25 @@ if(!isset($_SESSION["uid"])){
 							</div>
 						</div> -->
 					</div>
-					<div class="panel-footer">&copy; 2022</div>
-				</div>
-			</div>
-			<div class="col-md-1"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
+					<div class="row">
+			<div class="col-md-16">
 				<center>
 					<ul class="pagination" id="pageno">
 						<li><a href="#">1</a></li>
 						
 					</ul>
 				</center>
+			
+		
+				
 			</div>
 		</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 	</div>
 </body>
 </html>

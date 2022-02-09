@@ -33,7 +33,7 @@ class Products
 	}
 
 	public function getProducts(){
-		$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price,p.product_qty, p.product_desc, p.product_image, p.product_keywords, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand");
+		$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price,p.product_qty, p.product_desc, p.product_image, p.product_keywords, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand order by product_id desc");
 		
 		$products = [];
 		if ($q->num_rows > 0) {
@@ -93,7 +93,10 @@ class Products
 				if (move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/Ecommerce-master/product_images/".$uniqueImageName)) {
 					
 					$q = $this->con->query("INSERT INTO `products`(`product_cat`, `product_brand`, `product_title`, `product_qty`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES ('$category_id', '$brand_id', '$product_name', '$product_qty', '$product_price', '$product_desc', '$uniqueImageName', '$product_keywords')");
-
+					echo "<div class='alert alert-info'>
+						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+						<b>Product is updated</b>
+				</div>";
 					if ($q) {
 						return ['status'=> 202, 'message'=> 'Product Added Successfully..!'];
 					}else{
@@ -361,8 +364,8 @@ if (isset($_POST['add_product'])) {
 	&& !empty($product_keywords)
 	&& !empty($_FILES['product_image']['name'])) {
 		
-
 		$p = new Products();
+		
 		$result = $p->addProduct($product_name,
 								$brand_id,
 								$category_id,
@@ -371,13 +374,12 @@ if (isset($_POST['add_product'])) {
 								$product_price,
 								$product_keywords,
 								$_FILES['product_image']);
-		
 		header("Content-type: application/json");
 		echo json_encode($result);
 		http_response_code($result['status']);
 		exit();
 
-
+	
 	}else{
 		echo json_encode(['status'=> 303, 'message'=> 'Empty fields']);
 		exit();
