@@ -17,153 +17,179 @@ if(isset($_SESSION["uid"])){
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 		
-		<style>
-			body{
-    margin: 20px;
-    padding: 0;
-    background-color:white;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    height: auto;
-    font-family: poppins;
-}
-.wrapper{
-    width: 1170px;
-    margin: 5% auto;
-}
-.wrapper h2{
-    text-transform: uppercase;
-    font-family: poppins;
-    font-weight: bold;
-    text-align: center;
-    font-size: 60px;
-    color: #fff;
-    margin: 0;
-}
-.single-service {
-position: relative;
-width: 31%;
-height:auto;
-background: #A0E7E5;
-box-sizing: content-box;
-padding: 0 0px;
-transition: .5s;
-overflow: hidden;
-float: left;
-margin: 0 10px;
-text-align: center;
-margin-top:10px;
-}
-.line {
-width: 150px;
-height: 3px;
-background: #fff;
-margin: 0 auto 60px auto;
-}
-.single-service p{            
-   
-    font-size: 14px;
-	line-height: 28px;
-	height: 145px;
-	overflow: hidden;
-}
-.single-service h3 {
-    font-size: 25px;
-    text-transform: uppercase;
-    font-family: poppins;
-    letter-spacing: 1px;  
-}
-.readmore-btn{
-	margin-top:100px;
-	position:relative;
-}
-.single-service a {
-	display: auto;
-	color: #fff;
-	background-color: #2196f3;
-	text-decoration: none;
-	padding: 10px 15px;
-	border-radius: auto;
-	margin-top: 15px;
-}
-.single-service a {
-	box-shadow : 0 5px 5px rgba(0,0,0,0,2);
-}
-.single-service.showContent p{
-	height: auto;
-}
-.single-service.showContent a.readmore-btn{
-	background-color: red;
-}
-.single-service a:hover{
-	box-shadow: 0 5px 5px rgba(0,0,0,0,2)
-}
-.social {
-width: 60px;
-height: auto;
-border-radius: 50%;
-margin: 5% auto;
-}
-.social i {
-font-size: 30px;
-padding: 15px;
-
+        <style>
+        /* Base CSS */
+        
+        a:focus {
+            outline: 0 solid
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            
+        }
+        
+        a {
+            -moz-transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkittransition: 0.3s;
+            transition: 0.3s;
+            color: #333;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        /*custom css*/
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+        }
+        
+        .single-service {
+            border: 1px solid #ebebeb;
+            text-align: center;
+            background: #fff;
+        }
+        
+        .service-bg {
+            height: 200px;
+            position: relative;
+        }
+        
+        .service-bg-1 {
+            background: url("imgs/11.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-bg-2 {
+            background: url("imgs/2.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-bg-3 {
+            background: url("imgs/3.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-bg-4 {
+            background: url("imgs/4.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-bg-5 {
+            background: url("imgs/5.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-bg-6 {
+            background: url("imgs/6.jpg");
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-bg h2 {
+            color: #fff;
+            background: tomato;
+            border: 1px solid tomato;
+            font-size: 17px;
+            text-align: center;
+            font-weight: 700;
+            padding: 15px;
+            position: absolute;
+            left: 8%;
+            width: 84%;
+            margin: 0;
+            bottom: -25px;
+            border-radius: 50px;
+            letter-spacing: 2px;
+        }
+        
+        .single-service:hover .service-bg h2 {
+            background: #fff;
+            transition: .9s;
+            color: tomato;
+        }
+        
+        .service-text {
+            padding: 50px 30px 20px;
+            font-size: 15px;
+            font-weight: 400;
+            overflow:hidden;
+            height:auto;
+            text-align:left;
+        }
+        
+        .service-text p:last-child {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .btn-area {
+            display: inline-block;
+            color: #333;
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 30px;
+            text-transform: capitalize;
+        }
+        .readmore-btn{
+            margin-top:-10px;
+            position:relative;
+        }
+        #more{
+            display:none;
+        }
+        button{
+   margin-top: 15px;
+   display: block;
+   background-color: #e41d3f;
+   color: white;
+   border:none;
+   outline: none;
+   padding: 8px 20px;
+   text-transform: capitalize;
+   cursor: pointer;
+   font-size: 20px;
+   text-align:center;
 }
 .single-service:hover{
-    box-shadow: 0 30px 35px rgba(0,0,0,0.7);
-}
-.single-service span {
-position: relative;
-top: 0;
-left: -110%;
-width: 100%;
-height: 100%;
-transition: .7s;
-transform: skewX(10deg);
-}
-.single-service:hover span{
-    left: 110%;
+    box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
+-webkit-box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
+-moz-box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
 }
 
-@media (max-width:1000px){
-    .wrapper {
-width: 100%;
-}
-.single-service {
-width: 95%;
-margin-bottom: 30px;
-}
-.wrapper h2 {
-font-size: 30px;
-
-
-}
-footer{
-	background: rgb(0, 91, 143);
-	position: relative;
-	alignment: bottom;
-}
-a:link{
-	color: #fff;
-	text-decoration: none;
-}
-a:visited{
-	color: #fff;
-	text-decoration: none
-}
-a:hover{
-	color: #fff;
-	text-decoration: none
-}
-a:active{
-	color: #fff;
-	text-decoration: none
-
-}
-}
-
-		</style>
+    </style>
 	</head>
 <body>
 <div class="wait overlay">
@@ -237,109 +263,128 @@ a:active{
 		</div>
 	</div>
 </div>	
-	<div class="wrapper">
-<div class="line">
-	<h1>SERVICES</h1>
-</div>
-<div class="single-service">
-      <div class="social">
-	  <i class="fa fa-cogs"></i>
-<span></span></div>
-       <h3>
-	   BATTERY REPLACEMENT/INSTALL</h3>
-<p>
-How Long Does a Car Battery Last For your Vehicle?
-When your motor doesn't start it often seems at the most inconvenient of times.  As you know, motor batteries only last so long.
-Avoid this trouble of your vehicle not starting and contact (SHOP) if you need motorcycle battery replacement.
-We will recycle your old battery and install a new, high-quality leading-brand battery.</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
-<br>
-</div>
-<div class="single-service">
-      <div class="social">
-<i class="fa fa-cogs"></i>
-<span></span></div>
-       <h3>
-	   MUFFLER & EXHAUST SYSTEMS</h3>
-<p>Why is Muffler and Exhaust Systems Important For Your Vehicle?
-Your motor is not only has to help keep you safe, but it should also help maintain our environment with limited pollution.
-Most people think exhaust systems are only for reducing noise pollution, but they are also installed to reduce harmful emissions into our atmosphere.
-Keep in mind that a properly functioning muffler and exhaust system should not only be quieter,
-but it should also help with these primary.
-<br><br>
-Reduce noise pollution for you and others
-Maintain air quality for you and your family
-Help the community by maintaining quality atmosphere.
-</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
-<br>
-</div>
-
-<div class="single-service">
-      <div class="social">
-	  <i class="fa fa-cogs"></i></div>
-<span></span>
-       <h3>
-	   TIRE
-	 <br>  
-	   SALES</h3>
-<p>
-Your Best Choice For All Major Brands of New Tires For Your Vehicle!
-The tire specialists at (shop) proudly offer all major brands of new tires for our customers.
-We keep a variety of popular tire brands for motorcycle tires at our tire service location in.
-Ask us about any of your favorite tire brands.
-<br><br>
-Why Choose (shop) For Your New Tires?
-AAA Approved Auto Repair Shop
-FREE Shuttle
-Friendly Staff
-Complete Auto Repair Service
-</p>
-<a href="javascript:void();" Class="readmore-btn">Read More</a>
-<div></div>
-<br>
-</div>
 
 
-<br>
-<br>
-<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-20">
+                <div class="section-header">
+                    <h1 style="margin-top: 100px;">Our Services</h1>
+                    <p>Some of our recent works that we finished so far. </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="single-service">
+                    <div class="service-bg
+                        service-bg-1">
+                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
+<div class="content">Testing
+  <ul>
+    <li>first</li>
+  </ul>
+</div>
+                        <h2>BATTERY REPLACEMENT/INSTALL</h2>
+                    </div>
+                    <div class="service-text">
+                        <p>How Long Does a Car Battery Last For your Vehicle? When your motor doesn't start it often seems at the most inconvenient of times. As you know, motor batteries only last so long. Avoid this trouble of your vehicle not starting
+                            and contact (SHOP) if you need motorcycle battery replacement. We will recycle your old battery and install a new, high-quality leading-brand battery.</p>
+                            
+</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-service">
+                    <div class="service-bg
+                        service-bg-2">
+                        <h2>MUFFLER & EXHAUST SYSTEMS</h2>
+                    </div>
+                    <div class="service-text">
+                        <p>Why is Muffler and Exhaust Systems Important For Your Vehicle? Your motor is not only has to help keep you safe, but it should also help maintain our environment with limited pollution. Most people think exhaust systems are only
+                            for reducing noise pollution, but they are also installed to reduce harmful emissions into our atmosphere.</p>
+                            
+                    </div>
+                </div>
+            </div>
+            <div>
+            <div class="col-md-4">
+                <div class="single-service">
+                    <div class="service-bg
+                        service-bg-3">
+                        <h2>TIRE
+                            <br> SALES</h2>
+                    </div>
+                    <div class="service-text">
+                        <p>our Best Choice For All Major Brands of New Tires For Your Vehicle! The tire specialists at (shop) proudly offer all major brands of new tires for our customers. We keep a variety of popular tire brands for motorcycle tires at
+                            our tire service location in. Ask us about any of your favorite tire brands. Why Choose (shop) For Your New Tires? AAA Approved Auto Repair Shop FREE Shuttle Friendly Staff Complete Auto Repair Service</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-service">
+                    <div class="service-bg
+                        service-bg-4">
+                        <h2>WHEEL <br>ALIGNMENT</h2>
+                    </div>
+                    <div class="service-text">
+                        <p>Everything You Need to Know About Wheel Alignment Services!
+With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
 
-			<div class="col-md-5"></div>
-		</div>
-	</div>
-	<br>
-	<br>
-	<footer>
-		
-		<div class="container" style="padding: 80px;" align="bottom">
-		<a href="https://www.facebook.com/HardcoreMotor">
-			<i class=" fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
-		<a href="#">
-			<i class=" fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
-		<a href="#">
-			<i class=" fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
-		<a href="#">
-			<i class=" fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
-		<a href="#">
-			<i class=" fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
-		<a href="#">
-			<i class=" fa fa-pinterest fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
-		</a>
+Inspect your vehicle's suspension and steering
+Adjust alignment angles to specifications
+Tire Rotation & Balance</p>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-service">
+                    <div class="service-bg
+                        service-bg-5">
+                        <h2>CHANGE<br>OIL</h2>
+                    </div>
+                    <div class="service-text">
+                        <p>How Often Do You Get an Oil Change For your Vehicle?
+Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
+                        
+                    </div>
+                </div>
+            </div>
+          
+            </div>
+
+        </div>
+        </div>
+      
 </div>
-<div style="background: #004872;">
-<p style="color: #91BEC2; padding: 15px 0;" align="center">
-&copy; 2021 Copyright: <a href="Hardcoremotorshop@gmail.com"></a>
-</p>
+<br>
+<div class="panel-footer text-center" style="background:black; color:white;" >   <p></p>
+      <footer class="footer">
+          <div class="container">
+              <div class="row">
+                  <div class="footer-col">
+                      <h4>Follow Us !</h4>
+                      <ul>
+                          <div class=" col">
+                          <a href="#"><i style="color: white; font-size:30px;" class="fa fa-facebook-f"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-phone"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-instagram"></i></a>
+                          &nbsp;<a href="#"><i style="color: white; font-size:30px;" class="fa fa-google"></i></a>
 </div>
-</footer>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+        <script src="js/bootstrap.min.js"></script>
+
+
+
 
 
 
@@ -347,13 +392,7 @@ Complete Auto Repair Service
 
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 	<script>
-		$(".readmore-btn").on('click', function(){
-			$(this).parent().toggleClass("showContent");
-
-			// Shorthand if-else statement
-			var replaceText = $(this).parent().hasClass("showContent") ? "Read Less" : "Read More";
-			$(this).text(replaceText);
-		});
+		
 	</script>
 	
 </body>
