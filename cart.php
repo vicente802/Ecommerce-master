@@ -64,7 +64,7 @@ require "config/constants.php";
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
 							
-							<div class="col-md-2 col-xs-2"><b>Price in <?php echo CURRENCY; ?></b></div>
+							<div class="col-md-2 col-xs-2"><b><?php echo CURRENCY; ?></b></div>
 							
 						</div>
 						

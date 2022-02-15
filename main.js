@@ -120,7 +120,7 @@ $(document).ready(function() {
                 data: $("#login").serialize(),
                 success: function(data) {
                     if (data == "login_success") {
-                        window.location.href = "index.php";
+                        window.location.href = "profile.php";
                     } else if (data == "cart_login") {
                         window.location.href = "cart.php";
                     } else {
@@ -214,12 +214,16 @@ $(document).ready(function() {
             var row = $(this).parent().parent();
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
+
+
             if (isNaN(qty)) {
                 qty = 1;
             };
             if (qty < 1) {
                 qty = 1;
+
             };
+
             var total = price * qty;
             row.find('.total').val(total);
             var net_total = 0;
@@ -227,6 +231,7 @@ $(document).ready(function() {
                 net_total += ($(this).val() - 0);
             })
             $('.net_total').html("Total : Php " + net_total);
+
 
         })
         //Change Quantity end here 
@@ -262,6 +267,7 @@ $(document).ready(function() {
             data: { updateCartItem: 1, update_id: update_id, qty: qty },
             success: function(data) {
                 $("#cart_msg").html(data);
+
                 checkOutDetails();
             }
         })
