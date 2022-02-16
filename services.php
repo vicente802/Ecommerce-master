@@ -331,14 +331,7 @@ if(isset($_SESSION["uid"])){
               <div class="row">
                   <div class="footer-col">
                       <h4>Follow Us !</h4>
-                      <ul>
-                          <div class=" col">
-                          <a href="#"><i style="color: white; font-size:30px;" class="fa fa-facebook-f"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-phone"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-instagram"></i></a>
-                          &nbsp;<a href="#"><i style="color: white; font-size:30px;" class="fa fa-google"></i></a>
-</div>
-                        </ul>  
+                     
                     </div>
                 </div>
             </div>
