@@ -66,17 +66,21 @@ if (isset($_POST["login_user_with_product"])) {
 					<div class="panel-body">
 						<!--User Login Form-->
 						<form onsubmit="return false" id="login">
+						<?php
+							?>
+						<div class=" text-center">
+							<div id="e_msg"></div></div><?php ?>
 							<label for="email">Email</label>
 							<input type="email" class="form-control" name="email" id="email" required/>
 							<label for="email">Password</label>
 							<input type="password" class="form-control" name="password" id="password" required/>
 							<p><br/></p>
-							<a href="#" style="color:#333; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float:right;" Value="Login">
+							<a href="#" style="color:#333; list-style:none;">Forgotten Password</a><input type="submit" name="submit" class="btn btn-success" style="float:right;" Value="Login">
 							<!--If user dont have an account then he/she will click on create account button-->
 							<div><a href="customer_registration.php?register=1">Create a new account?</a></div>						
 						</form>
 				</div>
-				<div class="panel-footer"><div id="e_msg"></div></div>
+				
 			</div>
 		</div>
 		<div class="col-md-4"></div>

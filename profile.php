@@ -35,7 +35,7 @@ if(!isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index1.php"><span class="glyphicon glyphicon-home" style=""></span>Home</a></li>
+				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
@@ -72,9 +72,7 @@ if(!isset($_SESSION["uid"])){
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
-						<li class="divider"></li>
-						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
+						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>
@@ -110,6 +108,31 @@ if(!isset($_SESSION["uid"])){
 					<li><a href="#">Categories</a></li>
 				</div> -->
 			</div>
+
+			<div class="col-md-8">	
+				<div class="row">
+					<div class="col-md-12 col-xs-12" id="product_msg">
+					</div>
+				</div>
+				<div class="panel panel-info " id="scroll">
+					<div class="panel-heading text-center"><label class=" ">Best Seller</label></div>
+					<div class="panel-body">
+						<!--<div class="col-md-4">
+							<div class="panel panel-info">
+								<div class="panel-heading">Samsung Galaxy</div>
+								<div class="panel-body">
+									<img src="product_images/images.JPG"/>
+								</div>
+								<div class="panel-heading">$.500.00
+									<button style="float:right;" class="btn btn-danger btn-xs">AddToCart</button>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+
+			
 			<div class="col-md-8">	
 				<div class="row">
 					<div class="col-md-12 col-xs-12" id="product_msg">

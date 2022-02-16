@@ -2,7 +2,7 @@
 
 session_start();
 if(!isset($_SESSION["uid"])){
-	header("location:index.php");
+	header("location:index1.php");
 }
 
 if (isset($_GET["st"])) {
@@ -55,7 +55,7 @@ if (isset($_GET["st"])) {
 									<a href="#" class="navbar-brand">Hardcore Motorshop</a>
 								</div>
 								<ul class="nav navbar-nav">
-									<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+									<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 									<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 								</ul>
 							</div>
@@ -76,7 +76,7 @@ if (isset($_GET["st"])) {
 											<p>Hello <?php echo "<b>".$_SESSION["name"]."</b>"; ?>,Your payment process is 
 											successfully completed and your Transaction id is <b><?php echo $trx_id; ?></b><br/>
 											you can continue your Shopping <br/></p>
-											<a href="index.php" class="btn btn-success btn-lg">Continue Shopping</a>
+											<a href="index1.php" class="btn btn-success btn-lg">Continue Shopping</a>
 										</div>
 										<div class="panel-footer"></div>
 									</div>
