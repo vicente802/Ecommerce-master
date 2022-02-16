@@ -58,11 +58,7 @@ if(isset($_SESSION["uid"])){
         }
         /*custom css*/
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-            margin-top: 15px;
-        }
+       
         
         .section-header p {
             font-size: 18px;
@@ -78,46 +74,6 @@ if(isset($_SESSION["uid"])){
             height: 200px;
             position: relative;
         }
-        
-        .service-bg-1 {
-            background: url("imgs/11.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-bg-2 {
-            background: url("imgs/2.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-bg-3 {
-            background: url("imgs/3.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-4 {
-            background: url("imgs/4.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-5 {
-            background: url("imgs/5.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-6 {
-            background: url("imgs/6.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
         .service-bg h2 {
             color: #fff;
             background: tomato;
@@ -152,7 +108,7 @@ if(isset($_SESSION["uid"])){
         
         .service-text p:last-child {
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.3;
         }
         
         .btn-area {
@@ -211,7 +167,7 @@ if(isset($_SESSION["uid"])){
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
-                <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+                <li><a href="contact/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 
             </ul>
 			<form class="navbar-form navbar-left">
@@ -241,16 +197,8 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
-					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
-						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
-						<li class="divider"></li>
-						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
-						<li class="divider"></li>
-						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
-					</ul>
+				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+					
 				</li>
 			</ul>
 		</div>
@@ -261,17 +209,21 @@ if(isset($_SESSION["uid"])){
     <div class="container">
         <div class="row">
             <div class="col-md-20">
-                <div class="section-header">
+                <div class="section-header" style="text-align: center; margin-bottom: 30px; margin-top: 15px;">
                     <h1 style="margin-top: 100px;">Our Services</h1>
                     <p>Some of our recent works that we finished so far. </p>
                 </div>
             </div>
         </div>
-        <div class="row">
+     
+        <div class="row"    >
             <div class="col-md-8">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-1">
+                        service-bg-1" style=" background: url('imgs/11.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;">
                         <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
 <div class="content">Testing
   <ul>
@@ -290,7 +242,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-2">
+                        service-bg-2" style="
+                        background: url('imgs/2.jpg');
+                        -webkit-background-size: cover;
+                             background-size: cover;
+            background-position: center;
+        ">
                         <h2>MUFFLER & EXHAUST SYSTEMS</h2>
                     </div>
                     <div class="service-text">
@@ -304,7 +261,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-3">
+                        service-bg-3" style="
+            background: url('imgs/3.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>TIRE
                             <br> SALES</h2>
                     </div>
@@ -318,7 +280,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-4">
+                        service-bg-4" style="
+            background: url('imgs/4.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>WHEEL <br>ALIGNMENT</h2>
                     </div>
                     <div class="service-text">
@@ -335,12 +302,17 @@ Tire Rotation & Balance</p>
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-5">
+                        service-bg-5" style="
+            background: url('imgs/5.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>CHANGE<br>OIL</h2>
                     </div>
                     <div class="service-text">
                         <p>How Often Do You Get an Oil Change For your Vehicle?
-Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
+                            Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
                         
                     </div>
                 </div>
@@ -353,7 +325,7 @@ Why not come to (SHOP) for your next oil change? As you know, an changing an oil
       
 </div>
 <br>
-<div class="panel-footer text-center" style="background:black; color:white;" >   <p></p>
+<div class="panel-footer text-center" style="background:black; color:white;"><p></p>
       <footer class="footer">
           <div class="container">
               <div class="row">
