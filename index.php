@@ -5,6 +5,7 @@ if(isset($_SESSION["uid"])){
 	header("location:profile.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,7 +16,27 @@ if(isset($_SESSION["uid"])){
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<style></style>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
+
+			a {
+				text-decoration: none;
+			}
+
+			h1 {
+				font-size: 4em;
+				font-family: 'Montserrat', sans-serif;
+			}
+
+			h2 {
+				font-size: 4rem;
+				font-family: 'Poppins', sans-serif;
+			}
+			p {
+				font-family: 'Poppins', sans-serif;
+				font-size: 1.3em;
+			}
+		</style>
 	</head>
 <body>
 <div class="wait overlay">
@@ -32,14 +53,15 @@ if(isset($_SESSION["uid"])){
 				</button>
 				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
-			<div class=""
-		<div class="collapse navbar-collapse" id="collapse">
+			<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 	
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
 			
+
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
@@ -68,30 +90,8 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>SignIn</a>
-					<ul class="dropdown-menu">
-						<div style="width:300px;">
-							<div class="panel panel-primary">
-								<div class="panel-heading" style="text-align: center; font-weight:bold; font-size:large">Login</div>
-								<div class="panel-heading">
-									<form onsubmit="return false" id="login" style="text-align: center;">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" name="email" id="email" required/>
-										<label for="email">Password</label>
-										<input type="password" class="form-control" name="password" id="password" required/>
-										<p><br/></p>
-										<a href="#" style="color:white; list-style:none;">Forgotten Password</a>
-										<br>
-										<input type="submit" name="submit" class="btn btn-success" style="float:center;">
-										<br>
-										<br>
-										<a href="customer_registration.php?register=1" style="text-align: center; text-decoration:none; color:white;">Register Now</a>
-									</form>
-								</div>
-								<div class="panel-footer" id="e_msg"></div>
-							</div>
-						</div>
-					</ul>
+				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+					
 				</li>
 			</ul>
 		</div>
@@ -101,51 +101,64 @@ if(isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2 col-xs-12">
-				<div id="get_category">
-				</div>
-				<!--<div class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#"><h4>Categories</h4></a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-				</div> -->
-				<div id="get_brand">
-				</div>
-				<!--<div class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#"><h4>Brand</h4></a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Categories</a></li>
-				</div> -->
-			</div>
-			<div class="col-md-8 col-xs-12">
-				<div class="row">
-					<div class="col-md-12 col-xs-12" id="product_msg">
-					</div>
-				</div>
-				<div class="panel panel-info">
-					<div class="panel-heading">Products</div>
-					<div class="panel-body">
-						<dv id="get_product">
-							<!--Here we get product jquery Ajax Request-->
-						</dv>
-						
-					</div>
-					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
-				</div>
-			</div>
-			<div class="col-md-1"></div></div>
-			
-		</div>
+	
+	<div class="my-5">
+	<div class="container">
+        <div class="row">
+          <div class="col-md-7">
+			<img src="imgs/logo.PNG" alt="logo" width="650px">
+          </div>
+          <div class="col-md-5">
+            <h1 class="mt-5">Hardcore Motorshop</h1>
+			<h2>About Us</h2>
+            <p class="mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+              veniam suscipit accusantium quibusdam dicta nesciunt esse? Id
+              itaque incidunt sint distinctio voluptatem tempore tempora aliquam
+              sunt, vel, repellat velit. Vel!
+            </p>
+			<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+          </div>
+	</div>				
 	</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

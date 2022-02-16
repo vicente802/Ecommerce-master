@@ -214,6 +214,7 @@ $(document).ready(function() {
             var row = $(this).parent().parent();
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
+            document.getElementById("phpqty").value = qty;
             if (isNaN(qty)) {
                 qty = 1;
             };
@@ -262,6 +263,7 @@ $(document).ready(function() {
             data: { updateCartItem: 1, update_id: update_id, qty: qty },
             success: function(data) {
                 $("#cart_msg").html(data);
+
                 checkOutDetails();
             }
         })

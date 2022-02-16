@@ -1,44 +1,20 @@
 <?php
-require "../config/constants.php";
+require "config/constants.php";
 session_start();
-    if(isset($_POST['submit'])){
-
-        $full = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['number'];
-        $message = $_POST['message'];
-        $error = "There's Something Wrong";
-        
-            if(empty($full) || empty($email) || empty($phone) || empty($message)){
-                $error = "There's Something Wrong";
-            }
-            else{
-                $to_email = "handayanv@gmail.com";
-                $subject = "Hardcore Motorshop Concern";
-                $body = $message;
-                $headers = $email;
-        
-        if (mail($to_email, $subject, $body, $headers)) {
-            echo "Email successfully sent...";
-        } else {
-            echo "Email sending failed...";
-        }
-        
-        
-            }
-        }
-
+if(isset($_SESSION["uid"])){
+	header("location:profile.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
 		<title>Hardcore Motorshop</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="bootstrap.css"/>
-		<script src="../js/jquery2.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../main.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<script src="js/jquery2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<style></style>
 	</head>
 <body>
@@ -56,14 +32,15 @@ session_start();
 				</button>
 				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
+			<div class=""
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-	
+				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
-                <li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
-            </ul>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
+			
+			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
 		          <input type="text" class="form-control" placeholder="Search" id="search">
@@ -123,20 +100,43 @@ session_start();
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
-
-    <h1 style="text-align:center; margin-top:10px;">Contact Us</h1>
-    <div class="border"></div>
-    <form class="contact-form" action="" method="post">
-        <input type="text" class="contact-form-text" placeholder="Your name" name="name">
-        <input type="text"class="contact-form-text" placeholder="Your email" name="email">
-        <input type="text" class="contact-form-text" placeholder="Your number" name="number">
-        <textarea class="contact-form-text" placeholder=" Your Message" name="message"></textarea>
-        <input type="submit" class="contact-form-btn" name="submit" value="Send">
-    </form>
-
-	<br>
-    
 	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-2 col-xs-12">
+				<div id="get_category">
+				</div>
+				<!--<div class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#"><h4>Categories</h4></a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+				</div> -->
+				<div id="get_brand">
+				</div>
+				<!--<div class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#"><h4>Brand</h4></a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">Categories</a></li>
+				</div> -->
+			</div>
+			<div class="col-md-8 col-xs-12">
+				<div class="row">
+					<div class="col-md-12 col-xs-12" id="product_msg">
+					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">Products</div>
+					<div class="panel-body">
+						<dv id="get_product">
+							<!--Here we get product jquery Ajax Request-->
+						</dv>
+						
+					</div>
 					<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 				</div>
 			</div>

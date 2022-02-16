@@ -22,7 +22,7 @@ if(!isset($_SESSION["uid"])){
 		</style>
 	</head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -38,7 +38,7 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="index.php"><span class="glyphicon glyphicon-home" style="margin-left:50px;"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="services/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
+				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>

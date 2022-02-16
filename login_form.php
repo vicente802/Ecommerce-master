@@ -26,6 +26,9 @@ if (isset($_POST["login_user_with_product"])) {
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		window.history.forward();
+	</script>
 	</head>
 <body>
 <div class="wait overlay">
@@ -40,6 +43,7 @@ if (isset($_POST["login_user_with_product"])) {
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 			</ul>
 		</div>
 	</div>

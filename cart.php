@@ -34,6 +34,7 @@ require "config/constants.php";
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
+				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
 			</ul>
 		</div>
 	</div>
@@ -64,12 +65,12 @@ require "config/constants.php";
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
 							
-							<div class="col-md-2 col-xs-2"><b>Price in <?php echo CURRENCY; ?></b></div>
+							<div class="col-md-2 col-xs-2"><b><?php echo CURRENCY; ?></b></div>
 							
 						</div>
 						
-						<div id="cart_checkout"></div>
-					
+						<div id="cart_checkout" style="text-align:center;"></div>
+						
 						</div> 
 					</div>
 					<div class="panel-footer"></div>
