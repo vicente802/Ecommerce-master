@@ -75,38 +75,12 @@ if(isset($_SESSION["uid"])){
             position: relative;
         }
         
-        .service-bg-1 {
-            background: url("imgs/11.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
+
         
-        .service-bg-2 {
-            background: url("imgs/2.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
         
-        .service-bg-3 {
-            background: url("imgs/3.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-4 {
-            background: url("imgs/4.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-5 {
-            background: url("imgs/5.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
+        
+        
+        
         .service-bg-6 {
             background: url("imgs/6.jpg");
             -webkit-background-size: cover;
@@ -260,7 +234,10 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-8">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-1">
+                        service-bg-1" style=" background: url('imgs/11.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;">
                         <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
 <div class="content">Testing
   <ul>
@@ -279,7 +256,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-2">
+                        service-bg-2" style="
+                        background: url('imgs/2.jpg');
+                        -webkit-background-size: cover;
+                             background-size: cover;
+            background-position: center;
+        ">
                         <h2>MUFFLER & EXHAUST SYSTEMS</h2>
                     </div>
                     <div class="service-text">
@@ -293,7 +275,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-3">
+                        service-bg-3" style="
+            background: url('imgs/3.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>TIRE
                             <br> SALES</h2>
                     </div>
@@ -307,7 +294,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-4">
+                        service-bg-4" style="
+            background: url('imgs/4.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>WHEEL <br>ALIGNMENT</h2>
                     </div>
                     <div class="service-text">
@@ -324,7 +316,12 @@ Tire Rotation & Balance</p>
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-5">
+                        service-bg-5" style="
+            background: url('imgs/5.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>CHANGE<br>OIL</h2>
                     </div>
                     <div class="service-text">
@@ -342,7 +339,7 @@ Tire Rotation & Balance</p>
       
 </div>
 <br>
-<div class="panel-footer text-center" style="background:black; color:white;" >   <p></p>
+<div class="panel-footer text-center" style="background:black; color:white;"><p></p>
       <footer class="footer">
           <div class="container">
               <div class="row">
