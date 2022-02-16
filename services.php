@@ -111,34 +111,7 @@ if(isset($_SESSION["uid"])){
             line-height: 1.3;
         }
         
-        .btn-area {
-            display: inline-block;
-            color: #333;
-            font-size: 17px;
-            font-weight: 700;
-            margin-top: 30px;
-            text-transform: capitalize;
-        }
-        .readmore-btn{
-            margin-top:-10px;
-            position:relative;
-        }
-        #more{
-            display:none;
-        }
-        button{
-   margin-top: 15px;
-   display: block;
-   background-color: #e41d3f;
-   color: white;
-   border:none;
-   outline: none;
-   padding: 8px 20px;
-   text-transform: capitalize;
-   cursor: pointer;
-   font-size: 20px;
-   text-align:center;
-}
+       
 .single-service:hover{
     box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
 -webkit-box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
@@ -293,8 +266,8 @@ if(isset($_SESSION["uid"])){
                             With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
 
             Inspect your vehicle's suspension and steering
-            Adjust alignment angles to specifications
-            Tire Rotation & Balance</p>
+    Adjust alignment angles to specifications
+Tire Rotation & Balance</p>
                       
                     </div>
                 </div>
@@ -331,7 +304,14 @@ if(isset($_SESSION["uid"])){
               <div class="row">
                   <div class="footer-col">
                       <h4>Follow Us !</h4>
-                     
+                      <ul>
+                          <div class=" col">
+                          <a href="#"><i style="color: white; font-size:30px;" class="fa fa-facebook-f"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-phone"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-instagram"></i></a>
+                          &nbsp;<a href="#"><i style="color: white; font-size:30px;" class="fa fa-google"></i></a>
+</div>
+                        </ul>  
                     </div>
                 </div>
             </div>
