@@ -60,7 +60,7 @@ require "config/constants.php";
 						<div class="row">
 							
 							<div class="col-md-2 col-xs-2"><b>Action</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product :</b></div>
+							<div class="col-md-2 col-xs-2"><b>Product </b></div>
 							<div class="col-md-2 col-xs-2"><b>Description</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>

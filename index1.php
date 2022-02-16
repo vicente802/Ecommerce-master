@@ -68,30 +68,8 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>SignIn</a>
-					<ul class="dropdown-menu">
-						<div style="width:300px;">
-							<div class="panel panel-primary">
-								<div class="panel-heading" style="text-align: center; font-weight:bold; font-size:large">Login</div>
-								<div class="panel-heading">
-									<form onsubmit="return false" id="login" style="text-align: center;">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" name="email" id="email" required/>
-										<label for="email">Password</label>
-										<input type="password" class="form-control" name="password" id="password" required/>
-										<p><br/></p>
-										<a href="#" style="color:white; list-style:none;">Forgotten Password</a>
-										<br>
-										<input type="submit" name="submit" class="btn btn-success" style="float:center;">
-										<br>
-										<br>
-										<a href="customer_registration.php?register=1" style="text-align: center; text-decoration:none; color:white;">Register Now</a>
-									</form>
-								</div>
-								<div class="panel-footer" id="e_msg"></div>
-							</div>
-						</div>
-					</ul>
+				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+					
 				</li>
 			</ul>
 		</div>

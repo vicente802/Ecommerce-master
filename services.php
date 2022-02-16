@@ -138,10 +138,10 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
-                <li><a href="contact/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
+                <li><a href="contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 
             </ul>
 			<form class="navbar-form navbar-left">
@@ -171,7 +171,17 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+					<ul class="dropdown-menu">
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
+						<li class="divider"></li>
+						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+					</ul>
+				</li>
 					
 				</li>
 			</ul>
