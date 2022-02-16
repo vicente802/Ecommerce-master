@@ -74,20 +74,6 @@ if(isset($_SESSION["uid"])){
             height: 200px;
             position: relative;
         }
-        
-
-        
-        
-        
-        
-        
-        .service-bg-6 {
-            background: url("imgs/6.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
         .service-bg h2 {
             color: #fff;
             background: tomato;
@@ -122,7 +108,7 @@ if(isset($_SESSION["uid"])){
         
         .service-text p:last-child {
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.3;
         }
         
         .btn-area {
