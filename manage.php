@@ -111,7 +111,9 @@ if(isset($_SESSION["uid"])){
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+                        <li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>

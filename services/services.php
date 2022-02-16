@@ -11,18 +11,16 @@ if(isset($_SESSION["uid"])){
 		<meta charset="UTF-8">
 		<title>Hardcore Motorshop</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-		<script src="js/jquery2.js"></script>
+		<script src="../js/jquery2.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../main.js"></script>
+		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 		
         <style>
         /* Base CSS */
         
-        a:focus {
-            outline: 0 solid
-        }
+    
         
         img {
             max-width: 100%;
@@ -39,26 +37,11 @@ if(isset($_SESSION["uid"])){
             font-weight: 700;
         }
         
+
       
-        
-        a {
-            -moz-transition: 0.3s;
-            -o-transition: 0.3s;
-            -webkittransition: 0.3s;
-            transition: 0.3s;
-            color: #333;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
         /*custom css*/
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-            margin-top: 15px;
-        }
+       
         
         .section-header p {
             font-size: 18px;
@@ -74,46 +57,6 @@ if(isset($_SESSION["uid"])){
             height: 200px;
             position: relative;
         }
-        
-        .service-bg-1 {
-            background: url("../imgs/11.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-bg-2 {
-            background: url("../imgs/2.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-bg-3 {
-            background: url("../imgs/3.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-4 {
-            background: url("../imgs/4.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-5 {
-            background: url("../imgs/5.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        .service-bg-6 {
-            background: url("../imgs/6.jpg");
-            -webkit-background-size: cover;
-            background-size: cover;
-            background-position: center;
-        }
-        
         .service-bg h2 {
             color: #fff;
             background: tomato;
@@ -148,37 +91,10 @@ if(isset($_SESSION["uid"])){
         
         .service-text p:last-child {
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.3;
         }
         
-        .btn-area {
-            display: inline-block;
-            color: #333;
-            font-size: 17px;
-            font-weight: 700;
-            margin-top: 30px;
-            text-transform: capitalize;
-        }
-        .readmore-btn{
-            margin-top:-10px;
-            position:relative;
-        }
-        #more{
-            display:none;
-        }
-        button{
-   margin-top: 15px;
-   display: block;
-   background-color: #e41d3f;
-   color: white;
-   border:none;
-   outline: none;
-   padding: 8px 20px;
-   text-transform: capitalize;
-   cursor: pointer;
-   font-size: 20px;
-   text-align:center;
-}
+       
 .single-service:hover{
     box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
 -webkit-box-shadow: -2px 0px 65px 2px rgba(0,0,0,0.51);
@@ -188,43 +104,36 @@ if(isset($_SESSION["uid"])){
     </style>
 	</head>
 <body>
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
+					<span class="sr-only"> navigation toggle</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="../profile.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="../profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
-                <li><a href="../contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
-            </ul>
-			<form class="navbar-form navbar-left">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search" id="search">
-		        </div>
-		        <button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
-		     </form>
+				<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
+				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in <?php echo CURRENCY; ?></div>
+									<div class="col-md-3 col-xs-3">Sl.No</div>
+									<div class="col-md-3 col-xs-3">Product Image</div>
+									<div class="col-md-3 col-xs-3">Product Name</div>
+									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
 								</div>
 							</div>
 							<div class="panel-body">
@@ -236,25 +145,8 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>SignIn</a>
-					<ul class="dropdown-menu">
-						<div style="width:300px;">
-							<div class="panel panel-primary">
-								<div class="panel-heading">Login</div>
-								<div class="panel-heading">
-									<form onsubmit="return false" id="login">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" name="email" id="email" required/>
-										<label for="email">Password</label>
-										<input type="password" class="form-control" name="password" id="password" required/>
-										<p><br/></p>
-										<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" name="submit" class="btn btn-success" style="float:right;">
-									</form>
-								</div>
-								<div class="panel-footer" id="e_msg"></div>
-							</div>
-						</div>
-					</ul>
+				
+                <li><a href="../login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
 				</li>
 			</ul>
 		</div>
@@ -265,17 +157,21 @@ if(isset($_SESSION["uid"])){
     <div class="container">
         <div class="row">
             <div class="col-md-20">
-                <div class="section-header">
+                <div class="section-header" style="text-align: center; margin-bottom: 30px; margin-top: 15px;">
                     <h1 style="margin-top: 100px;">Our Services</h1>
                     <p>Some of our recent works that we finished so far. </p>
                 </div>
             </div>
         </div>
-        <div class="row">
+     
+        <div class="row"    >
             <div class="col-md-8">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-1">
+                        service-bg-1" style=" background: url('../imgs/11.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;">
                         <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
 <div class="content">Testing
   <ul>
@@ -294,7 +190,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-2">
+                        service-bg-2" style="
+                        background: url('../imgs/2.jpg');
+                        -webkit-background-size: cover;
+                             background-size: cover;
+            background-position: center;
+        ">
                         <h2>MUFFLER & EXHAUST SYSTEMS</h2>
                     </div>
                     <div class="service-text">
@@ -308,7 +209,12 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-3">
+                        service-bg-3" style="
+            background: url('../imgs/3.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>TIRE
                             <br> SALES</h2>
                     </div>
@@ -322,15 +228,20 @@ if(isset($_SESSION["uid"])){
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-4">
+                        service-bg-4" style="
+            background: url('../imgs/4.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>WHEEL <br>ALIGNMENT</h2>
                     </div>
                     <div class="service-text">
                         <p>Everything You Need to Know About Wheel Alignment Services!
-With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
+                            With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
 
-Inspect your vehicle's suspension and steering
-Adjust alignment angles to specifications
+            Inspect your vehicle's suspension and steering
+    Adjust alignment angles to specifications
 Tire Rotation & Balance</p>
                       
                     </div>
@@ -339,12 +250,17 @@ Tire Rotation & Balance</p>
             <div class="col-md-4">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-5">
+                        service-bg-5" style="
+            background: url('../imgs/5.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        ">
                         <h2>CHANGE<br>OIL</h2>
                     </div>
                     <div class="service-text">
                         <p>How Often Do You Get an Oil Change For your Vehicle?
-Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
+                            Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
                         
                     </div>
                 </div>
@@ -357,7 +273,7 @@ Why not come to (SHOP) for your next oil change? As you know, an changing an oil
       
 </div>
 <br>
-<div class="panel-footer text-center" style="background:black; color:white;" >   <p></p>
+<div class="panel-footer text-center" style="background:black; color:white;"><p></p>
       <footer class="footer">
           <div class="container">
               <div class="row">

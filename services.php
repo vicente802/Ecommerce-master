@@ -20,9 +20,7 @@ if(isset($_SESSION["uid"])){
         <style>
         /* Base CSS */
         
-        a:focus {
-            outline: 0 solid
-        }
+    
         
         img {
             max-width: 100%;
@@ -39,23 +37,8 @@ if(isset($_SESSION["uid"])){
             font-weight: 700;
         }
         
-        html,
-        body {
-            height: 100%;
-            
-        }
-        
-        a {
-            -moz-transition: 0.3s;
-            -o-transition: 0.3s;
-            -webkittransition: 0.3s;
-            transition: 0.3s;
-            color: #333;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
+
+      
         /*custom css*/
         
        
@@ -121,44 +104,36 @@ if(isset($_SESSION["uid"])){
     </style>
 	</head>
 <body>
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
+					<span class="sr-only"> navigation toggle</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand active">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
-                <li><a href="contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
-
-            </ul>
-			<form class="navbar-form navbar-left">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search" id="search">
-		        </div>
-		        <button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
-		     </form>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
+				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in <?php echo CURRENCY; ?></div>
+									<div class="col-md-3 col-xs-3">Sl.No</div>
+									<div class="col-md-3 col-xs-3">Product Image</div>
+									<div class="col-md-3 col-xs-3">Product Name</div>
+									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
 								</div>
 							</div>
 							<div class="panel-body">

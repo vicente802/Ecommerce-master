@@ -1,6 +1,9 @@
 <?php
-require "config/constants.php";
-
+require "../config/constants.php";
+session_start();
+if(!isset($_SESSION['uid'])){
+	header('location: ../index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +11,11 @@ require "config/constants.php";
 	<head>
 		<meta charset="UTF-8">
 		<title>Hardcore Motorshop</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<script src="js/jquery2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="main.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		<script src="../js/jquery2.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="..main.js"></script>
+		<link rel="stylesheet" type="text/css" href="../style.css">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
 
@@ -50,22 +53,22 @@ require "config/constants.php";
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li><a href="../profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="../services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="../contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in <?php echo CURRENCY; ?></div>
+									<div class="col-md-3 col-xs-3">Sl.No</div>
+									<div class="col-md-3 col-xs-3">Product Image</div>
+									<div class="col-md-3 col-xs-3">Product Name</div>
+									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
 								</div>
 							</div>
 							<div class="panel-body">
@@ -77,9 +80,17 @@ require "config/constants.php";
 						</div>
 					</div>
 				</li>
-				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
-					
-				</li>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+					<ul class="dropdown-menu">
+						<li><a href="../cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart"> Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="../customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+						<li><a href="../manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li class="divider"></li>
+						<li><a href="../logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+					</ul>
+				</li>		
 			</ul>
 		</div>
 	</div>
@@ -93,7 +104,7 @@ require "config/constants.php";
 	<div class="container">
         <div class="row">
           <div class="col-md-7">
-			<img src="imgs/logo.PNG" alt="logo" width="650px">
+			<img src="../imgs/logo.PNG" alt="logo" width="650px">
           </div>
           <div class="col-md-5">
             <h1 class="mt-5">Hardcore Motorshop</h1>
@@ -104,7 +115,7 @@ require "config/constants.php";
               itaque incidunt sint distinctio voluptatem tempore tempora aliquam
               sunt, vel, repellat velit. Vel!
             </p>
-			<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+			<a href="../profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
           </div>
 	</div>				
 	</div>

@@ -2,32 +2,7 @@
 require "../config/constants.php";
 session_start();
 if(isset($_SESSION['uid'])){
-    if(isset($_POST['submit'])){
-
-        $full = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['number'];
-        $message = $_POST['message'];
-        $error = "There's Something Wrong";
-        
-            if(empty($full) || empty($email) || empty($phone) || empty($message)){
-                $error = "There's Something Wrong";
-            }
-            else{
-                $to_email = "handayanv@gmail.com";
-                $subject = "Hardcore Motorshop Concern";
-                $body = $message;
-                $headers = $email;
-        
-        if (mail($to_email, $subject, $body, $headers)) {
-            echo '<script>alert("Email successfully sent...")</script>';
-        } else {
-            echo "Email sending failed...";
-        }
-        
-        
-            }
-        }
+   
 	}
 ?>
 <!DOCTYPE html>
@@ -36,21 +11,18 @@ if(isset($_SESSION['uid'])){
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Hardcore Motorshop</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="bootstrap.css"/>
+        <link rel="stylesheet" href="../bootstrap.css"/>
 		<script src="../js/jquery2.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../main.js"></script>
 		<style></style>
 	</head>
 <body>
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
+					<span class="sr-only"> navigation toggle</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -59,28 +31,23 @@ if(isset($_SESSION['uid'])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="../profile.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="../profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-	
-				<li><a href="../services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
-                <li><a href="../contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
-            </ul>
-			<form class="navbar-form navbar-left">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search" id="search">
-		        </div>
-		        <button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
-		     </form>
+				<li><a href="../services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="../contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
+				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in <?php echo CURRENCY; ?></div>
+									<div class="col-md-3 col-xs-3">Sl.No</div>
+									<div class="col-md-3 col-xs-3">Product Image</div>
+									<div class="col-md-3 col-xs-3">Product Name</div>
+									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
 								</div>
 							</div>
 							<div class="panel-body">
@@ -92,31 +59,7 @@ if(isset($_SESSION['uid'])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
-					<ul class="dropdown-menu">
-						<div style="width:300px;">
-							<div class="panel panel-primary">
-								<div class="panel-heading" style="text-align: center; font-weight:bold; font-size:large">Login</div>
-								<div class="panel-heading">
-									<form onsubmit="return false" id="login" style="text-align: center;">
-										<label for="email">Email</label>
-										<input type="email" class="form-control" name="email" id="email" required/>
-										<label for="email">Password</label>
-										<input type="password" class="form-control" name="password" id="password" required/>
-										<p><br/></p>
-										<a href="#" style="color:white; list-style:none;">Forgotten Password</a>
-										<br>
-										<input type="submit" name="submit" class="btn btn-success" style="float:center;">
-										<br>
-										<br>
-										<a href="customer_registration.php?register=1" style="text-align: center; text-decoration:none; color:white;">Register Now</a>
-									</form>
-								</div>
-								<div class="panel-footer" id="e_msg"></div>
-							</div>
-						</div>
-					</ul>
-				</li>
+				<li><a href="../login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>	
 			</ul>
 		</div>
 	</div>
@@ -127,6 +70,11 @@ if(isset($_SESSION['uid'])){
 
     <h1 style="text-align:center; margin-top:10px;">Contact Us</h1>
     <div class="border"></div>
+	<?php
+ if(isset($_POST['submit'])){
+		?><div class="container alert alert-danger text-center" style="width:40%; text-align:center;"><?php echo"You Need to login first"; ?></div>	</div></div><?php
+}
+	?>
     <form class="contact-form" action="" method="post">
         <input type="text" class="contact-form-text" placeholder="Your name" name="name">
         <input type="text"class="contact-form-text" placeholder="Your email" name="email">

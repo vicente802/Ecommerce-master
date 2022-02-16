@@ -35,7 +35,7 @@ if(!isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="home/index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
@@ -74,7 +74,7 @@ if(!isset($_SESSION["uid"])){
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
-						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
+						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>
