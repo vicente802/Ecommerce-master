@@ -2,7 +2,6 @@
 require "config/constants.php";
 
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -53,16 +52,10 @@ require "config/constants.php";
 			<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-<<<<<<< HEAD
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-=======
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 	
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
 			
-
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
@@ -107,7 +100,7 @@ require "config/constants.php";
 	<div class="container">
         <div class="row">
           <div class="col-md-7">
-			<img src="imgs/logo.PNG" alt="logo" width="650px">
+			<img src="logo-index.PNG" alt="logo" width="650px">
           </div>
           <div class="col-md-5">
             <h1 class="mt-5">Hardcore Motorshop</h1>
@@ -118,7 +111,7 @@ require "config/constants.php";
               itaque incidunt sint distinctio voluptatem tempore tempora aliquam
               sunt, vel, repellat velit. Vel!
             </p>
-			<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+			<button type="button" class="btn btn-primary btn-lg">Shop Now</button>
           </div>
 	</div>				
 	</div>
@@ -136,30 +129,6 @@ require "config/constants.php";
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
