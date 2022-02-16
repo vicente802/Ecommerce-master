@@ -290,11 +290,11 @@ if(isset($_SESSION["uid"])){
                     </div>
                     <div class="service-text">
                         <p>Everything You Need to Know About Wheel Alignment Services!
-With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
+                            With every wheel alignment, the (TITLE) perform a complete steering and suspension system inspection. In fact, there is not much we don't do when it comes to car alignment or front alignment. Here are the AAA approved wheel alignment services we provide:
 
-Inspect your vehicle's suspension and steering
-Adjust alignment angles to specifications
-Tire Rotation & Balance</p>
+            Inspect your vehicle's suspension and steering
+            Adjust alignment angles to specifications
+            Tire Rotation & Balance</p>
                       
                     </div>
                 </div>
