@@ -43,7 +43,7 @@ if (isset($_POST["login_user_with_product"])) {
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
 			</ul>
 		</div>
 	</div>

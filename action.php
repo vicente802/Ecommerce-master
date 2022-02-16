@@ -259,17 +259,10 @@ if (isset($_POST["Common"])) {
 					$product_price = $row["product_price"];
 					$product_image = $row["product_image"];
 					$product_desc = $row["product_desc"];
-<<<<<<< HEAD
 					
 					$product_price = $row["product_price"];
 					$cart_item_id = $row["id"];
 					$qty = $row["qty"];
-=======
-					$product_qty = $row["product_qty"];
-					$cart_item_id = $row["id"];
-					$qty = $row["qty"];
-					
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 					echo 
 						'<br><div class="row">
 								<div class="col-md-2">
@@ -281,11 +274,7 @@ if (isset($_POST["Common"])) {
 								<input type="hidden" name="product_id[]" value="'.$product_id.'"/>
 								<input type="hidden" name="" value="'.$cart_item_id.'"/>
 								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
-<<<<<<< HEAD
 								<div class="col-md-2 text-left">'.$product_desc.'</div>
-=======
-								<div class="col-md-2" style="text-align:left;">'.$product_desc.'</div>
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 								<div class="col-md-2"><input type="text" class="form-control qty" value="'.$qty.'" ></div>
 								<div class="col-md-2"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
@@ -298,11 +287,7 @@ if (isset($_POST["Common"])) {
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
 					?>
-<<<<<<< HEAD
 					<div class="col md-2"><?php
-=======
-					<div class="col md-2" style="margin-left:-80x;"><?php
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 				if (!isset($_SESSION["uid"])) {
 					echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
 							</form>';
@@ -325,13 +310,8 @@ if (isset($_POST["Common"])) {
 								echo  	
 									'<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
 								  	 <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
-<<<<<<< HEAD
 								     <input type="hidden" name="amount_'.$x.'" value="'.$row["product_price"].'">
 								     <input type="hidden"  name="quantity_'.$x.'" value="'.$row["qty"].'">';
-=======
-								     <input type="hidden" name="amount_'.$x.'" value="'.$row['product_price'].'">
-								     <input type="text" id="phpqty" name="quantity_'.$x.'" value="'.$row["qty"].'">';
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 								}
 							  
 							echo   

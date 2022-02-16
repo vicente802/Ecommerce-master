@@ -1,9 +1,6 @@
 <?php
 session_start();
 require "config/constants.php";
-  if(isset($_POST['submit'])){
-	  echo'<script>alert("Login first")</script>';
-  }
 
 ?>
 <!DOCTYPE html>
@@ -35,11 +32,11 @@ require "config/constants.php";
 			</div>
 			<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 	
-				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
 			
 
 			</ul>
@@ -93,8 +90,41 @@ require "config/constants.php";
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
+	
     <h1 style="text-align:center; margin-top:10px;">Contact Us</h1>
     <div class="border"></div>
+	
+	<?php
+	if(isset($_SESSION['uid'])){
+
+	 if(isset($_POST['submit'])){
+		$full = $_POST['name'];
+		$email = $_POST['email'];
+		$phone = $_POST['number'];
+		$message = $_POST['message'];
+	
+
+		if(empty($full) || empty($email) || empty($phone) || empty($message)){
+			?><div class="container alert alert-danger text-center" style="width:40%; text-align:center;"><?php
+			echo "Fill Up the Form";
+			?>
+</div>
+	
+	<?php } else {
+		  $to_email = "handayanv@gmail.com";
+		  $subject = "Hardcore Motorshop Concern";
+		  $body = $message;
+		  $headers = $email;
+  ?><div class="container alert alert-success text-center" style="width: 40%; text-align:center;"><?php
+  if (mail($to_email, $subject, $body, $headers)) {
+	  echo "Email successfully sent...";
+  ?></div><?php
+  }else {
+	  echo "Email sending failed...";
+  }
+	} 
+}
+}?>
     <form class="contact-form" action="" method="post">
         <input type="text" class="contact-form-text" placeholder="Your name" name="name">
         <input type="text"class="contact-form-text" placeholder="Your email" name="email">
