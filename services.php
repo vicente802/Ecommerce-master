@@ -37,29 +37,8 @@ if(isset($_SESSION["uid"])){
             font-weight: 700;
         }
         
-<<<<<<< HEAD
 
       
-=======
-        html,
-        body {
-            height: 100%;
-            
-        }
-        
-        a {
-            -moz-transition: 0.3s;
-            -o-transition: 0.3s;
-            -webkittransition: 0.3s;
-            transition: 0.3s;
-            color: #333;
-        }
-        
-        a:hover {
-            text-decoration: none;
-            
-        }
->>>>>>> 740c490a73042ef29c8ac46cb4919fbb0be24676
         /*custom css*/
         
        
@@ -138,7 +117,7 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="home/index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
