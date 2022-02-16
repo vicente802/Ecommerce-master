@@ -28,10 +28,12 @@ if(isset($_SESSION["uid"])){
             $new = $_POST['newpass'];
             $retype = $_POST['retype'];
             $password = $row['password'];
+            $password = md5($password);
        if($new != $retype){
             echo'<script>alert("Password not matched")</script>';
         }
-        else if($password == $curr){
+        else if($curr==$password){
+            $new = $_POST['newpass'];
             $new = md5($new);
             $sql1 = "UPDATE user_info set first_name='$fname', last_name='$lname', email='$email', 
             mobile='$num', address1='$add',address2='$city', password='$new'";
@@ -163,8 +165,8 @@ if(isset($_SESSION["uid"])){
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Contact Number: </label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" name="contact" maxlength="14" value="+63 <?php echo $mobile ?> ">
+            <div class="col-md-8">
+             <input class="form-control" type="text" name="contact" maxlength="15" value="+63 <?php echo $mobile ?> ">
             </div>
           </div>
           <div class="form-group">
@@ -183,7 +185,7 @@ if(isset($_SESSION["uid"])){
           <div class="form-group">
             <label class="col-lg-3 control-label">Current Password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="" name="current" placeholder="Enter Your Current Password">
+              <input class="form-control" type="password" value="" name="current" placeholder="Enter Your Current Password">
             </div>
           </div>
           <div class="form-group">
@@ -191,7 +193,7 @@ if(isset($_SESSION["uid"])){
             <div class="col-lg-8">
               <input class="form-control" type="password" name="newpass" value=""  placeholder="Enter New Password">
             </div>
-          </div>
+          </div>    
           <div class="form-group">
             <label class="col-lg-3 control-label">Retype Password:</label>
             <div class="col-lg-8">
