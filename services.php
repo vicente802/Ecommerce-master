@@ -37,8 +37,29 @@ if(isset($_SESSION["uid"])){
             font-weight: 700;
         }
         
+<<<<<<< HEAD
 
       
+=======
+        html,
+        body {
+            height: 100%;
+            
+        }
+        
+        a {
+            -moz-transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkittransition: 0.3s;
+            transition: 0.3s;
+            color: #333;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            
+        }
+>>>>>>> 740c490a73042ef29c8ac46cb4919fbb0be24676
         /*custom css*/
         
        
@@ -288,13 +309,13 @@ Tire Rotation & Balance</p>
           <div class="container">
               <div class="row">
                   <div class="footer-col">
-                      <h4>Follow Us !</h4>
+                      <h4 style="text-align: center;">Follow Us !</h4>
                       <ul>
                           <div class=" col">
-                          <a href="#"><i style="color: white; font-size:30px;" class="fa fa-facebook-f"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-phone"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:30px;" class="fa fa-instagram"></i></a>
-                          &nbsp;<a href="#"><i style="color: white; font-size:30px;" class="fa fa-google"></i></a>
+                          <a href="#"><i style="color: white; font-size:20px;" class="fa fa-facebook-f"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:20px;" class="fa fa-phone"></i></a>
+                          &nbsp; <a href="#"><i style="color: white; font-size:20px;" class="fa fa-instagram"></i></a>
+                          &nbsp;<a href="#"><i style="color: white; font-size:20px;" class="fa fa-google"></i></a>
 </div>
                         </ul>  
                     </div>
