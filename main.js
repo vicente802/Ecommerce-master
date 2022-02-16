@@ -214,12 +214,7 @@ $(document).ready(function() {
             var row = $(this).parent().parent();
             var price = row.find('.price').val();
             var qty = row.find('.qty').val();
-<<<<<<< HEAD
-            document.getElementById("phpqty").value = qty;
-=======
 
-
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
             if (isNaN(qty)) {
                 qty = 1;
             };

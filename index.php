@@ -53,11 +53,7 @@ require "config/constants.php";
 			<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-<<<<<<< HEAD
 				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-=======
-				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
->>>>>>> 45fd67bdaca0a00964e9144bce5cc68253d97d76
 	
 				<li><a href="services.php"><span class="glyphicon glyphicon-modal-window"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-modal-window"></span>Contact Us</a></li>
