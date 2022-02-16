@@ -58,11 +58,7 @@ if(isset($_SESSION["uid"])){
         }
         /*custom css*/
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-            margin-top: 15px;
-        }
+       
         
         .section-header p {
             font-size: 18px;
@@ -211,7 +207,7 @@ if(isset($_SESSION["uid"])){
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Service</a></li>
-                <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+                <li><a href="contact/contactus.php"><span class="glyphicon glyphicon-globe"></span>Contact Us</a></li>
 
             </ul>
 			<form class="navbar-form navbar-left">
@@ -241,16 +237,8 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
-					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
-						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
-						<li class="divider"></li>
-						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
-						<li class="divider"></li>
-						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
-					</ul>
+				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+					
 				</li>
 			</ul>
 		</div>
@@ -261,13 +249,14 @@ if(isset($_SESSION["uid"])){
     <div class="container">
         <div class="row">
             <div class="col-md-20">
-                <div class="section-header">
+                <div class="section-header" style="text-align: center; margin-bottom: 30px; margin-top: 15px;">
                     <h1 style="margin-top: 100px;">Our Services</h1>
                     <p>Some of our recent works that we finished so far. </p>
                 </div>
             </div>
         </div>
-        <div class="row">
+     
+        <div class="row"    >
             <div class="col-md-8">
                 <div class="single-service">
                     <div class="service-bg
@@ -340,7 +329,7 @@ Tire Rotation & Balance</p>
                     </div>
                     <div class="service-text">
                         <p>How Often Do You Get an Oil Change For your Vehicle?
-Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
+                            Why not come to (SHOP) for your next oil change? As you know, an changing an oil for your vehicle is a necessity, and most owner’s manuals and expert mechanic recommend an oil change at least every 3 months. Your motorcycle engine puts extreme pressure on the oil, and eventually the oil loses its lubricant qualities. When that happens, the oil can't cool, clean or lubricate the engine’s components.</p>
                         
                     </div>
                 </div>
