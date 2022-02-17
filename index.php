@@ -94,14 +94,14 @@ font-size: 1.3em;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
+<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
 </div>
 <div class="collapse navbar-collapse" id="collapse">
 <ul class="nav navbar-nav">
 <li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 <li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 
-<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+<li><a href="services/services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
 
 
@@ -110,7 +110,7 @@ font-size: 1.3em;
 <div class="form-group">
 <input type="text" class="form-control" placeholder="Search" id="search">
 </div>
-<button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
+<button type="submit" class="btn btn-primary" id="search_btn"><span class=""></span>Search</button>
 </form>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>

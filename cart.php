@@ -28,7 +28,7 @@ require "config/constants.php";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -52,7 +52,7 @@ require "config/constants.php";
 								</div>
 							</div>	
 				</li>
-				
+				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
 			</ul>
 		</div>
 	</div>
@@ -76,14 +76,14 @@ require "config/constants.php";
 					<div class="panel-heading">Cart Checkout</div>
 					<div class="panel-body">
 						<div class="row">
-							
+						<br>
+						
 							<div class="col-md-2 col-xs-2"><b>Action</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product :</b></div>
 							<div class="col-md-2 col-xs-2"><b>Description</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
-							
-							<div class="col-md-2 col-xs-2"><b><?php echo CURRENCY; ?></b></div>
+							<div class="col-md-2 col-xs-2"><b>Price</b></div>
+							<br>
 							
 						</div>
 						

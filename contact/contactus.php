@@ -27,15 +27,15 @@ if(isset($_SESSION['uid'])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="../profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="../services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="../contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
+				<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="../services/services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li style="width:300px;left:10px;top:10px;"><input type="text" placeholder="Search" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

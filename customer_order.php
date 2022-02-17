@@ -23,7 +23,7 @@ if(!isset($_SESSION["uid"])){
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Hardcore Motorshop</a>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li><a href="home/index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>

@@ -264,7 +264,9 @@ if (isset($_POST["Common"])) {
 					$cart_item_id = $row["id"];
 					$qty = $row["qty"];
 					echo 
-						'<br><div class="row">
+						'<br>
+						<br>
+						<div class="row">
 								<div class="col-md-2">
 									<div class="btn-group">
 										<a href="#" remove_id="'.$product_id.'" class="btn btn-danger remove"><span class="glyphicon glyphicon-trash"></span></a>
@@ -276,9 +278,9 @@ if (isset($_POST["Common"])) {
 								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
 								<div class="col-md-2 text-left">'.$product_desc.'</div>
 								<div class="col-md-2"><input type="text" class="form-control qty" value="'.$qty.'" ></div>
-								<div class="col-md-2"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
-							</div>';
+								<div class="col-md-2"><input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
+								</div>';
 				}
 				
 				echo '<div class="row">
