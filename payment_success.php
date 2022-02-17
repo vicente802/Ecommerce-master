@@ -56,7 +56,7 @@ if (isset($_GET["st"])) {
 								</div>
 								<ul class="nav navbar-nav">
 									
-<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-expand-md navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -69,7 +69,7 @@ if (isset($_GET["st"])) {
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="home/index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
@@ -102,18 +102,18 @@ if (isset($_GET["st"])) {
 				</li>
 			</ul>
 		</div>
-	</div>
-</div>	
+		</div>
+</div>
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
 								</ul>
 							</div>
 						</div>
-						<p><br/></p>
-						<p><br/></p>
-						<p><br/></p>
-						<div class="container-fluid">
+								<br>
+								<br>
+								<br>
+						<div class="container-fluid" style="margin-top: 50px;">
 						
 							<div class="row">
 								<div class="col-md-2"></div>
@@ -140,7 +140,7 @@ if (isset($_GET["st"])) {
 				<?php
 			}
 		}else{
-			header("location:index.php");
+			header("location:index1.php");
 		}
 		
 	}

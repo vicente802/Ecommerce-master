@@ -86,13 +86,13 @@ if (isset($_GET["register"])) {
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="address1">Address Line 1</label>
+								<label for="address1">Address</label>
 								<input type="text" id="address1" name="address1"class="form-control">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="address2">Address Line 2</label>
+								<label for="address2">Municipality/City</label>
 								<input type="text" id="address2" name="address2"class="form-control">
 							</div>
 						</div>

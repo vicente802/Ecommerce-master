@@ -32,16 +32,17 @@ if(isset($_SESSION["uid"])){
        if($new != $retype){
             echo'<script>alert("Password not matched")</script>';
         }
-        else if($curr==$password){
-            $new = $_POST['newpass'];
-            $new = md5($new);
-            $sql1 = "UPDATE user_info set first_name='$fname', last_name='$lname', email='$email', 
-            mobile='$num', address1='$add',address2='$city', password='$new'";
-            mysqli_query($con,$sql1);
-            echo'<script>alert("Updated Successfully")</script>';
+       if($curr!=$password){
+          echo'<script>alert("Current password error")</script>';
         }
             else{
-                echo'<script>alert("Current password error")</script>';
+               
+                $new = $_POST['newpass'];
+                $new = md5($new);
+                $sql1 = "UPDATE user_info set first_name='$fname', last_name='$lname', email='$email', 
+                mobile='$num', address1='$add',address2='$city', password='$new'";
+                mysqli_query($con,$sql1);
+                echo'<script>alert("Updated Successfully")</script>';
             }
         }
 
@@ -76,7 +77,7 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index1.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>

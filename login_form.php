@@ -29,6 +29,14 @@ if (isset($_POST["login_user_with_product"])) {
 	<script>
 		window.history.forward();
 	</script>
+	<style>
+		.g-captcha{
+			z-index: auto;
+			text-align: center;
+			float: center;
+
+		}
+	</style>
 	</head>
 <body>
 <div class="wait overlay">
@@ -75,6 +83,13 @@ if (isset($_POST["login_user_with_product"])) {
 							<label for="email">Password</label>
 							<input type="password" class="form-control" name="password" id="password" required/>
 							<p><br/></p>
+							<div class="container-fluid text-center" style="text-align:center; margin-left:30px;" >
+							<div class="g-recaptcha" 
+        data-sitekey="6LfYRwgeAAAAAD4VVfV1_FUFiqJHAHZNl4oQZoBp" 
+        data-callback='onSubmit' 
+        data-action='submit'></div>
+		</div>
+		<br>
 							<a href="#" style="color:#333; list-style:none;">Forgotten Password</a><input type="submit" name="submit" class="btn btn-success" style="float:right;" Value="Login">
 							<!--If user dont have an account then he/she will click on create account button-->
 							<div><a href="customer_registration.php?register=1">Create a new account?</a></div>						
@@ -85,6 +100,28 @@ if (isset($_POST["login_user_with_product"])) {
 		</div>
 		<div class="col-md-4"></div>
 	</div>
+	<script async src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LfYRwgeAAAAAD4VVfV1_FUFiqJHAHZNl4oQZoBp"></script>
+
+	<script>
+		 grecaptcha.ready(function(){
+    grecaptcha.render("container", {
+      sitekey: "ABC-123"
+    });
+  });
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+   function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LfYRwgeAAAAAD4VVfV1_FUFiqJHAHZNl4oQZoBp', {action: 'submit'}).then(function(token) {
+              // Add your logic to submit to your backend server here.
+          });
+        });
+      }
+ </script>
 </body>
 </html>
 

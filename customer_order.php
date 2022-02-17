@@ -26,7 +26,7 @@ if(!isset($_SESSION["uid"])){
 				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="home/index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>

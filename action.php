@@ -277,7 +277,7 @@ if (isset($_POST["Common"])) {
 								<input type="hidden" name="" value="'.$cart_item_id.'"/>
 								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
 								<div class="col-md-2 text-left">'.$product_desc.'</div>
-								<div class="col-md-2"><input type="text" class="form-control qty" value="'.$qty.'" ></div>
+								<div class="col-md-2"><input type="number" min="1" class="form-control qty" value="'.$qty.'" ></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
 								<div class="col-md-2"><input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
 								</div>';
