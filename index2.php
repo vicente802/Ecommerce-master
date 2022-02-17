@@ -169,7 +169,7 @@ font-size: 1.3em;
 <p class="mt-4">
 
 </p>
-<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+<a href="profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
 
