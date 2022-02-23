@@ -34,7 +34,7 @@ if(!isset($_SESSION["uid"])){
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+			<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
@@ -44,8 +44,17 @@ if(!isset($_SESSION["uid"])){
 									<div class="col-md-3 col-xs-3">Product Name</div>
 									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
 								</div>
-							</div>	
-				</li>
+							</div>
+							<div class="panel-body">
+								<div id="cart_product">
+								<!--<div class="row">
+									<div class="col-md-3">Sl.No</div>
+									<div class="col-md-3">Product Image</div>
+									<div class="col-md-3">Product Name</div>
+									<div class="col-md-3">Price in $.</div>
+								</div>-->
+								</div>
+							</div>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
@@ -91,6 +100,7 @@ if(!isset($_SESSION["uid"])){
 												<table>
 													
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
+													<tr><td>Status</td><td><b><?php echo $row["p_status"]; ?></b> </td></tr>
 													<tr><td>Description</td><td><b><?php echo $row["product_desc"]; ?></b> </td></tr>
 													<tr><td>Product Price</td><td><b><?php echo  CURRENCY." ".$row["product_price"]; ?></b></td></tr>
 													<tr><td>Quantity</td><td><b><?php echo $row["qty"]; ?></b></td></tr>

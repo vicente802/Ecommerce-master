@@ -41,7 +41,7 @@ require "config/constants.php";
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
-					<div class="dropdown-menu" style="width:400px;">
+				<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
@@ -49,6 +49,16 @@ require "config/constants.php";
 									<div class="col-md-3 col-xs-3">Product Image</div>
 									<div class="col-md-3 col-xs-3">Product Name</div>
 									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div id="cart_product">
+								<!--<div class="row">
+									<div class="col-md-3">Sl.No</div>
+									<div class="col-md-3">Product Image</div>
+									<div class="col-md-3">Product Name</div>
+									<div class="col-md-3">Price in $.</div>
+								</div>-->
 								</div>
 							</div>	
 				</li>

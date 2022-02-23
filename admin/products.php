@@ -14,7 +14,7 @@
       		<a href="#" data-toggle="modal" data-target="#add_product_modal" class="btn btn-primary btn-sm">Add Product</a>
       	</div>
       </div>
-      
+     
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -30,6 +30,7 @@
             </tr>
           </thead>
           <tbody id="product_list">
+         
             <!-- <tr>
               <td>1</td>
               <td>ABC</td>

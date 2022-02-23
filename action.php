@@ -229,6 +229,7 @@ if (isset($_POST["Common"])) {
 				$product_price = $row["product_price"];
 				$product_image = $row["product_image"];
 				$product_desc = $row["product_desc"];
+				$product_qty = $row["product_qty"];
 				$cart_item_id = $row["id"];
 				$qty = $row["qty"];
 				echo '
@@ -247,22 +248,26 @@ if (isset($_POST["Common"])) {
 		}
 	}
 	if (isset($_POST["checkOutDetails"])) {
+		
+	
 		if (mysqli_num_rows($query) > 0) {
 			
 			//display user cart item with "Ready to checkout" button if user is not login
 			echo "<form method='post' action='login_form.php'>";
 				$n=0;
 				while ($row=mysqli_fetch_array($query)) {
+					
 					$n++;
 					$product_id = $row["product_id"];
 					$product_title = $row["product_title"];
 					$product_price = $row["product_price"];
 					$product_image = $row["product_image"];
 					$product_desc = $row["product_desc"];
-					
+					$product_qty = $row["product_qty"];
 					$product_price = $row["product_price"];
 					$cart_item_id = $row["id"];
 					$qty = $row["qty"];
+					
 					echo 
 						'<br>
 						<br>
@@ -322,10 +327,11 @@ if (isset($_POST["Common"])) {
 									<input type="hidden" name="cancel_return" value="http://localhost/Ecommerce-master/cancel.php"/>
 									<input type="hidden" name="currency_code" value="PHP"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-									<input style="float:right;" type="image" name="submit"
+									<input style="float:right; width:200px;" type="image" name="submit"
 										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 										alt="PayPal - The safer, easier way to pay online">
 								</form>';
+								
 				}
 			}
 	}
@@ -355,6 +361,7 @@ if (isset($_POST["removeItemFromCart"])) {
 if (isset($_POST["updateCartItem"])) {
 	$update_id = $_POST["update_id"];
 	$qty = $_POST["qty"];
+	
 	if (isset($_SESSION["uid"])) {
 		$sql = "UPDATE cart SET qty='$qty' WHERE p_id = '$update_id' AND user_id = '$_SESSION[uid]'";
 	}else{

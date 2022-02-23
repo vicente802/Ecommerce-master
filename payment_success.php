@@ -26,12 +26,13 @@ if (isset($_GET["st"])) {
 			while ($row=mysqli_fetch_array($query)) {
 			$product_id[] = $row["p_id"];
 			$qty[] = $row["qty"];
-			$product_qty = $row["product_qty"];
+			
 		
 			}
 
 			for ($i=0; $i < count($product_id); $i++) { 
-				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st')";
+				$p_st = "Queue";
+				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,price) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$price')";
 				mysqli_query($con,$sql);
 			
 			}
@@ -130,8 +131,30 @@ if (isset($_GET["st"])) {
 											<p>Hello <?php echo "<b>".$_SESSION["name"]."</b>"; ?>,Your payment process is 
 											successfully completed and your Transaction id is <b><?php echo $trx_id; ?></b><br/>
 											you can continue your Shopping <br/></p>
-											<a href="index1.php" class="btn btn-success btn-lg">Continue Shopping</a>
+											<a href="index1.php" name="continue" class="btn btn-success btn-lg">Continue Shopping</a>
 										</div>
+										<?php
+										}
+											$order = mysqli_query($con, "SELECT * FROM orders");
+											$product = mysqli_query($con, "SELECT * FROM products");
+											if (mysqli_num_rows($order) > 0) {
+											while ($row=mysqli_fetch_array($order)) {
+												$qty = $row['qty'];
+												$orderid = $row['order_id'];
+												$product_id1 = $row['product_id'];
+											}
+										}
+										if (mysqli_num_rows($product) > 0) {
+											while ($row=mysqli_fetch_array($product)) {
+												$product_qty = $row['product_qty'];
+												
+											}
+										}
+										$total = $product_qty - $qty;
+										mysqli_query($con, "UPDATE products set product_qty='$total' WHERE product_id='$product_id1'");	
+											?>
+										
+										
 										<div class="panel-footer"></div>
 									</div>
 								</div>
@@ -141,8 +164,9 @@ if (isset($_GET["st"])) {
 					</body>
 					</html>
 
+			
 				<?php
-			}
+			
 		}else{
 			header("location:index1.php");
 		}
