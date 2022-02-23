@@ -80,7 +80,7 @@ if(isset($_SESSION['uid'])){
         <input type="text"class="contact-form-text" placeholder="Your email" name="email">
         <input type="text" class="contact-form-text" placeholder="Your number" name="number">
         <textarea class="contact-form-text" placeholder=" Your Message" name="message"></textarea>
-        <input type="submit" class="contact-form-btn" name="submit" value="Send">
+        <center><input type="submit" class="contact-form-btn" name="submit" value="Send"></center>
     </form>
 
 	<br>

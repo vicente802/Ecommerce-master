@@ -110,12 +110,7 @@ font-size: 1.3em;
 
 
 </ul>
-<form class="navbar-form navbar-left">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Search" id="search">
-</div>
-<button type="submit" class="btn btn-primary" id="search_btn"><span class=""></span>Search</button>
-</form>
+
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 <div class="dropdown-menu" style="width:400px;">
@@ -139,7 +134,7 @@ font-size: 1.3em;
 </li>
 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>

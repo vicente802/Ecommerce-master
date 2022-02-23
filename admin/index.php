@@ -53,7 +53,7 @@ h2 {
 }
 
 h3 {
-    color: white;
+    color: black;
 }
 
 .btn {
@@ -204,7 +204,7 @@ td {
 .container .content .cards .card {
     width: 250px;
     height: 150px;
-    background-image:url("https://img.freepik.com/free-vector/black-label-shopping-cart-sale-red-background_45981-201.jpg?size=626&ext=jpg");
+
     background-size:250px;
    
     margin: 20px 10px;
@@ -304,7 +304,8 @@ $count = mysqli_query($con,$select);
 if($counting = mysqli_num_rows($count)){
     echo $counting;
 }
-?></h1>
+?></h1><hr style="color : green; border:2px solid black;">
+
                         <h3>Total Sales</h3>
                     </div>
                 </div>
@@ -316,7 +317,7 @@ $count = mysqli_query($con,$select);
 if($counting = mysqli_num_rows($count)){
     echo $counting;
 }
-?></h1>
+?></h1><hr style="color : green; border:2px solid black;">
                         <h3>Number of products</h3>
                     </div>
                 </div>
@@ -328,13 +329,13 @@ $count = mysqli_query($con,$select);
 if($counting = mysqli_num_rows($count)){
     echo $counting;
 }
-?></h1>
+?></h1><hr style="color : green; border:2px solid black;">
                         <h3>Number of users</h3>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>350000</h1>
+                        <h1>350000</h1><hr style="color : green; border:2px solid black;">
                         <h3>Critical Value</h3>
                     </div>
                    

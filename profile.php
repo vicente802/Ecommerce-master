@@ -39,8 +39,7 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
@@ -55,6 +54,7 @@ if(!isset($_SESSION["uid"])){
 								</div>
 							</div>
 							<div class="panel-body">
+								
 								<div id="cart_product">
 								<!--<div class="row">
 									<div class="col-md-3">Sl.No</div>
@@ -70,7 +70,7 @@ if(!isset($_SESSION["uid"])){
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
@@ -88,7 +88,9 @@ if(!isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	<div class="container-fluid">
+		
 		<div class="row">
+			
 			<div class="col-md-1"></div>
 			<div class="col-md-2">
 				<div id="get_category">
@@ -112,11 +114,18 @@ if(!isset($_SESSION["uid"])){
 			</div>
 			<div class="col-md-8">	
 				<div class="row">
+					
 					<div class="col-md-12 col-xs-12" id="product_msg">
+						
 					</div>
 				</div>
 				<div class="panel panel-info" id="scroll">
-					<div class="panel-heading">Products</div>
+					
+					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
+					<li style="float:right;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			<li style="width:300px; float:right"><input type="text" class="form-control" id="search"></li>
+				
+		</ul></div>
 					<div class="panel-body">
 						<div id="get_product">
 							<!--Here we get product jquery Ajax Request-->

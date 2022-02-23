@@ -38,7 +38,7 @@ if (!$con) {
 	}else{
 		$start = 0;
 	}
-	$product_query = "SELECT * FROM products order by product_qty desc LIMIT $start,$limit";
+	$product_query = "SELECT * FROM products ORDER BY product_qty asc LIMIT $start,$limit";
 	$run_query = mysqli_query($con,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
