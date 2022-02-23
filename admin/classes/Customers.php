@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 /**
  * 
  */
@@ -65,6 +66,13 @@ if (isset($_POST["GET_CUSTOMER_ORDERS"])) {
 		exit();
 	}
 }
-
+include '../db.php';
+$status = $_POST['status'];
+$order = $_POST['order'];
+    $sql = mysqli_query($con, "SELECT*FROM orders");
+    if($row = mysqli_num_rows($sql)){
+mysqli_query($con, "UPDATE orders set p_status='$status' where order_id='$order'");
+    header('location: ../customer_orders.php');
+    }
 
 ?>

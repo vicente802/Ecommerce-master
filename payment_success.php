@@ -32,7 +32,7 @@ if (isset($_GET["st"])) {
 
 			for ($i=0; $i < count($product_id); $i++) { 
 				$p_st = "Queue";
-				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,price) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$price')";
+				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st')";
 				mysqli_query($con,$sql);
 			
 			}
