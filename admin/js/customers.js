@@ -55,6 +55,7 @@ $(document).ready(function() {
                     $.each(resp.message, function(index, value) {
                         var total = value.qty * value.product_price;
                         customerOrderHTML += '<tr>' +
+                            '<td>' + value.email + '</td>' +
                             '<td>' + value.order_id + '</td>' +
                             '<td>' + value.product_title + '</td>' +
                             '<td>' + value.product_id + '</td>' +
@@ -63,7 +64,7 @@ $(document).ready(function() {
                             '<td>' + total + '</td>' +
                             '<td>' + value.datetime + '</td>' +
                             '<td>' + value.p_status + '</td>' +
-                            '<td><form action="action.php" method="POST"><select name="status" value="status" id="status"><option value="Queue">Status</option><option value="Preparing..." >Preparing</option><option value="Preparing" ></option></select> <input type="submit" value="update"></form></td>' +
+                            '<td><form action="action.php" method="POST"><select name="status" value="status" id="status"><option value="Queue">Status</option><option value="Preparing..." >Preparing</option><option value="Shipping.." >Shipped</option></select> <input type="submit" value="update"></form></td>' +
 
 
 

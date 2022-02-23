@@ -28,6 +28,7 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
+			<th>Consumer</th>
 			<th>Order #</th>
 			<th>Product Name</th>
               <th>Product Id</th>

@@ -98,11 +98,14 @@ if(!isset($_SESSION["uid"])){
 											</div>
 											<div class="col lg">
 												<table>
-													
+													<?php $price = $row["product_price"]; 
+															$qty = $row["qty"];
+															$total = $price * $qty;
+													?>
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
 													<tr><td>Status</td><td><b><?php echo $row["p_status"]; ?></b> </td></tr>
 													<tr><td>Description</td><td><b><?php echo $row["product_desc"]; ?></b> </td></tr>
-													<tr><td>Product Price</td><td><b><?php echo  CURRENCY." ".$row["product_price"]; ?></b></td></tr>
+													<tr><td>Product Price</td><td><b><?php echo  CURRENCY." " .$total ?></b></td></tr>
 													<tr><td>Quantity</td><td><b><?php echo $row["qty"]; ?></b></td></tr>
 													<tr><td>Transaction Id</td><td><b><?php echo $row["trx_id"]; ?></b></td>
 													<td><input style="float:right;" type="button" name="cancel" class="btn btn-danger" value="Cancel"></td></tr>
