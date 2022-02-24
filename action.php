@@ -331,6 +331,8 @@ if (isset($_POST["Common"])) {
 										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 										alt="PayPal - The safer, easier way to pay online">
 								</form>';
+								include 'gcash.php';
+								
 				}
 			}
 	}
