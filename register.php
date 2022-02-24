@@ -110,7 +110,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		exit();
 	} else {
 		
-		
+	
 		$_SESSION["name"] = $f_name;
 		$_SESSION["l_name"] = $l_name;
 		$_SESSION["email"] = $email;

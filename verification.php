@@ -1,6 +1,19 @@
 <?php
 session_start();
 
+$code = $_SESSION['email'];
+$key = md5(time() .$code);
+$to_email = "handayanv@gmail.com";
+$subject = "Hardcore Motorshop Concern";
+$body = "Copy The Verification Code Here: $key";
+$headers = $_SESSION['email'];
+?><?php
+if (mail($to_email, $subject, $body, $headers)) {
+$_SESSION['code'] = $key;
+?></div><?php
+}else {
+echo "Email sending failed...";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +50,11 @@ Simply click the big button below to verify your email address.</h3>"?>
 <input type="hidden" name="mobile" value="<?php echo $_SESSION['mobile'] ?>">
 <input type="hidden" name="address1" value="<?php echo $_SESSION['address1'] ?>">
 <input type="hidden" name="address2" value="<?php echo $_SESSION['address2'] ?>">
-<input type="text" style="margin-top: 50px; font-size:35px; height:40px; margin-top:-5px; width:60%; " name="verication">
+<input type="hidden" name="code" value="<?php echo $key ?>">
+<input type="text" style="margin-top: 50px; font-size:35px; height:40px; margin-top:-5px; width:60%; " name="verification">
 <br>
 <br>
-							<input style="width:20%;" type="submit" name="signup" class="btn btn-success btn-lg">
+							<input style="width:30%;" type="submit" name="signup" class="btn btn-success btn-lg">
 	
 						</fieldset>
 						</form>

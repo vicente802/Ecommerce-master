@@ -1,6 +1,12 @@
 <?php
 session_start();
+
 include 'db.php';
+
+    if(empty($_POST['verification'])){
+        echo"ERROR";
+    }
+else if($_POST['verification'] == $_POST['code']){
 $f_name = $_POST['fname'];
 $l_name = $_POST['lname'];
 $email = $_POST['email'];
@@ -20,8 +26,13 @@ $address2 = $_POST['address2'];
 		$ip_add = getenv("REMOTE_ADDR");
 		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
 		if(mysqli_query($con,$sql)){
-			echo "register_success";
+			header('location:profile.php');
 			exit();
 		}
+        else{
+            echo'<script>alert("Verification Code Not matched")</script>';
+        }
+    }
+
 
 ?>
