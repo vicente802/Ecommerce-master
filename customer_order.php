@@ -87,7 +87,7 @@ if(!isset($_SESSION["uid"])){
 						<?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM orders o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM orders o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {
@@ -102,14 +102,18 @@ if(!isset($_SESSION["uid"])){
 															$qty = $row["qty"];
 															$total = $price * $qty;
 													?>
+													<form action="action.php" method="POST">
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
-													<tr><td>Status</td><td><b><?php echo $row["p_status"]; ?></b> </td></tr>
+													<tr><td>Status</td><td><b><?php echo $row["shipping"]; ?></b> </td></tr>
 													<tr><td>Description</td><td><b><?php echo $row["product_desc"]; ?></b> </td></tr>
 													<tr><td>Product Price</td><td><b><?php echo  CURRENCY." " .$total ?></b></td></tr>
 													<tr><td>Quantity</td><td><b><?php echo $row["qty"]; ?></b></td></tr>
 													<tr><td>Transaction Id</td><td><b><?php echo $row["trx_id"]; ?></b></td>
-													<td><input style="float:right;" type="button" name="cancel" class="btn btn-danger" value="Cancel"></td></tr>
-												
+													<input type="hidden" name="canceled" value="Requesting cancel">
+													<input type="hidden" name="trx1" value="<?php echo $row["order_id"]; ?>">
+													<td><input style="float:right;" type="submit" name="cancel" class="btn btn-danger" value="Cancel"></td>
+													<td><input style="float:right;" type="submit" name="receive" class="btn btn-success" value="Order Received"></td></tr>
+													</form>
 												</table>
 								
 											</div>

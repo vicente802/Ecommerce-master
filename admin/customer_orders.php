@@ -38,10 +38,10 @@
       	</div>
       </div>
       
-      <div class="table-responsive" style="margin-top:-45px;">
+      <div class="table-responsive" style="padding:10px; margin-top:-45px;">
         <table class="table table-striped table-sm">
           <thead>
-            <tr>
+            <tr style="padding:px; ">
 			<th>Consumer</th>
 			<th>Order #</th>
 			<th>Product Name</th>
@@ -51,7 +51,10 @@
 			  <th>Price</th>
 			  <th>Date Time</th>
 			  <th>Payment Status</th>
+			  <th>Payment Method</th>
+			  <th>Shipping</th>
 			  <th>Action</th>
+			 
 			
             </tr>
 			

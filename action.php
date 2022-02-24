@@ -309,6 +309,7 @@ if (isset($_POST["Common"])) {
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="business" value="Hardcore@gmail.com">
 							<input type="hidden" name="upload" value="1">';
+
 							$x=0;
 							$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
 							$query = mysqli_query($con,$sql);
@@ -331,7 +332,7 @@ if (isset($_POST["Common"])) {
 										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 										alt="PayPal - The safer, easier way to pay online">
 								</form>';
-								include 'gcash.php';
+								
 								
 				}
 			}
@@ -377,7 +378,19 @@ if (isset($_POST["updateCartItem"])) {
 	}
 }
 
-
+if(isset($_POST['cancel'])){
+	$canceled = $_POST['canceled'];
+	$trx = $_POST['trx1'];
+	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
+header('location:customer_order.php');
+}
+if(isset($_POST['receive'])){
+	$canceled = $_POST['canceled'];
+	$canceled = "Order Received..";
+	$trx = $_POST['trx1'];
+	mysqli_query($con,"UPDATE orders set Shipping ='$canceled' where order_id='$trx'");
+	header('location:profile.php');
+}
 
 
 ?>

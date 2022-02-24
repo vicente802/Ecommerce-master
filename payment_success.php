@@ -31,8 +31,9 @@ if (isset($_GET["st"])) {
 			}
 
 			for ($i=0; $i < count($product_id); $i++) { 
-				$p_st = "Queue";
-				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st')";
+			
+				$shipping = "Queue";
+				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,shipping) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$shipping')";
 				mysqli_query($con,$sql);
 			
 			}
@@ -135,6 +136,7 @@ if (isset($_GET["st"])) {
 										</div>
 										<?php
 										}
+										$payment_method="Paypal";
 											$order = mysqli_query($con, "SELECT * FROM orders");
 											$product = mysqli_query($con, "SELECT * FROM products");
 											if (mysqli_num_rows($order) > 0) {
@@ -152,7 +154,8 @@ if (isset($_GET["st"])) {
 										}
 										$total = $product_qty - $qty;
 										mysqli_query($con, "UPDATE products set product_qty='$total' WHERE product_id='$product_id1'");	
-											?>
+										mysqli_query($con, "UPDATE orders set payment_method='$payment_method'");	
+										?>
 										
 										
 										<div class="panel-footer"></div>

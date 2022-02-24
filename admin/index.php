@@ -372,14 +372,16 @@ if($counting = mysqli_num_rows($count)){
           </thead>
           <tbody>
          <?php
-         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx_id,o.p_status,o.qty FROM user_info u JOIN orders o on u.user_id=o.user_id");
+         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx_id,o.p_status,o.qty,o.payment_method FROM user_info u JOIN orders o on u.user_id=o.user_id");
          if(mysqli_num_rows($sql1)>0){
             while($row = mysqli_fetch_array($sql1)){
                 echo '<tr><td>',$row["first_name"] ," ", $row["last_name"],'</td>';
                 echo '<td>',$row["address1"] ," ", $row["address2"],'</td>';
                 echo '<td>',$row["trx_id"] ,'</td>';
                 echo '<td>',$row["qty"] ,'</td>';
-                echo '<td>',$row["price"] ,'</td></tr>';
+                echo '<td>',$row["price"] ,'</td>';
+                echo '<td>',$row["p_status"] ,'</td>';
+                echo '<td>',$row["payment_method"] ,'</td></tr>';
             }
          }
          ?>

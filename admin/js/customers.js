@@ -64,7 +64,9 @@ $(document).ready(function() {
                             '<td>' + total + '</td>' +
                             '<td>' + value.datetime + '</td>' +
                             '<td>' + value.p_status + '</td>' +
-                            '<td><form action="./classes/Customers.php" method="POST"><input type="hidden" name="order" value=' + value.order_id + '><input type="hidden" name="price" value=' + total + '><select name="status" value="status" id="status"><option value="Queue">Status</option><option value="Preparing..." >Preparing</option><option value="Shipping.." >Shipped</option></select> <input type="submit" value="update"></form></td>' +
+                            '<td>' + value.payment_method + '</td>' +
+                            '<td>' + value.shipping + '</td>' +
+                            '<td><form action="./classes/Customers.php" method="POST"><input type="hidden" name="order" value=' + value.order_id + '><input type="hidden" name="price" value=' + total + '><select name="status" value="status" id="status"><option value="Queue">Status</option><option value="Preparing..." >Preparing</option><option value="Shipping.." >Shipped</option><option name="cancel" value="Cancelled" >Cancel</option></select> <input type="submit" value="update"></form></td>' +
 
 
 
