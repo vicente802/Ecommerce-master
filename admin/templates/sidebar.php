@@ -60,12 +60,8 @@
         <h1 class="h2"></h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary"  style="background:red; color:white;">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" style="background:red; color:white;">Export</button>
+            
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" style="background:red; color:white;">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
+          
         </div>
       </div>

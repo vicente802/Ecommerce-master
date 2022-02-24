@@ -30,12 +30,15 @@ class Customers
 
 
 	public function getCustomersOrder(){
+		
 		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,p.product_title, p.product_image,p.product_price,u.email FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
 		
 		$ar = [];
 		if (@$query->num_rows > 0) {
 			while ($row = $query->fetch_assoc()) {
 				$ar[] = $row;
+				include '../db.php';
+				
 			}
 			return ['status'=> 202, 'message'=> $ar];
 		}
@@ -69,9 +72,10 @@ if (isset($_POST["GET_CUSTOMER_ORDERS"])) {
 include '../db.php';
 $status = $_POST['status'];
 $order = $_POST['order'];
+$price = $_POST['price'];
     $sql = mysqli_query($con, "SELECT*FROM orders");
     if($row = mysqli_num_rows($sql)){
-mysqli_query($con, "UPDATE orders set p_status='$status' where order_id='$order'");
+mysqli_query($con, "UPDATE orders set p_status='$status', price='$price' where order_id='$order'");
     header('location: ../customer_orders.php');
     }
 

@@ -7,6 +7,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 include "./templates/top.php"; 
 
+
 ?>
  
 <?php include "./templates/navbar.php"; ?>
@@ -187,7 +188,7 @@ td {
 
 .container .content {
     position: relative;
-    margin-top: 10vh;
+    margin-top: -5vh;
     min-height: 90vh;
     background: #f1f1f1;
 }
@@ -298,13 +299,18 @@ td {
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1><?php
-$select = "SELECT * FROM orders";
+                        <h1>Php <?php
+$select = "SELECT SUM(price) as sum FROM orders ";
 $count = mysqli_query($con,$select);
-if($counting = mysqli_num_rows($count)){
-    echo $counting;
+
+if(mysqli_num_rows($count)){
+    while($row = mysqli_fetch_array($count)){
+    $total=$row['sum'];
+    }
+    echo $total;
 }
-?></h1><hr style="color : green; border:2px solid black;">
+
+?>.0</h1><hr style="color : green; border:2px solid black;">
 
                         <h3>Total Sales</h3>
                     </div>
@@ -347,52 +353,40 @@ if($counting = mysqli_num_rows($count)){
                         <h2>Recent Payments</h2>
                         <a href="#" class="btn">View All</a>
                     </div>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>School</th>
-                            <th>Amount</th>
-                            <th>Option</th>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>St. James College</td>
-                            <td>$120</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                    <div class="table-responsive" style="margin-top:-45px;">
+        <table class="table table-striped table-sm">
+            <br>
+            <br>
+          <thead>
+            <tr>
+			<th>Consumer</th>
+			<th>Address</th>
+			  <th>Trx Id</th>
+              <th>Quantity</th>
+			  <th>Price</th>
+			  <th>Payment Status</th>
+              <th>Payment Method</th>
+			  <th>Action</th>
+            </tr>
+			
+          </thead>
+          <tbody>
+         <?php
+         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx_id,o.p_status,o.qty FROM user_info u JOIN orders o on u.user_id=o.user_id");
+         if(mysqli_num_rows($sql1)>0){
+            while($row = mysqli_fetch_array($sql1)){
+                echo '<tr><td>',$row["first_name"] ," ", $row["last_name"],'</td>';
+                echo '<td>',$row["address1"] ," ", $row["address2"],'</td>';
+                echo '<td>',$row["trx_id"] ,'</td>';
+                echo '<td>',$row["qty"] ,'</td>';
+                echo '<td>',$row["price"] ,'</td></tr>';
+            }
+         }
+         ?>
+         
+          </tbody>
+        </table>
+      </div>
         </div>
     </div>
 </body>

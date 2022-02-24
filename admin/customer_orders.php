@@ -11,20 +11,34 @@
 </head>
 <body>
 	
-</body>
-</html>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" >
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary"  style="background:red; color:white;">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" style="background:red; color:white;">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" style="background:red; color:white;">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+</main>
 <div class="container-fluid">
+	
   <div class="row">
     
     <?php include "./templates/sidebar.php"; ?>
 
       <div class="row">
-      	<div class="col-10">
+      	<div class="col-10" style="margin-top:-90px;">
       		<h2>Customers Order</h2>
       	</div>
       </div>
       
-      <div class="table-responsive">
+      <div class="table-responsive" style="margin-top:-45px;">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -126,7 +140,8 @@
   </div>
 </div>
 <!-- Modal -->
-
+</body>
+</html>
 <?php include_once("./templates/footer.php"); ?>
 
 
