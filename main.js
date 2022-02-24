@@ -143,7 +143,7 @@ $(document).ready(function() {
                 success: function(data) {
                     $(".overlay").hide();
                     if (data == "register_success") {
-                        window.location.href = "index1.php";
+                        window.location.href = "verification.php";
                     } else {
                         $("#signup_msg").html(data);
                     }

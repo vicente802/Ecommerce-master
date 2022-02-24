@@ -87,7 +87,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	}
-	if(!(strlen($mobile) == 10)){
+	if(!(strlen($mobile) == 11)){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -109,21 +109,18 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	} else {
-		$password = md5($password);
-		$sql = "INSERT INTO `user_info` 
-		(`user_id`, `first_name`, `last_name`, `email`, 
-		`password`, `mobile`, `address1`, `address2`) 
-		VALUES (NULL, '$f_name', '$l_name', '$email', 
-		'$password', '$mobile', '$address1', '$address2')";
-		$run_query = mysqli_query($con,$sql);
-		$_SESSION["uid"] = mysqli_insert_id($con);
+		
+		
 		$_SESSION["name"] = $f_name;
-		$ip_add = getenv("REMOTE_ADDR");
-		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
-		if(mysqli_query($con,$sql)){
-			echo "register_success";
-			exit();
-		}
+		$_SESSION["l_name"] = $l_name;
+		$_SESSION["email"] = $email;
+		$_SESSION["password"] = $password ;
+		$_SESSION["repassword"] = $repassword ;
+		 $_SESSION['mobile']=$mobile ;
+	$_SESSION['address1']=$address1;
+	$_SESSION['address2']=$address2;
+	header("location:verification.php");
+		
 	}
 	}
 	
