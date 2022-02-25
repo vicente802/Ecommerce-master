@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 $code = $_SESSION['email'];
 $key = md5(time() .$code);
-$to_email = "handayanv@gmail.com";
-$subject = "Hardcore Motorshop Concern";
+$to_email = $code;
+$subject = "Hardcore Motorshop Verification";
 $body = "Copy The Verification Code Here: $key";
-$headers = $_SESSION['email'];
+$headers = "Verification Code";
 ?><?php
 if (mail($to_email, $subject, $body, $headers)) {
 $_SESSION['code'] = $key;
@@ -49,7 +48,9 @@ Simply click the big button below to verify your email address.</h3>"?>
 <input type="hidden" name="repassword" value="<?php echo $_SESSION['repassword'] ?>">
 <input type="hidden" name="mobile" value="<?php echo $_SESSION['mobile'] ?>">
 <input type="hidden" name="address1" value="<?php echo $_SESSION['address1'] ?>">
+<input type="hidden" name="street" value="<?php echo $_SESSION['street'] ?>">
 <input type="hidden" name="address2" value="<?php echo $_SESSION['address2'] ?>">
+<input type="hidden" name="unit" value="<?php echo $_SESSION['unit'] ?>">
 <input type="hidden" name="code" value="<?php echo $key ?>">
 <input type="text" style="margin-top: 50px; font-size:35px; height:40px; margin-top:-5px; width:60%; " name="verification">
 <br>

@@ -58,7 +58,6 @@ $(document).ready(function() {
                             '<td>' + value.email + '</td>' +
                             '<td>' + value.order_id + '</td>' +
                             '<td>' + value.product_title + '</td>' +
-                            '<td>' + value.product_id + '</td>' +
                             '<td>' + value.trx_id + '</td>' +
                             '<td>' + value.qty + '</td>' +
                             '<td>' + total + '</td>' +
@@ -66,7 +65,7 @@ $(document).ready(function() {
                             '<td>' + value.p_status + '</td>' +
                             '<td>' + value.payment_method + '</td>' +
                             '<td>' + value.shipping + '</td>' +
-                            '<td><form action="./classes/Customers.php" method="POST"><input type="hidden" name="order" value=' + value.order_id + '><input type="hidden" name="price" value=' + total + '><select name="status" value="status" id="status"><option value="Queue">Status</option><option value="Preparing..." >Preparing</option><option value="Shipping.." >Shipped</option><option name="cancel" value="Cancelled" >Cancel</option></select> <input type="submit" value="update"></form></td>' +
+                            '<td><form action="./classes/Customers.php" method="POST"><input type="hidden" name="order" value=' + value.order_id + '><input type="hidden" name="price" value=' + total + '><select name="status" value="status" id="status"><option value="Processing...">Status</option><option name="preparing" value="Preparing..." >Preparing</option><option value="Delivered" >Delivered</option><option name="cancel" value="Cancelled" >Cancel</option></select> <input type="submit" value="update"><form action="./classes/Customers.php"><input type="hidden" value=' + value.shipping + '><input type="submit" name="settled" value="Settled"></form></td>' +
 
 
 

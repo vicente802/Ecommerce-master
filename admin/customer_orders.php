@@ -41,11 +41,10 @@
       <div class="table-responsive" style="padding:10px; margin-top:-45px;">
         <table class="table table-striped table-sm">
           <thead>
-            <tr style="padding:px; ">
+            <tr style="padding:10px; font-size:13px; ">
 			<th>Consumer</th>
 			<th>Order #</th>
 			<th>Product Name</th>
-              <th>Product Id</th>
 			  <th>Trx Id</th>
               <th>Quantity</th>
 			  <th>Price</th>
@@ -59,7 +58,7 @@
             </tr>
 			
           </thead>
-          <tbody id="customer_order_list">
+          <tbody id="customer_order_list" style="font-size:12px;">
 		
      
          

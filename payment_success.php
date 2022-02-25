@@ -33,7 +33,8 @@ if (isset($_GET["st"])) {
 			for ($i=0; $i < count($product_id); $i++) { 
 			
 				$shipping = "Queue";
-				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,shipping) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$shipping')";
+				$cancel = "Cancel";
+				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,shipping,cancel) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$shipping','$cancel')";
 				mysqli_query($con,$sql);
 			
 			}

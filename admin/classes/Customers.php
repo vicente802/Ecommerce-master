@@ -31,7 +31,7 @@ class Customers
 
 	public function getCustomersOrder(){
 		
-		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,p.product_title, p.product_image,p.product_price,u.email FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
+		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,o.cancel,o.receive,p.product_title, p.product_image,p.product_price,u.email FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
 		
 		$ar = [];
 		if (@$query->num_rows > 0) {
@@ -73,13 +73,29 @@ include '../db.php';
 $status = $_POST['status'];
 $order = $_POST['order'];
 $total = $_POST['price'];
+$cancel = $row['cancel'];
+$cancel="";
+$empty = "Cancel";
+$receive = $row['receive'];
+$receive="Order Received";
     $sql = mysqli_query($con, "SELECT*FROM orders");
     if($row = mysqli_num_rows($sql)){
 mysqli_query($con, "UPDATE orders set shipping='$status', price='$total' where order_id='$order'");
     header('location: ../customer_orders.php');
     }
+	if($status == "Processing..."){
+		mysqli_query($con, " UPDATE orders SET cancel='$empty',receive='$cancel' WHERE order_id='$order'");
+	}
 	if($status == "Cancelled"){
 mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 	}
+	if($status == "Preparing..."){
+
+		mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
+			}
+			if($status == "Delivered"){
+
+				mysqli_query($con, " UPDATE orders set receive='$receive' WHERE order_id='$order'");
+					}
 
 ?>

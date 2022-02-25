@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "db.php";
+
 if (isset($_POST["f_name"])) {
 
 	$f_name = $_POST["f_name"];
@@ -10,13 +11,15 @@ if (isset($_POST["f_name"])) {
 	$repassword = $_POST['repassword'];
 	$mobile = $_POST['mobile'];
 	$address1 = $_POST['address1'];
+	$street = $_POST["street"];
 	$address2 = $_POST['address2'];
+	$unit = $_POST["unit"];
 	$name = "/^[a-zA-Z ]+$/";
 	$emailValidation = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$/";
 	$number = "/^[0-9]+$/";
 
 if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empty($repassword) ||
-	empty($mobile) || empty($address1) || empty($address2)){
+	empty($mobile) || empty($address1) || empty($street) || empty($address2)){
 		
 		echo "
 			<div class='alert alert-warning'>
@@ -109,8 +112,6 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	} else {
-		
-	
 		$_SESSION["name"] = $f_name;
 		$_SESSION["l_name"] = $l_name;
 		$_SESSION["email"] = $email;
@@ -118,7 +119,9 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		$_SESSION["repassword"] = $repassword ;
 		 $_SESSION['mobile']=$mobile ;
 	$_SESSION['address1']=$address1;
+	$_SESSION["street"] = $street;
 	$_SESSION['address2']=$address2;
+	$_SESSION['unit']=$unit;
 	header("location:verification.php");
 		
 	}

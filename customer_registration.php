@@ -85,15 +85,24 @@ if (isset($_GET["register"])) {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
-								<label for="address1">Address</label>
-								<input type="text" id="address1" name="address1"class="form-control">
+							<div class="col-md-4">
+								<label for="address1">Barangay</label>
+								<input type="text" id="address1" name="address1"class="form-control" placeholder="Example: Bagong Silang">
+								</div>
+								<div class="col-md-4">
+								<label for="address1">Street / Building Name</label>
+								<input type="text" id="address1" name="street"class="form-control" placeholder="Example: Phase 1 Package 2 ....">
+							</div>
+							<div class="col-md-3">
+								<label for="address1">Unit / Floor</label> <i>(optional)</i>
+								<input type="text" id="address1" name="unit"class="form-control" placeholder="(optional)">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<label for="address2">Municipality/City</label>
-								<input type="text" id="address2" name="address2"class="form-control">
+								<br>
+								<select value="Municipality" id="address2" name="address2" style="width:500px; height:40px; font-size:20px;"><option value="Select">Select</option><option value="Bulacan City">Bulacan</option><option value="Caloocan City">Caloocan</option><option value="Quezon city">Quezon</option></select>
 							</div>
 						</div>
 						<p><br/></p>

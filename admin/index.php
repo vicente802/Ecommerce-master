@@ -341,7 +341,7 @@ if($counting = mysqli_num_rows($count)){
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>350000</h1><hr style="color : green; border:2px solid black;">
+                        <h1>100%</h1><hr style="color : green; border:2px solid black;">
                         <h3>Critical Value</h3>
                     </div>
                    

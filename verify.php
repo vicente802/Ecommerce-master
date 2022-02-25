@@ -13,14 +13,16 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $mobile = $_POST['mobile'];
 $address1 = $_POST['address1'];
+$street = $_POST['street'];
 $address2 = $_POST['address2'];
+$unit = $_POST['unit'];
 
 	$password = md5($password);
 		$sql = "INSERT INTO `user_info` 
 		(`user_id`, `first_name`, `last_name`, `email`, 
-		`password`, `mobile`, `address1`, `address2`) 
+		`password`, `mobile`, `address1`,`street`, `address2`,`unit`) 
 		VALUES (NULL, '$f_name', '$l_name', '$email', 
-		'$password', '$mobile', '$address1', '$address2')";
+		'$password', '$mobile', '$address1', '$street', '$address2', '$unit')";
 		$run_query = mysqli_query($con,$sql);
 		$_SESSION["uid"] = mysqli_insert_id($con);
 		$ip_add = getenv("REMOTE_ADDR");
@@ -32,6 +34,10 @@ $address2 = $_POST['address2'];
         else{
             echo'<script>alert("Verification Code Not matched")</script>';
         }
+		if($_POST['verification'] != $_POST['code']){
+			echo'<script>alert("Error")	</script>';
+			header("location: #");
+		}
     }
 
 

@@ -87,7 +87,7 @@ if(!isset($_SESSION["uid"])){
 						<?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM orders o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM orders o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {
@@ -111,8 +111,8 @@ if(!isset($_SESSION["uid"])){
 													<tr><td>Transaction Id</td><td><b><?php echo $row["trx_id"]; ?></b></td>
 													<input type="hidden" name="canceled" value="Requesting cancel">
 													<input type="hidden" name="trx1" value="<?php echo $row["order_id"]; ?>">
-													<td><input style="float:right;" type="submit" name="cancel" class="btn btn-danger" value="Cancel"></td>
-													<td><input style="float:right;" type="submit" name="receive" class="btn btn-success" value="Order Received"></td></tr>
+													<?php $cancel = $row["cancel"]; if(!empty($cancel)){ echo'<td><input style="float:right;" type="submit" name="cancel" class="btn btn-danger" value="'.$row['cancel'].'"></td>';}?>
+													<?php $receive = $row["receive"]; if(!empty($receive)){ echo'<td><input style="float:right;" type="submit" name="receive" class="btn btn-success" value="'.$row['receive'].'"></td></tr>';}?>
 													</form>
 												</table>
 								
