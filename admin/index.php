@@ -111,6 +111,8 @@ td {
     width: 80vw;
     height: 100vh;
     background: #f1f1f1;
+    float:center;
+    text-align:center;
 }
 
 .container .header {
@@ -189,6 +191,7 @@ td {
 .container .content {
     position: relative;
     margin-top: -5vh;
+    margin-left:-100px;
     min-height: 90vh;
     background: #f1f1f1;
 }
@@ -300,7 +303,7 @@ td {
                 <div class="card">
                     <div class="box">
                         <h1>Php <?php
-$select = "SELECT SUM(price) as sum FROM orders ";
+$select = "SELECT SUM(price) as sum FROM settled ";
 $count = mysqli_query($con,$select);
 
 if(mysqli_num_rows($count)){
@@ -341,7 +344,23 @@ if($counting = mysqli_num_rows($count)){
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>100%</h1><hr style="color : green; border:2px solid black;">
+                        <h1><?php
+                        $select = "SELECT * FROM products";
+                        $count = mysqli_query($con,$select);
+                       
+$select = "SELECT SUM(product_qty) as product_qty1 FROM products";
+$count1 = mysqli_query($con,$select);
+if(mysqli_num_rows($count)){
+    if($counting = mysqli_num_rows($count)){
+    
+    while($row = mysqli_fetch_array($count1)){
+    $total=$row['product_qty1']/$counting;
+  
+    }
+}
+    echo $total,"%";
+}
+?></h1><hr style="color : green; border:2px solid black;">
                         <h3>Critical Value</h3>
                     </div>
                    
@@ -372,12 +391,13 @@ if($counting = mysqli_num_rows($count)){
           </thead>
           <tbody>
          <?php
-         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx_id,o.p_status,o.qty,o.payment_method FROM user_info u JOIN orders o on u.user_id=o.user_id");
+         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx,o.p_status,o.qty,o.payment_method FROM user_info u JOIN settled o on u.email=o.email");
          if(mysqli_num_rows($sql1)>0){
+             
             while($row = mysqli_fetch_array($sql1)){
                 echo '<tr><td>',$row["first_name"] ," ", $row["last_name"],'</td>';
                 echo '<td>',$row["address1"] ," ", $row["address2"],'</td>';
-                echo '<td>',$row["trx_id"] ,'</td>';
+                echo '<td>',$row["trx"] ,'</td>';
                 echo '<td>',$row["qty"] ,'</td>';
                 echo '<td>',$row["price"] ,'</td>';
                 echo '<td>',$row["p_status"] ,'</td>';

@@ -70,9 +70,16 @@ if (isset($_POST["GET_CUSTOMER_ORDERS"])) {
 	}
 }
 include '../db.php';
+$email = $_POST['email'] ;
+$title = $_POST['title'];
+$trx = $_POST['trx'];
+$p_status = $_POST['p_status'];
+$shipping = $_POST['shipping'];
+$payment_method = $_POST['payment_method'];
 $status = $_POST['status'];
 $order = $_POST['order'];
 $total = $_POST['price'];
+$qt = $_POST['qty1'];
 $cancel = $row['cancel'];
 $cancel="";
 $empty = "Cancel";
@@ -96,6 +103,21 @@ mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 			if($status == "Delivered"){
 
 				mysqli_query($con, " UPDATE orders set receive='$receive' WHERE order_id='$order'");
-					}
-
+				}
+if($status = "Settled"){
+	mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
+	$email =  $_SESSION['email']=$_POST['email'];
+	$title =$_SESSION['title']= $_POST['title'];
+$trx =$_SESSION['trx']= $_POST['trx'];
+$p_status =$_SESSION['p_status']= $_POST['p_status'];
+$shipping =$_SESSION['shipping']= $_POST['shipping'];
+$payment_method = $_SESSION['payment_method']=$_POST['payment_method'];
+$order =$_SESSION['order']= $_POST['order'];
+$total = $_SESSION['price']=$_POST['price'];
+$qt = $_SESSION['qty1']=$_POST['qty1'];
+		header("location:history.php");
+		
+				}
+		
+			
 ?>

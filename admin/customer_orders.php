@@ -58,9 +58,12 @@
             </tr>
 			
           </thead>
+
           <tbody id="customer_order_list" style="font-size:12px;">
 		
-     
+     <?php
+	 	
+			?>
          
           </tbody>
         </table>
