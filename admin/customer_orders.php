@@ -42,6 +42,8 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr style="padding:10px; font-size:13px; ">
+			<th>User ID</th>
+			<th>Product ID</th>
 			<th>Consumer</th>
 			<th>Order #</th>
 			<th>Product Name</th>

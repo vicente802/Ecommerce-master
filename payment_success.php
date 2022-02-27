@@ -12,7 +12,7 @@ if (isset($_GET["st"])) {
 		$amt = $_GET["amt"];
 		$cc = $_GET["cc"];
 		$cm_user_id = $_GET["cm"];
-		$c_amt = $_COOKIE["ta"];
+	
 	if ($p_st == "Completed") {
 
 
@@ -32,9 +32,11 @@ if (isset($_GET["st"])) {
 
 			for ($i=0; $i < count($product_id); $i++) { 
 			
-				$shipping = "Queue";
+				$shipping = "Processing";
 				$cancel = "Cancel";
 				$sql = "INSERT INTO orders (user_id,product_id,qty,trx_id,p_status,shipping,cancel) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$shipping','$cancel')";
+				$sql1 = "INSERT INTO processing (user_id,product_id,qty,trx_id,p_status,shipping,cancel) VALUES ('$cm_user_id','".$product_id[$i]."','".$qty[$i]."','$trx_id','$p_st','$shipping','$cancel')";
+				mysqli_query($con,$sql1);
 				mysqli_query($con,$sql);
 			
 			}
@@ -156,6 +158,9 @@ if (isset($_GET["st"])) {
 										$total = $product_qty - $qty;
 										mysqli_query($con, "UPDATE products set product_qty='$total' WHERE product_id='$product_id1'");	
 										mysqli_query($con, "UPDATE orders set payment_method='$payment_method'");	
+										
+											mysqli_query($con, "UPDATE processing set payment_method='$payment_method'");	
+										}
 										?>
 										
 										
@@ -176,7 +181,6 @@ if (isset($_GET["st"])) {
 		}
 		
 	}
-}
 
 
 

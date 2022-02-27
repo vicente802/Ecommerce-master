@@ -36,7 +36,7 @@ $unit = $_POST['unit'];
         }
 		if($_POST['verification'] != $_POST['code']){
 			echo'<script>alert("Error")	</script>';
-			header("location: #");
+			header("location: customer_registration.php?register=1");
 		}
     }
 

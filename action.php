@@ -381,6 +381,7 @@ if (isset($_POST["updateCartItem"])) {
 if(isset($_POST['cancel'])){
 	$canceled = $_POST['canceled'];
 	$trx = $_POST['trx1'];
+	mysqli_query($con,"UPDATE processing set shipping ='$canceled' where order_id='$trx'");
 	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
 header('location:customer_order.php');
 }

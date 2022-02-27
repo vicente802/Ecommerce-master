@@ -31,7 +31,7 @@ class Customers
 
 	public function getCustomersOrder(){
 		
-		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,o.cancel,o.receive,p.product_title, p.product_image,p.product_price,u.email FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
+		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,o.cancel,o.receive,p.product_title, p.product_image,p.product_price,u.email,u.user_id FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
 		
 		$ar = [];
 		if (@$query->num_rows > 0) {
@@ -88,6 +88,7 @@ $receive="Order Received";
     $sql = mysqli_query($con, "SELECT*FROM orders");
     if($row = mysqli_num_rows($sql)){
 mysqli_query($con, "UPDATE orders set shipping='$status', price='$total' where order_id='$order'");
+mysqli_query($con, "UPDATE processing set shipping='$status', price='$total' where order_id='$order'");
     header('location: ../customer_orders.php');
     }
 	if($status == "Processing..."){
@@ -97,14 +98,38 @@ mysqli_query($con, "UPDATE orders set shipping='$status', price='$total' where o
 mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 	}
 	if($status == "Preparing..."){
-
 		mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
+		$email =  $_SESSION['user_id']=$_POST['user_id'];
+		$email =  $_SESSION['email']=$_POST['email'];
+	$product_id =$_SESSION['product_id']= $_POST['product_id'];
+$trx =$_SESSION['trx']= $_POST['trx'];
+$p_status =$_SESSION['p_status']= $_POST['p_status'];
+$shipping =$_SESSION['shipping']= $_POST['shipping'];
+$payment_method = $_SESSION['payment_method']=$_POST['payment_method'];
+$order =$_SESSION['order']= $_POST['order'];
+$total = $_SESSION['price']=$_POST['price'];
+$qt = $_SESSION['qty1']=$_POST['qty1'];
+header('location:preparing.php');
+			}
+			if($status == "Shipping..."){
+				mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
+				$user_id =  $_SESSION['user_id']=$_POST['user_id'];
+				$email =  $_SESSION['email']=$_POST['email'];
+			$product_id =$_SESSION['product_id']= $_POST['product_id'];
+		$trx =$_SESSION['trx']= $_POST['trx'];
+		$p_status =$_SESSION['p_status']= $_POST['p_status'];
+		$shipping =$_SESSION['shipping']= $_POST['shipping'];
+		$payment_method = $_SESSION['payment_method']=$_POST['payment_method'];
+		$order =$_SESSION['order']= $_POST['order'];
+		$total = $_SESSION['price']=$_POST['price'];
+		$qt = $_SESSION['qty1']=$_POST['qty1'];
+		header('location:shipping.php');
 			}
 			if($status == "Delivered"){
 
 				mysqli_query($con, " UPDATE orders set receive='$receive' WHERE order_id='$order'");
 				}
-if($status = "Settled"){
+if($status == "Settled"){
 	mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 	$email =  $_SESSION['email']=$_POST['email'];
 	$title =$_SESSION['title']= $_POST['title'];
