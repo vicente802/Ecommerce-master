@@ -11,6 +11,8 @@ echo '<input type="text" name="payment_method" value="'.$_SESSION['payment_metho
 echo '<input type="text" name="order" value="'.$_SESSION['order'].'">';
 echo '<input type="text"  name="price" value="'.$_SESSION['price'].'">';
 echo '<input type="text"  name="price" value="'.$_SESSION['qty1'].'">';
+echo '<input type="text"  name="price" value="'.$_SESSION['user_id'].'">';
+
 $email = $_SESSION['email'] ;
 $product_id = $_SESSION['product_id'];
 $trx = $_SESSION['trx'];
@@ -20,8 +22,8 @@ $payment_method = $_SESSION['payment_method'];
 $order = $_SESSION['order'];
 $total = $_SESSION['price'];
 $qty = $_SESSION['qty1'];
- 
-$sql1 = "INSERT INTO shipping (email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method) VALUES ('$email','".$product_id."','".$qty."','$trx','$p_status','$shipping','$cancel','$payment_method')";
+$user_id =  $_SESSION['user_id'];
+$sql1 = "INSERT INTO shipping (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method) VALUES ('$order','$user_id','$email','".$product_id."','".$qty."','$trx','$p_status','$shipping','$cancel','$payment_method')";
 				mysqli_query($con,$sql1);
                 mysqli_query($con, " DELETE FROM preparing WHERE order_id='$order'");
                 header('location:../customer_orders.php');

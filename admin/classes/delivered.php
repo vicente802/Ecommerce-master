@@ -17,15 +17,17 @@ $email = $_SESSION['email'] ;
 $product_id = $_SESSION['product_id'];
 $trx = $_SESSION['trx'];
 $p_status = $_SESSION['p_status'];
-$shipping = $_SESSION['shipping']="Preparing";
+$shipping = $_SESSION['shipping']="Delivered..";
 $payment_method = $_SESSION['payment_method'];
 $order = $_SESSION['order'];
 $total = $_SESSION['price'];
 $qty = $_SESSION['qty1'];
 $user_id =  $_SESSION['user_id'];
-$sql1 = "INSERT INTO preparing (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method) VALUES ('$order','$user_id','$email','".$product_id."','".$qty."','$trx','$p_status','$shipping','$cancel','$payment_method')";
+$sql1 = "INSERT INTO delivered (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method) VALUES ('$order','$user_id','$email','".$product_id."','".$qty."','$trx','$p_status','$shipping','$cancel','$payment_method')";
 				mysqli_query($con,$sql1);
-                mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
+                $receive="Order Received";
+				mysqli_query($con, " UPDATE delivered set receive='$receive' WHERE order_id='$order'");
+                mysqli_query($con, " DELETE FROM shipping WHERE order_id='$order'");
                 header('location:../customer_orders.php');
 
 ?>

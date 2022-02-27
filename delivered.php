@@ -47,8 +47,7 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
@@ -100,7 +99,7 @@ if(!isset($_SESSION["uid"])){
 			<a href="customer_order.php" ><button>Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
 			<a href="shipping.php"><button>To Ship</button></a>
-			<a href="delivered.php"><button>Delivered</button></a>
+			<a href="#"><button>Delivered</button></a>
 		
 			</table>
 		</div>
@@ -116,7 +115,7 @@ if(!isset($_SESSION["uid"])){
 						<?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM shipping o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM delivered o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {

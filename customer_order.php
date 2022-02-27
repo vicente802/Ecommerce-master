@@ -100,7 +100,7 @@ if(!isset($_SESSION["uid"])){
 			<a href="customer_order.php" ><button>Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
 			<a href="shipping.php"><button>To Ship</button></a>
-			<a href="#"><button>Delivered</button></a>
+			<a href="delivered.php"><button>Delivered</button></a>
 		
 			</table>
 		</div>
@@ -139,6 +139,7 @@ if(!isset($_SESSION["uid"])){
 													<tr><td>Quantity</td><td><b><?php echo $row["qty"]; ?></b></td></tr>
 													<tr><td>Transaction Id</td><td><b><?php echo $row["trx_id"]; ?></b></td>
 													<input type="hidden" name="canceled" value="Requesting cancel">
+													<input type="hidden" name="trx_id" value="<?php echo $row["trx_id"]; ?>">
 													<input type="hidden" name="trx1" value="<?php echo $row["order_id"]; ?>">
 													<?php $cancel = $row["cancel"]; if(!empty($cancel)){ echo'<td><input style="float:right;" type="submit" name="cancel" class="btn btn-danger" value="'.$row['cancel'].'"></td>';}?>
 													<?php $receive = $row["receive"]; if(!empty($receive)){ echo'<td><input style="float:right;" type="submit" name="receive" class="btn btn-success" value="'.$row['receive'].'"></td></tr>';}?>

@@ -386,11 +386,16 @@ if(isset($_POST['cancel'])){
 header('location:customer_order.php');
 }
 if(isset($_POST['receive'])){
+	$trx_id = $_POST['trx_id'];
 	$canceled = $_POST['canceled'];
-	$canceled = "Order Received..";
+	$canceled = "Order Received...";
+	$canceled1 = "Purchased Has Been deliver successfully";
+	$success = "";
 	$trx = $_POST['trx1'];
-	mysqli_query($con,"UPDATE orders set Shipping ='$canceled' where order_id='$trx'");
-	header('location:profile.php');
+	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
+	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
+	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$trx'");
+	header('location:delivered.php');
 }
 
 
