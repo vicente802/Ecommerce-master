@@ -36,13 +36,13 @@ require "config/constants.php";
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				
+			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+				<li><a href="cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 				<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
-						
+							
 							<div class="panel-body">
 								<div id="cart_product">
 								<!--<div class="row">

@@ -47,21 +47,13 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+			<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-md-3 col-xs-3">Sl.No</div>
-									<div class="col-md-3 col-xs-3">Product Image</div>
-									<div class="col-md-3 col-xs-3">Product Name</div>
-									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
-								</div>
-							</div>
+							
 							<div class="panel-body">
 								<div id="cart_product">
 								<!--<div class="row">

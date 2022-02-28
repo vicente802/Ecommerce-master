@@ -31,7 +31,7 @@ class Customers
 
 	public function getCustomersOrder(){
 		
-		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,o.cancel,o.receive,p.product_title, p.product_image,p.product_price,u.email,u.user_id FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id");
+		$query = $this->con->query("SELECT o.order_id, o.product_id, o.qty, o.trx_id,o.datetime,o.p_status,o.shipping,o.payment_method,o.cancel,o.receive,p.product_title, p.product_image,p.product_price,u.email,u.user_id FROM orders o JOIN products p ON o.product_id = p.product_id INNER JOIN user_info u on o.user_id=u.user_id order by datetime desc");
 		
 		$ar = [];
 		if (@$query->num_rows > 0) {
@@ -85,7 +85,7 @@ $cancel="";
 $empty = "Cancel";
 $receive = $row['receive'];
 $receive="Order Received";
-    $sql = mysqli_query($con, "SELECT*FROM orders");
+    $sql = mysqli_query($con, "SELECT*FROM orders order by datetime desc");
     if($row = mysqli_num_rows($sql)){
 mysqli_query($con, "UPDATE orders set shipping='$status', price='$total' where order_id='$order'");
 mysqli_query($con, "UPDATE processing set shipping='$status', price='$total' where order_id='$order'");
@@ -154,6 +154,7 @@ $qt = $_SESSION['qty1']=$_POST['qty1'];
 		header("location:history.php");
 		
 				}
-		
-			
-?>
+
+				
+		?>
+				

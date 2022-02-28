@@ -301,9 +301,27 @@ if (isset($_POST["Common"])) {
 					?></div>
 					<?php
 				}else if(isset($_SESSION["uid"])){
-					//Paypal checkout form
-					
-					echo '
+			
+					echo '</form><form action="payment_option.php" method="POST">
+					<div class="col-md-12">';
+					$x=0;
+					$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+							$query = mysqli_query($con,$sql);
+							while($row=mysqli_fetch_array($query)){
+								$x++;
+								echo'
+					<input type="hidden" name="user" value="'.$_SESSION['uid'].'">
+					<input type="text" name="pro_id" value="'.$x.'">
+					<input type="text" name="pro_title" value="'.$product_title.'">
+					<input type="hidden" name="pro_qty" value="'.$product_qty.'">
+					<input type="hidden" name="pro_desc" value="'.$product_desc.'">
+					<input type="hidden" name="pro_price" value="'.$product_price.'">';
+							}
+echo'
+					<button class="btn btn-primary"style="float:right; font-size:30px; width:20%;">Checkout</button>
+					</div></form>
+					';
+					/* echo '
 						</form>
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_cart">
@@ -332,7 +350,7 @@ if (isset($_POST["Common"])) {
 										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 										alt="PayPal - The safer, easier way to pay online">
 								</form>';
-								
+								*/
 								
 				}
 			}
@@ -371,7 +389,7 @@ if (isset($_POST["updateCartItem"])) {
 	}
 	if(mysqli_query($con,$sql)){
 		echo "<div class='alert alert-info'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 						<b>Product is updated</b>
 				</div>";
 		exit();
@@ -395,7 +413,10 @@ if(isset($_POST['receive'])){
 	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
 	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
 	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$trx'");
+	mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
 	header('location:delivered.php');
+	
+	
 }
 
 

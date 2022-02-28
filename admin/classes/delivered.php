@@ -28,6 +28,14 @@ $sql1 = "INSERT INTO delivered (order_id,user_id,email,product_id,qty,trx_id,p_s
                 $receive="Order Received";
 				mysqli_query($con, " UPDATE delivered set receive='$receive' WHERE order_id='$order'");
                 mysqli_query($con, " DELETE FROM shipping WHERE order_id='$order'");
-                header('location:../customer_orders.php');
+                $sql =  "INSERT INTO settled ( `email`, `order`,  `trx`, `p_status`, `shipping`, `payment_method`, `price`,`qty`) VALUES ('$email','$order','$trx','$p_status','$shipping','$payment_method','$total','$qty')";
+	if ($con->query($sql) === TRUE) {
+	
+        header('location:../customer_orders.php');
+	  } else {
+		echo "Error: " ,$sql;
+	  }
+	
+
 
 ?>

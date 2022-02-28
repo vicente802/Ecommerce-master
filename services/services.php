@@ -1,9 +1,20 @@
 <?php
 require "../config/constants.php";
 session_start();
-if(isset($_SESSION["uid"])){
+if(!isset($_SESSION["uid"])){
 	
+
+if (isset($_POST["count_item"])) {
+	//When user is logged in then we will count number of item in cart by using user session id
+	if (isset($_SESSION["uid"])) {
+		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
+	}else{
+		//When user is not logged in then we will count number of item in cart by using users unique ip address
+		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE ip_add = '$ip_add' AND user_id < 0";
+	}
 }
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +24,7 @@ if(isset($_SESSION["uid"])){
 		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
 		<script src="../js/jquery2.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="main.js"></script>
+		<script src="../main.js"></script>
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 		
@@ -121,21 +132,13 @@ if(isset($_SESSION["uid"])){
 				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" placeholder="Search" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="../cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-md-3 col-xs-3">Sl.No</div>
-									<div class="col-md-3 col-xs-3">Product Image</div>
-									<div class="col-md-3 col-xs-3">Product Name</div>
-									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
-								</div>
-							</div>
+							
 							<div class="panel-body">
 								<div id="cart_product">
 								
@@ -305,56 +308,17 @@ Tire Rotation & Balance</p>
 
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 	<script>
-		
+		function count_item() {
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: { count_item: 1 },
+            success: function(data) {
+                $(".badge").html(data);
+            }
+        })
+    }
 	</script>
 	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
