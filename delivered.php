@@ -99,7 +99,7 @@ if(!isset($_SESSION["uid"])){
 			<a href="customer_order.php" ><button>Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
 			<a href="shipping.php"><button>To Ship</button></a>
-			<a href="#"><button>Delivered</button></a>
+			<a href="#"><button style="background:pink;">Delivered</button></a>
 		
 			</table>
 		</div>

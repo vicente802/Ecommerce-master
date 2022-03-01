@@ -26,6 +26,11 @@ if(mysqli_num_rows($result)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardcore Motorshop</title>
+    <style>
+      .checkout{
+        display: none;
+      }
+    </style>
 </head>
 <body>
     
@@ -42,7 +47,7 @@ if(mysqli_num_rows($result)){
       </div>
       
       <div class="modal-body">
-        <form action="Customers.php" method="POST">
+        <form action="payment_method.php" method="POST">
           <div class="row">
           <div class="col-md-12">
               <div class="form-group">
@@ -130,8 +135,8 @@ if(mysqli_num_rows($result)){
                   
                 <label>Payment Method</label>
                 <br>
-                <select name="payment_option" style="width:470px; height:40px; font-size:20px;">
-                  <option value="">Status</option>
+                <select name="payment_option" id="payment_option" onchange="changeStatus()" style="width:470px; height:40px; font-size:20px;">
+                  <option value="Status">Status</option>
                   <option name="gcash" value="Gcash" >Gcash</option>
                   <option name="paymaya" value="Paymaya" >Paymaya</option>
                   <option name="paypal" value="Paypal" >Paypal</option>
@@ -140,18 +145,69 @@ if(mysqli_num_rows($result)){
               </div>
             </div>
             
-
-            <div class="col-md-12" style="text-align:right;display: flex;justify-content: space-between">
-                <p>total price : <?php
-                    echo $total_price;
-                    ?></p>
-              <button type="submit" name="submit" class="btn btn-primary submit-edit-product">Checkout</button>
+              
+            <div class="col-md-12" style="text-align:right">
+               <?php
+                    echo ' Total Price <h4>PHP ',$total_price,'</h4>';
+                    ?></label>
+             <div class="col-md-12" style="display: block; position:absolute; float:right;">
+              <button type="submit" name="submit" id="gcash" class="btn btn-primary submit-edit-product" style=" position:auto; visibility:hidden;">Checkout</button></div>
+              <div class="col-md-12" style="display: block; position:absolute; float:right;">
+              <button type="submit" name="submit" id="paymaya" class="btn btn-primary submit-edit-product" style=" position:auto; visibility:hidden;">Checkout</button></div>
+              <div class="col-md-12" style="display: block; position:absolute; float:right;">
+              <button type="submit" name="submit" id="cashondeliver" class="btn btn-primary submit-edit-product" style=" position:auto; visibility:hidden;">Checkout</button>
+              </div>
+                    </div>
             </div>
           </div>
         </form>
+        <div id="paypal" style="visibility:hidden; position:auto;">
+        <?php include 'paypal/paypal.php'; ?>
+        </div>
       </div>
     </div>
   </div>
+          <script>
+              
+           function changeStatus(){
           
+             var status = document.getElementById("payment_option");
+             
+             if(status.value == "Status"){
+               document.getElementById("gcash").style.visibility="hidden";
+               document.getElementById("paypal").style.visibility="hidden";
+               document.getElementById("paymaya").style.visibility="hidden";
+               document.getElementById("cashondelivery").style.visibility="hidden";
+             }
+             if(status.value == "Gcash"){
+               document.getElementById("gcash").style.visibility="visible";
+               document.getElementById("cashondeliver").style.visibility="hidden";
+               document.getElementById("paypal").style.visibility="hidden";
+               document.getElementById("paymaya").style.visibility="hidden";
+             }
+             if(status.value == "Paymaya"){
+              document.getElementById("gcash").style.visibility="hidden";
+               document.getElementById("paypal").style.visibility="hidden";
+               document.getElementById("paymaya").style.visibility="visible";
+               document.getElementById("cashondeliver").style.visibility="hidden";
+             }
+             if(status.value == "cod"){
+              document.getElementById("gcash").style.visibility="hidden";
+               document.getElementById("paypal").style.visibility="hidden";
+               document.getElementById("paymaya").style.visibility="hidden";
+               document.getElementById("cashondeliver").style.visibility="visible";
+              }
+             if(status.value == "Paypal"){
+              document.getElementById("gcash").style.visibility="hidden";
+               document.getElementById("paypal").style.visibility="visible";
+               document.getElementById("paymaya").style.visibility="hidden";
+               document.getElementById("cashondeliver").style.visibility="hidden";
+              }
+              
+             else{
+               
+             }
+           }
+          </script>
 </body>
 </html>

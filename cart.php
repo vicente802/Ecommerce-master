@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "config/constants.php";
 
 
@@ -39,22 +39,20 @@ require "config/constants.php";
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
-				<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-						
-							<div class="panel-body">
-								<div id="cart_product">
-								<!--<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>-->
-								</div>
-							</div>	
+				<li><a href="#" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+							<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+					<ul class="dropdown-menu">
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li class="divider"></li>
+						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+					</ul>
 				</li>
-				
+
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -75,7 +73,7 @@ require "config/constants.php";
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Cart Checkout</div>
+					<div class="panel-heading">View Cart</div>
 					<div class="panel-body">
 						<div class="row">
 						<br>
@@ -94,8 +92,10 @@ require "config/constants.php";
 						</div> 
 					</div>
 					<div class="panel-footer"></div>
+					
 				</div>
 			</div>
+		
 			<div class="col-md-2"></div>
 			
 		</div>

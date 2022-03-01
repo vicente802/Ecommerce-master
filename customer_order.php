@@ -89,7 +89,7 @@ if(!isset($_SESSION["uid"])){
 			<br>
 			<br>
 			<table style=" text-align:center; ">
-			<a href="customer_order.php" ><button>Processing</button></a>
+			<a href="customer_order.php" ><button style="background:pink;">Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
 			<a href="shipping.php"><button>To Ship</button></a>
 			<a href="delivered.php"><button>Delivered</button></a>
