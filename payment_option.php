@@ -86,7 +86,9 @@ if(mysqli_num_rows($result)){
                      if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                            $total = $row['qty']*$row['product_price'];
+                           $product_price = $row['product_price'];
                           echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
+                          echo'<input type="text" class="price" value="'.$total.'">';
                        
                           
                          
@@ -141,18 +143,19 @@ if(mysqli_num_rows($result)){
 
             <div class="col-md-12" style="text-align:right;">
             <?php 
-           $select = "SELECT SUM(product_price) as p_price ,p.product_price,c.qty,c.user_id,u.user_id FROM products p JOIN cart c on p.product_id=c.p_id JOIN user_info u on c.user_id=u.user_id  ";
+           $select = "SELECT SUM(product_price) as p_price ,p.product_price,p.product_qty,c.qty,c.user_id,u.user_id FROM products p JOIN cart c on p.product_qty=c.qty JOIN user_info u on c.user_id=u.user_id ";
            $count1 = mysqli_query($con,$select);
            if(mysqli_num_rows($count1)){
-          
+         $x=0;
                while($row = mysqli_fetch_array($count1)){
-              
-                echo $net_total;
+              $x++;
+            $total++;
+                echo $total;
                }
             
            }
                
-           
+       
           
            ?>
               <button type="submit" name="submit" class="btn btn-primary submit-edit-product">Checkout</button>
@@ -162,6 +165,8 @@ if(mysqli_num_rows($result)){
       </div>
     </div>
   </div>
+          <script>
           
+          </script>
 </body>
 </html>

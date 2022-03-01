@@ -291,7 +291,7 @@ if (isset($_POST["Common"])) {
 				echo '<div class="row">
 							<div class="col-md-9"></div>
 							<div class="col-md-3">
-								<b class="net_total" style="font-size:20px;"> </b>
+							<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
 					?>
 					<div class="col md-2"><?php
@@ -309,15 +309,14 @@ if (isset($_POST["Common"])) {
 							$query = mysqli_query($con,$sql);
 							while($row=mysqli_fetch_array($query)){
 								$x++;
+						$total = $row['qty'] * $row['product_price'];
 								echo'
-					<input type="hidden" name="user" value="'.$_SESSION['uid'].'">
-					<input type="text" name="pro_id" value="'.$x.'">
-					<input type="text" name="pro_title" value="'.$product_title.'">
-					<input type="hidden" name="pro_qty" value="'.$product_qty.'">
-					<input type="hidden" name="pro_desc" value="'.$product_desc.'">
-					<input type="hidden" name="pro_price" value="'.$product_price.'">';
-					
-					
+								<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
+								<input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
+							  <input type="text" name="amount_'.$x.'" value="'.$row["product_price"].'">
+							  <input type="text"  name="quantity_'.$x.'" value="'.$row["qty"].'">
+								
+								<input type="text"  name="quantity_'.$x.'" value="'.$total.'">';
 							}
 echo'
 					<button class="btn btn-primary"style="float:right; font-size:30px; width:20%;">Checkout</button>
