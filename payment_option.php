@@ -64,7 +64,7 @@ if(mysqli_num_rows($result)){
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
-                      echo "<h4>",$row['product_title'],"</h4>";
+                      echo "<h4>",$row['product_title'],"</h4><hr>";
                       
                      
                      }
@@ -78,7 +78,8 @@ if(mysqli_num_rows($result)){
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
-                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4>";
+                      ?><br><?php
+                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4><hr>";
                       
                      
                      }
@@ -91,14 +92,17 @@ if(mysqli_num_rows($result)){
                      $result = mysqli_query($con,$combine);
                      if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
+                          $total_price = $total_price + $row['qty']*$row['product_price'];
                            $total = $row['qty']*$row['product_price'];
-                          echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
+?><br><?php
+                          echo "<h4 style='padding-left:20px;' >",$total,"</h4><hr>";
 
-                             $total_price = $total_price + $row['qty']*$row['product_price'];
+                          
 
                          }
 
                      }
+                     
                    ?>
                  </td>
                </tr>
