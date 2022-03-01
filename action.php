@@ -316,6 +316,8 @@ if (isset($_POST["Common"])) {
 					<input type="hidden" name="pro_qty" value="'.$product_qty.'">
 					<input type="hidden" name="pro_desc" value="'.$product_desc.'">
 					<input type="hidden" name="pro_price" value="'.$product_price.'">';
+					
+					
 							}
 echo'
 					<button class="btn btn-primary"style="float:right; font-size:30px; width:20%;">Checkout</button>

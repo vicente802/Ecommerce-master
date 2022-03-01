@@ -67,7 +67,9 @@ if(mysqli_num_rows($result)){
                  ?>
                  </td>
                  <td>
-                   <?php    $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                   <?php   
+                  
+                    $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
@@ -85,6 +87,7 @@ if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                            $total = $row['qty']*$row['product_price'];
                           echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
+                       
                           
                          
                          }
@@ -137,6 +140,21 @@ if(mysqli_num_rows($result)){
             
 
             <div class="col-md-12" style="text-align:right;">
+            <?php 
+           $select = "SELECT SUM(product_price) as p_price ,p.product_price,c.qty,c.user_id,u.user_id FROM products p JOIN cart c on p.product_id=c.p_id JOIN user_info u on c.user_id=u.user_id  ";
+           $count1 = mysqli_query($con,$select);
+           if(mysqli_num_rows($count1)){
+          
+               while($row = mysqli_fetch_array($count1)){
+              
+                echo $net_total;
+               }
+            
+           }
+               
+           
+          
+           ?>
               <button type="submit" name="submit" class="btn btn-primary submit-edit-product">Checkout</button>
             </div>
           </div>
