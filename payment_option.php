@@ -43,7 +43,7 @@ if(mysqli_num_rows($result)){
               <div class="form-group">
                 <label>Product Name</label>
                 <br>
-                <h4><?php echo $title ?></h4>
+                <h4><?php echo $row ['product_title'] ?></h4>
                 <hr>
               </div>
             </div>
