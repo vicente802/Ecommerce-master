@@ -2,11 +2,16 @@
 session_start();
 include 'db.php';
 
-$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty FROM products p join cart c on p.product_id=c.p_id";
+$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
 $result = mysqli_query($con,$combine);
 if(mysqli_num_rows($result)){
     while($row = mysqli_fetch_array($result)){
-        $title =  $row['product_title'];
+     $title = $row['product_title'];
+     $add = $row['address1'];
+     $street = $row['street'];
+     $add2 = $row['address2'];
+     $mobile = $row['mobile'];
+    
     }
 }
 ?>
@@ -20,7 +25,7 @@ if(mysqli_num_rows($result)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hardcore Motorshop</title>
 </head>
 <body>
     
@@ -39,15 +44,61 @@ if(mysqli_num_rows($result)){
       <div class="modal-body">
         <form action="Customers.php" method="POST">
           <div class="row">
-          <div class="col-12">
+          <div class="col-md-12">
               <div class="form-group">
-                <label>Product Name</label>
-                <br>
-                <h4><?php echo $row ['product_title'] ?></h4>
-                <hr>
+             <table>
+               <tr>
+                 <td>Product Name</td>
+                 <td style="padding-left:120px;">Quantity</td>
+                 <td style="padding-left:20px;">Price</td>
+               </tr>
+               <tr>
+                 <td>
+                   <?php
+                 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                 $result = mysqli_query($con,$combine);
+                 if(mysqli_num_rows($result)){
+                     while($row = mysqli_fetch_array($result)){
+                      echo "<h4>",$row['product_title'],"</h4>";
+                      
+                     
+                     }
+                 }
+                 ?>
+                 </td>
+                 <td>
+                   <?php    $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                 $result = mysqli_query($con,$combine);
+                 if(mysqli_num_rows($result)){
+                     while($row = mysqli_fetch_array($result)){
+                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4>";
+                      
+                     
+                     }
+                 } ?>
+                 </td>
+                 <td>
+                   <?php 
+                     $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                     $result = mysqli_query($con,$combine);
+                     if(mysqli_num_rows($result)){
+                         while($row = mysqli_fetch_array($result)){
+                           $total = $row['qty']*$row['product_price'];
+                          echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
+                          
+                         
+                         }
+                     }
+                   ?>
+                 </td>
+               </tr>
+             </table>
+                
               </div>
             </div>
-
+        
+           
+         
            
 
             <div class="col-12">
@@ -67,20 +118,7 @@ if(mysqli_num_rows($result)){
                 <hr>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-             <table>
-                 <tr>
-                     <td style=" padding-right: 80px;">Quantity</td>
-                     <td>Price</td>
-                 </tr>
-                 <tr>
-                     <td><h4><?php echo $pro_qty ?></h4></td>
-                     <td><h4><?php echo $pro_price ?></h4></td>
-                 </tr>
-             </table>
-              </div>
-            </div>
+          
            
               <div class="col-12">
               <div class="form-group">
