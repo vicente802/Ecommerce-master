@@ -86,20 +86,15 @@ font-size: 1.3em;
 <div class="loader"></div>
 </div>
 <div class="navbar navbar-inverse navbar-fixed-top">
-<<<<<<< HEAD
-<div class="container-fluid" style="background-color:powderblue;">	
+<div class="container-fluid" style="background-color:#ce2029;">	
 <div class="navbar-header">
-=======
-<div class="container-fluid">	
-<div class="navbar-header ">
->>>>>>> 822b44719a68b3c88b5181269c4ab3c3334c9241
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 <span class="sr-only">navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
+<a href="#" class="navbar-brand" style="margin-left: 5px; color:block;">Hardcore Motorshop</a>
 </div>
 <div class="collapse navbar-collapse" id="collapse">
 <ul class="nav navbar-nav">
