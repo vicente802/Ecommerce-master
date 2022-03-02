@@ -87,6 +87,7 @@ if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                            $total = $row['qty']*$row['product_price'];
                           echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
+                          echo '<input type="text" value="'.$total.'"';
                        
                           
                          
