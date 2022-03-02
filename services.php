@@ -121,8 +121,7 @@ if(isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>

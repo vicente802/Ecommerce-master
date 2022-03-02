@@ -47,10 +47,11 @@ if(!isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-				
+			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+			<li><a href="#" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+					
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
@@ -78,9 +79,9 @@ if(!isset($_SESSION["uid"])){
 			<table style=" text-align:center; ">
 			<a href="customer_order.php" ><button>Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
-			<a href="shipping.php"><button>To Ship</button></a>
-			<a href="#"><button style="background:pink;">Delivered</button></a>
-			<a href="history.php"><button>History</button></a>
+			<a href="shipping.php" ><button>To Ship</button></a>
+			<a href="delivered.php"><button>Delivered</button></a>
+            <a href="history.php"><button style="background:pink;">History</button></a>
 		
 			</table>
 		</div>
@@ -96,7 +97,7 @@ if(!isset($_SESSION["uid"])){
 						<?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM delivered o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM history o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {
@@ -107,39 +108,11 @@ if(!isset($_SESSION["uid"])){
 											</div>
 											<div class="col lg">
 												<table>
-													<?php 
-													$order_id = $row["order_id"];
-													$user_id = $row["user_id"];
-													$product_price = $row["product_price"]; 
-													$product_id = $row["product_id"];
-													$qty = $row["qty"];
-													$total = $product_price * $qty;
-													$trx_id = $row["trx_id"];
-													$shipped = $row["shipping"];
-													$cancel = $row['cancel'];
-													$receive = $row['receive'];
-													$product_title = $row["product_title"];
-													$desc = $row["product_desc"];
-															
-															
+													<?php $price = $row["product_price"]; 
+															$qty = $row["qty"];
+															$total = $price * $qty;
 													?>
-													
-
 													<form action="action.php" method="POST">
-													<input type="text" name="order_id" value="<?php echo $order_id?>">
-													<input type="text" name="user_id" value="<?php echo $user_id?>">
-													<input type="text" name="product_price" value="<?php echo $product_price?>">
-													<input type="text" name="product_id" value="<?php echo $product_id?>">
-													<input type="text" name="qty" value="<?php echo $qty?>">
-													<input type="text" name="total" value="<?php echo $total?>">
-													<input type="text" name ="trx_id" value="<?php echo $trx_id?>">
-													<input type="text" name="product_title" value="<?php echo $product_title?>">
-													<input type="text" name="shipped" value="<?php echo $shipped?>">
-													<input type="text" name ="cancel" value="<?php echo $cancel?>">
-													<input type="text" name ="receive" value="<?php echo $receive?>">
-													<input type="text" name ="desc" value="<?php echo $desc?>">
-													
-
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
 													<tr><td>Status</td><td><b><?php echo $row["shipping"]; ?></b> </td></tr>
 													<tr><td>Description</td><td><b><?php echo $row["product_desc"]; ?></b> </td></tr>
@@ -147,7 +120,7 @@ if(!isset($_SESSION["uid"])){
 													<tr><td>Quantity</td><td><b><?php echo $row["qty"]; ?></b></td></tr>
 													<tr><td>Transaction Id</td><td><b><?php echo $row["trx_id"]; ?></b></td>
 													<input type="hidden" name="canceled" value="Requesting cancel">
-													<input type="hidden" name="order_id" value="<?php echo $row["order_id"]; ?>">
+													<input type="hidden" name="trx1" value="<?php echo $row["order_id"]; ?>">
 													<?php $cancel = $row["cancel"]; if(!empty($cancel)){ echo'<td><input style="float:right;" type="submit" name="cancel" class="btn btn-danger" value="'.$row['cancel'].'"></td>';}?>
 													<?php $receive = $row["receive"]; if(!empty($receive)){ echo'<td><input style="float:right;" type="submit" name="receive" class="btn btn-success" value="'.$row['receive'].'"></td></tr>';}?>
 													</form>

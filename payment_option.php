@@ -26,12 +26,41 @@ if(mysqli_num_rows($result)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardcore Motorshop</title>
+    <style>
+      .checkout{
+        display: none;
+      }
+
+.myButton {
+	box-shadow:inset 0px 5px 20px -2px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+    </style>
 </head>
 <body>
-    
 <br>
-<br>
-<br>
+
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -42,7 +71,7 @@ if(mysqli_num_rows($result)){
       </div>
       
       <div class="modal-body">
-        <form action="Customers.php" method="POST">
+        <form action="payment_method.php" method="POST">
           <div class="row">
           <div class="col-md-12">
               <div class="form-group">
@@ -59,7 +88,7 @@ if(mysqli_num_rows($result)){
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
-                      echo "<h4>",$row['product_title'],"</h4>";
+                      echo "<h4>",$row['product_title'],"</h4><hr>";
                       
                      
                      }
@@ -68,31 +97,42 @@ if(mysqli_num_rows($result)){
                  </td>
                  <td>
                    <?php   
-                  
+
                     $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
-                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4>";
+                      ?><br><?php
+                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4><hr>";
                       
                      
                      }
                  } ?>
                  </td>
                  <td>
-                   <?php 
+                   <?php
+                   $total_price = 0;
                      $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
                      $result = mysqli_query($con,$combine);
                      if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
+                          $total_price = $total_price + $row['qty']*$row['product_price'];
                            $total = $row['qty']*$row['product_price'];
+<<<<<<< HEAD
                           echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
                           echo '<input type="text" value="'.$total.'"';
                        
+=======
+?><br><?php
+                          echo "<h4 style='padding-left:20px;' >",$total,"</h4><hr>";
+
+>>>>>>> bbdb77c517811cef957b17b5e6e63705b31e654b
                           
-                         
+
                          }
+
                      }
+                     
                    ?>
                  </td>
                </tr>
@@ -129,40 +169,86 @@ if(mysqli_num_rows($result)){
                   
                 <label>Payment Method</label>
                 <br>
-                <select name="payment_option" style="width:470px; height:40px; font-size:20px;">
-                  <option value="">Status</option>
+                <select name="payment_option" id="payment_option" onchange="changeStatus()" style="width:470px; height:40px; font-size:20px;">
+                  <option value="Status">Status</option>
                   <option name="gcash" value="Gcash" >Gcash</option>
-                  <option name="paymaya" value="Paymaya" >Paymaya</option>
                   <option name="paypal" value="Paypal" >Paypal</option>
                   <option value="cod" >Cash On Delivery</option>
                 </select>
               </div>
             </div>
             
-
-            <div class="col-md-12" style="text-align:right;">
-            <?php 
-           $select = "SELECT SUM(product_price) as p_price ,p.product_price,c.qty,c.user_id,u.user_id FROM products p JOIN cart c on p.product_id=c.p_id JOIN user_info u on c.user_id=u.user_id  ";
-           $count1 = mysqli_query($con,$select);
-           if(mysqli_num_rows($count1)){
-          
-               while($row = mysqli_fetch_array($count1)){
               
-                echo $net_total;
-               }
+            <div class="col-md-12" style="text-align:right">
+               <?php
+                    echo ' Total Price <h4>PHP ',$total_price,'</h4>';
+                    ?></label>
             
-           }
-               
-           
+           <table>
+             <div class="col-md-10">
+             <tr style="text-align:right; float:right; position:relative">
+              <td style="position:relative;"><button  type="submit" name="submit" id="gcash"style=" display:none; margin-left:257px; width:190px; backround:transparent; border:none; border-radius:10px; "><img src="imgs/gcash.jpeg" style="border-radius:5px;" width="200" height="50"></button></td>
+              <td style="position:relative;"> <button type="submit" name="submit" id="paymaya" class="btn btn-primary " style="display:none;margin-left:370px;">Checkout</button></td>
           
-           ?>
-              <button type="submit" name="submit" class="btn btn-primary submit-edit-product">Checkout</button>
+           
+              <td style="position:relative;"> <button type="submit" name="submit" id="cashondeliver" class="myButton" style="display:none;margin-left:270px; color:white; width:190px;">Cash On Delivery</button></td>
+            
+            
+              
+                    </div> 
             </div>
           </div>
         </form>
+        <div id="paypal" style="display:none; position:relative;">
+        <?php include 'paypal/paypal.php'; ?>
+        </tr>
+        </div>
+        </table>
+        </div>
       </div>
     </div>
   </div>
+          <script>
+              
+           function changeStatus(){
           
+             var status = document.getElementById("payment_option");
+             
+             if(status.value == "Status"){
+               document.getElementById("gcash").style.display="none";
+               document.getElementById("paypal").style.display="none";
+               document.getElementById("paymaya").style.display="none";
+               document.getElementById("cashondeliver").style.display="none";
+             }
+             if(status.value == "Gcash"){
+               document.getElementById("gcash").style.display="block";
+               document.getElementById("cashondeliver").style.display="none";
+               document.getElementById("paypal").style.display="none";
+               document.getElementById("paymaya").style.display="none";
+             }
+             if(status.value == "Paymaya"){
+              document.getElementById("gcash").style.display="none";
+               document.getElementById("paypal").style.display="none";
+               document.getElementById("paymaya").style.display="block";
+               document.getElementById("cashondeliver").style.display="none";
+             }
+             if(status.value == "cod"){
+              document.getElementById("gcash").style.display="none";
+               document.getElementById("paypal").style.display="none";
+               document.getElementById("paymaya").style.display="none";
+               document.getElementById("cashondeliver").style.display="block";
+              }
+             if(status.value == "Paypal"){
+              document.getElementById("gcash").style.display="none";
+               document.getElementById("paypal").style.display="block";
+               document.getElementById("paymaya").style.display="none";
+               document.getElementById("cashondeliver").style.display="none";
+              }
+              
+             else{
+               
+             }
+           }
+          </script>
 </body>
 </html>

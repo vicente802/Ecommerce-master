@@ -20,14 +20,14 @@ if(!isset($_SESSION["uid"])){
 			.row a button{
 				text-decoration: none;
 				border: none;
-				margin-left: 1px;
+				margin-left: 0px;
 				font-size: large;
 				font-weight: bold;
 				text-align: center;
 				padding: 10px;
 				border-bottom:4px solid red;
 				
-				width:241px;
+				width:221px;
 				background: transparent;
 			}
 			.row a button:hover{
@@ -51,27 +51,8 @@ if(!isset($_SESSION["uid"])){
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-md-3 col-xs-3">Sl.No</div>
-									<div class="col-md-3 col-xs-3">Product Image</div>
-									<div class="col-md-3 col-xs-3">Product Name</div>
-									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="cart_product">
-								<!--<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>-->
-								</div>
-							</div>
+			<li><a href="#" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+					
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
@@ -99,8 +80,9 @@ if(!isset($_SESSION["uid"])){
 			<table style=" text-align:center; ">
 			<a href="customer_order.php" ><button>Processing</button></a>
 			<a href="preparing.php" ><button>Preparing</button></a>
-			<a href="shipping.php"><button>To Ship</button></a>
+			<a href="shipping.php" ><button style="background:pink;">To Ship</button></a>
 			<a href="delivered.php"><button>Delivered</button></a>
+			<a href="delivered.php"><button>History</button></a>
 		
 			</table>
 		</div>

@@ -270,27 +270,30 @@ if (isset($_POST["Common"])) {
 					
 					echo 
 						'<br>
-						<br>
+						
 						<div class="row">
-								<div class="col-md-2">
-									<div class="btn-group">
-										<a href="#" remove_id="'.$product_id.'" class="btn btn-danger remove"><span class="glyphicon glyphicon-trash"></span></a>
-										<a href="#" update_id="'.$product_id.'" class="btn btn-primary update"><span class="glyphicon glyphicon-ok-sign"></span></a>
-									</div>
-								</div>
+								<div class="container">
+								<div class="col-md-11"><hr style="border:none; height:2px; background:black;></div>
 								<input type="hidden" name="product_id[]" value="'.$product_id.'"/>
 								<input type="hidden" name="" value="'.$cart_item_id.'"/>
+								<br>
 								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
 								<div class="col-md-2 text-left">'.$product_desc.'</div>
 								<div class="col-md-2"><input type="number" min="1" class="form-control qty" value="'.$qty.'" ></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
-								<div class="col-md-2"><input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
+								<input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly">
+								<div class="col-md-2">
+									<div class="btn-group">
+										<a href="#" remove_id="'.$product_id.'" class="btn btn-danger remove"><span class="glyphicon glyphicon-trash"></span></a>
+										<a href="#" update_id="'.$product_id.'" class="btn btn-primary update" style="margin-left:5px;"><span class="glyphicon glyphicon-ok-sign"></span></a>
+									</div>
+								</div>
 								</div>';
 				}
 				
 				echo '<div class="row">
-							<div class="col-md-9"></div>
-							<div class="col-md-3">
+							<div class="col-md-8"></div>
+							<div class="col-md-4">
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
 					?>
@@ -311,48 +314,20 @@ if (isset($_POST["Common"])) {
 								$x++;
 								echo'
 					<input type="hidden" name="user" value="'.$_SESSION['uid'].'">
-					<input type="text" name="pro_id" value="'.$x.'">
-					<input type="text" name="pro_title" value="'.$product_title.'">
+					<input type="hidden" name="pro_id" value="'.$x.'">
+					<input type="hidden" name="pro_title" value="'.$product_title.'">
 					<input type="hidden" name="pro_qty" value="'.$product_qty.'">
 					<input type="hidden" name="pro_desc" value="'.$product_desc.'">
 					<input type="hidden" name="pro_price" value="'.$product_price.'">';
-					
-					
 							}
-echo'
-					<button class="btn btn-primary"style="float:right; font-size:30px; width:20%;">Checkout</button>
-					</div></form>
+echo'<div class="row">
+<div class="col-md-8"></div>
+<div class="col-md-4">
+					<button class="btn btn-primary"style=" font-size:30px;">Place Order</button>
+					</div>
+					</div></div></form>
 					';
-					/* echo '
-						</form>
-						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="business" value="Hardcore@gmail.com">
-							<input type="hidden" name="upload" value="1">';
-
-							$x=0;
-							$sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
-							$query = mysqli_query($con,$sql);
-							while($row=mysqli_fetch_array($query)){
-								$x++;
-								echo  	
-									'<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
-								  	 <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
-								     <input type="hidden" name="amount_'.$x.'" value="'.$row["product_price"].'">
-								     <input type="hidden"  name="quantity_'.$x.'" value="'.$row["qty"].'">';
-								}
-							  
-							echo   
-								'<input type="hidden" name="return" value="http://localhost/Ecommerce-master/payment_success.php"/>
-					                <input type="hidden" name="notify_url" value="http://localhost/Ecommerce-master/payment_success.php">
-									<input type="hidden" name="cancel_return" value="http://localhost/Ecommerce-master/cancel.php"/>
-									<input type="hidden" name="currency_code" value="PHP"/>
-									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-									<input style="float:right; width:200px;" type="image" name="submit"
-										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
-										alt="PayPal - The safer, easier way to pay online">
-								</form>';
-								*/
+					
 								
 				}
 			}
@@ -411,11 +386,30 @@ if(isset($_POST['receive'])){
 	$canceled = "Order Received...";
 	$canceled1 = "Purchased Has Been deliver successfully";
 	$success = "";
-	$trx = $_POST['trx1'];
-	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
-	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
-	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$trx'");
-	mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
+
+	$order_id = $_POST["order_id"];
+	$user_id = $_POST["user_id"];
+	$product_price = $_POST["product_price"]; 
+	$product_id = $_POST["product_id"];
+	$qty = $_POST["qty"];
+	$total = $product_price * $qty;
+	$trx_id = $_POST["trx_id"];
+	$shipped = $_POST["shipping"];
+	$cancel = $_POST['cancel'];
+	$receive = $_POST['receive'];
+	$product_title = $_POST["product_title"];
+	$desc = $_POST["product_desc"];
+
+	/* $sql1 = "INSERT INTO history (order_id,trx_id,qty,p_status,shipping,cancel) VALUES ('".$order."','".$order."','".$qty."','$p_status','$shipping','$cancel')";
+	mysqli_query($con,$sql1);*/
+
+	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$order'");
+	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$order'");
+	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$order'");
+	mysqli_query($con, "DELETE FROM orders WHERE order_id='$order'");
+	mysqli_query($con,"DELETE FROM delivered WHERE order_id='$order'");
+
+	
 	header('location:delivered.php');
 	
 	
