@@ -299,8 +299,11 @@ if (isset($_POST["Common"])) {
 					?>
 					<div class="col md-2"><?php
 				if (!isset($_SESSION["uid"])) {
-					echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
-							</form>';
+					echo '<div class="row">
+					<div class="col-md-7"></div>
+					<div class="col-md-4"> 	<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
+					</div>
+					</div></div></form>';
 					?></div>
 					<?php
 				}else if(isset($_SESSION["uid"])){
@@ -394,23 +397,24 @@ if(isset($_POST['receive'])){
 	$qty = $_POST["qty"];
 	$total = $product_price * $qty;
 	$trx_id = $_POST["trx_id"];
-	$shipped = $_POST["shipping"];
+	$shipped = "Purchased Has Been deliver successfully";
 	$cancel = $_POST['cancel'];
-	$receive = $_POST['receive'];
+	$receive = "";
 	$product_title = $_POST["product_title"];
 	$desc = $_POST["product_desc"];
+	$email = $_POST["email"];
 
-	/* $sql1 = "INSERT INTO history (order_id,trx_id,qty,p_status,shipping,cancel) VALUES ('".$order."','".$order."','".$qty."','$p_status','$shipping','$cancel')";
-	mysqli_query($con,$sql1);*/
+	 
 
-	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$order'");
-	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$order'");
-	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$order'");
-	mysqli_query($con, "DELETE FROM orders WHERE order_id='$order'");
-	mysqli_query($con,"DELETE FROM delivered WHERE order_id='$order'");
-
+	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$order_id'");
+	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$order_id'");
+	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$order_id'");
+	mysqli_query($con, "DELETE FROM orders WHERE order_id='$order_id'");
+	mysqli_query($con,"DELETE FROM delivered WHERE order_id='$order_id'");
+	$sql1 = "INSERT INTO history (order_id,user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel,receive,email) VALUES ('".$order_id."','".$user_id."','".$product_id."','$qty','$trx_id','$shipped','$total','','$shipped','$cancel','$receive','$email')";
+	mysqli_query($con,$sql1);
 	
-	header('location:delivered.php');
+	header('location:history.php');
 	
 	
 }

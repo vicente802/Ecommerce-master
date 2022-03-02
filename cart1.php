@@ -89,9 +89,12 @@ require "config/constants.php";
 							
 						</div>
 						
+						<div class="container">
+							<div class="col-md ">
 						<div id="cart_checkout"></div>
-					
+						</div>
 						</div> 
+						</div>
 					</div>
 					<div class="panel-footer"></div>
 				</div>
