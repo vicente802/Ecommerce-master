@@ -128,14 +128,14 @@ if (isset($_POST["count_item"])) {
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li><a href="../index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+				<li><a href="../cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							
@@ -149,7 +149,7 @@ if (isset($_POST["count_item"])) {
 					</div>
 				</li>
 				
-                <li><a href="../login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
+                <li><a href="../login_form.php" ><span class="glyphicon glyphicon-user">&nbsp;</span>SignIn</a>
 				</li>
 			</ul>
 		</div>
@@ -304,7 +304,7 @@ Tire Rotation & Balance</p>
 
 
 
-
+        <div class="panel-footer" style="text-align: center; "><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 	<script>
