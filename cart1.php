@@ -40,19 +40,7 @@ require "config/constants.php";
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
-				<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-							
-							<div class="panel-body">
-								<div id="cart_product">
-								<!--<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>-->
-								</div>
-							</div>	
+	
 				</li>
 				
 			</ul>

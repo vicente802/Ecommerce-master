@@ -117,14 +117,14 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
 			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
@@ -144,9 +144,9 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
@@ -282,31 +282,31 @@ Tire Rotation & Balance</p>
       
 </div>
 <br>
-<div class="panel-footer text-center" style="background:black; color:white;"><p></p>
+<div class="panel-footer text-center" style="background:transparent;">
       <footer class="footer">
           <div class="container">
               <div class="row">
-                  <div class="footer-col">
-                      <h4 style="text-align: center;">Follow Us !</h4>
-                      <ul>
-                          <div class=" col">
-                          <a href="#"><i style="color: white; font-size:20px;" class="fa fa-facebook-f"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:20px;" class="fa fa-phone"></i></a>
-                          &nbsp; <a href="#"><i style="color: white; font-size:20px;" class="fa fa-instagram"></i></a>
-                          &nbsp;<a href="#"><i style="color: white; font-size:20px;" class="fa fa-google"></i></a>
-</div>
-                        </ul>  
+                  <div class="footer-col-8">
+                      <h4 style="font-wieght:bold;">Follow Us !</h4>
+                     
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:block; font-size: 20px;" class="fa fa-facebook-f"></i></a>
+                          &nbsp; <a href="#"><i style="color: block; font-size:20px;" class="fa fa-phone"></i></a>
+                          &nbsp; <a href="#"><i style="color: block; font-size:20px;" class="fa fa-instagram"></i></a>
+                          &nbsp;<a href="#"><i style="color: block; font-size:20px;" class="fa fa-google"></i></a>
+
+                        
                     </div>
                 </div>
             </div>
+            
         </div>
 
-
+        <div class="panel-footer" style="text-align: center; "><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
     </div>
         <script src="js/bootstrap.min.js"></script>
 
 
-
+       
 
 
 

@@ -99,18 +99,18 @@ font-size: 1.3em;
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">View Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
@@ -216,7 +216,7 @@ include "include/services.php";
 
 
 
-<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
+<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 
 </body>
 </html>	
