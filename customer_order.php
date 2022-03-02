@@ -20,14 +20,14 @@ if(!isset($_SESSION["uid"])){
 			.row a button{
 				text-decoration: none;
 				border: none;
-				margin-left: 1px;
+				margin-left: 0px;
 				font-size: large;
 				font-weight: bold;
 				text-align: center;
 				padding: 10px;
 				border-bottom:4px solid red;
 				
-				width:241px;
+				width:221px;
 				background: transparent;
 			}
 			.row a button:hover{
@@ -93,6 +93,7 @@ if(!isset($_SESSION["uid"])){
 			<a href="preparing.php" ><button>Preparing</button></a>
 			<a href="shipping.php"><button>To Ship</button></a>
 			<a href="delivered.php"><button>Delivered</button></a>
+			<a href="history.php"><button>History</button></a>
 		
 			</table>
 		</div>

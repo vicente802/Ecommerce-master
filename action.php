@@ -386,11 +386,30 @@ if(isset($_POST['receive'])){
 	$canceled = "Order Received...";
 	$canceled1 = "Purchased Has Been deliver successfully";
 	$success = "";
-	$trx = $_POST['trx1'];
-	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$trx'");
-	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
-	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$trx'");
-	mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
+
+	$order_id = $_POST["order_id"];
+	$user_id = $_POST["user_id"];
+	$product_price = $_POST["product_price"]; 
+	$product_id = $_POST["product_id"];
+	$qty = $_POST["qty"];
+	$total = $product_price * $qty;
+	$trx_id = $_POST["trx_id"];
+	$shipped = $_POST["shipping"];
+	$cancel = $_POST['cancel'];
+	$receive = $_POST['receive'];
+	$product_title = $_POST["product_title"];
+	$desc = $_POST["product_desc"];
+
+	/* $sql1 = "INSERT INTO history (order_id,trx_id,qty,p_status,shipping,cancel) VALUES ('".$order."','".$order."','".$qty."','$p_status','$shipping','$cancel')";
+	mysqli_query($con,$sql1);*/
+
+	mysqli_query($con,"UPDATE orders set shipping ='$canceled' where order_id='$order'");
+	mysqli_query($con,"UPDATE delivered set shipping ='$canceled1' where order_id='$order'");
+	mysqli_query($con,"UPDATE delivered set receive ='$success' where order_id='$order'");
+	mysqli_query($con, "DELETE FROM orders WHERE order_id='$order'");
+	mysqli_query($con,"DELETE FROM delivered WHERE order_id='$order'");
+
+	
 	header('location:delivered.php');
 	
 	
