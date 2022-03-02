@@ -96,7 +96,7 @@ if(!isset($_SESSION["uid"])){
 						<?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM delivered o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,o.email,p.product_title,p.product_price,p.product_image,product_desc FROM delivered o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {
@@ -120,6 +120,7 @@ if(!isset($_SESSION["uid"])){
 													$receive = $row['receive'];
 													$product_title = $row["product_title"];
 													$desc = $row["product_desc"];
+													$email = $row["email"];
 															
 															
 													?>
@@ -138,6 +139,7 @@ if(!isset($_SESSION["uid"])){
 													<input type="text" name ="cancel" value="<?php echo $cancel?>">
 													<input type="text" name ="receive" value="<?php echo $receive?>">
 													<input type="text" name ="desc" value="<?php echo $desc?>">
+													<input type="text" name ="email" value="<?php echo $email?>">
 													
 
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
