@@ -25,7 +25,7 @@ echo'
 									<input type="hidden" name="cancel_return" value="http://localhost/Ecommerce-master/cancel.php"/>
 									<input type="hidden" name="currency_code" value="PHP"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-									<input style="float:right; width:200px;" type="image" name="submit"
+									<input style="float:right; width:200px; height:50px" type="image" name="submit"
 										src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 										alt="PayPal - The safer, easier way to pay online">
 								</form>';

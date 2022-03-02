@@ -78,7 +78,7 @@ require "config/constants.php";
 						<div class="row">
 						<br>
 						
-							<div class="col-md-2 col-xs-2"><b>Action</b></div>
+						
 							<div class="col-md-2 col-xs-2"><b>Product :</b></div>
 							<div class="col-md-2 col-xs-2"><b>Description</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
@@ -86,10 +86,12 @@ require "config/constants.php";
 							<br>
 							
 						</div>
-						
+						<div class="container">
+							<div class="col-md ">
 						<div id="cart_checkout"></div>
-					
+						</div>
 						</div> 
+						</div>
 					</div>
 					<div class="panel-footer"></div>
 					

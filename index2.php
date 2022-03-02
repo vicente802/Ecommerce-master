@@ -86,71 +86,46 @@ font-size: 1.3em;
 </head>
 
 <body>
-<div class="wait overlay">
-<div class="loader"></div>
-</div>
-<div class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">	
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-<span class="sr-only">navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
-</div>
-<div class="collapse navbar-collapse" id="collapse">
-<ul class="nav navbar-nav">
-<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-
-<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
-
-
-</ul>
-
-<ul class="nav navbar-nav navbar-right">
-<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
-<div class="dropdown-menu" style="width:400px;">
-<div class="panel panel-success">
-<div class="panel-heading">
-	<div class="row">
-		<div class="col-md-3">Sl.No</div>
-		<div class="col-md-3">Product Image</div>
-		<div class="col-md-3">Product Name</div>
-		<div class="col-md-3">Price in <?php echo CURRENCY; ?></div>
-	</div>
-</div>
-<div class="panel-body">
-	<div id="cart_product">
-	
-	</div>
-</div>
-<div class="panel-footer"></div>
-</div>
-</div>
-</li>
-<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only"> navigation toggle</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        <a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+			</div>
+		<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
+				</li>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="">View Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
 						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
-					</ul>
-				</li>
-</ul>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
 </div>
-</div>
-</div>	
-<p><br/></p>
-<p><br/></p>
-<p><br/></p>
-
+  <p><br/></p>
+	<p><br/></p>
+	<p><br/></p>
 
 <div class="my-5" style="margin-top: 80px;">
 <v class="container">
@@ -167,8 +142,9 @@ font-size: 1.3em;
 <a href="profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
-
+<div class="container-fluid"></div>
 <div class="container-fluid text-center">
+ 
 	<?php include 'include/products.php';?>
 </div>
 
@@ -220,10 +196,12 @@ font-size: 1.3em;
 <?php
 include "include/services.php";
 ?>
-<div><br>
+<div>
+  <br>
 <br>
 <br>
-<br></div>
+<br>
+</div>
 <div class="container-fluid text-center">
   <h2>Come to Our Physical Store</h2>
   <p><b>Address:</b> Langit Rd, Phase 1 Package 3, Caloocan, Metro Manila</p>
@@ -237,12 +215,6 @@ include "include/services.php";
 </div>
 
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 

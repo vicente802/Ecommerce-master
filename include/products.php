@@ -22,11 +22,14 @@ if (!$con) {
 <body>
     <div class="container-fluid" >
     <div class="col-md">	
-				<div class="row">
-					<div class="col-md-12 col-xs-12" id="product_msg">
-					</div>
-				</div>
+				
 				<div class="panel panel-info" style="margin-top: 100px;" id="scroll">
+				<div class="row">
+					<br>
+				<div class="col-md-12 col-xs-12" id="product_msg">
+					</div>
+					
+				</div>
 					<div class="panel-heading"><label>Best Seller</label> </div>
 					<div class="panel-body">
 					<?php

@@ -270,27 +270,30 @@ if (isset($_POST["Common"])) {
 					
 					echo 
 						'<br>
-						<br>
+						
 						<div class="row">
-								<div class="col-md-2">
-									<div class="btn-group">
-										<a href="#" remove_id="'.$product_id.'" class="btn btn-danger remove"><span class="glyphicon glyphicon-trash"></span></a>
-										<a href="#" update_id="'.$product_id.'" class="btn btn-primary update"><span class="glyphicon glyphicon-ok-sign"></span></a>
-									</div>
-								</div>
+								<div class="container">
+								<div class="col-md-11"><hr style="border:none; height:2px; background:black;></div>
 								<input type="hidden" name="product_id[]" value="'.$product_id.'"/>
 								<input type="hidden" name="" value="'.$cart_item_id.'"/>
+								<br>
 								<div class="col-md-2"><img class="img-responsive" src="product_images/'.$product_image.'">'.$product_title.'</div>
 								<div class="col-md-2 text-left">'.$product_desc.'</div>
 								<div class="col-md-2"><input type="number" min="1" class="form-control qty" value="'.$qty.'" ></div>
 								<div class="col-md-2"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></div>
-								<div class="col-md-2"><input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly"></div>
+								<input type="hidden" class="form-control price" value="'.$product_price.'" readonly="readonly">
+								<div class="col-md-2">
+									<div class="btn-group">
+										<a href="#" remove_id="'.$product_id.'" class="btn btn-danger remove"><span class="glyphicon glyphicon-trash"></span></a>
+										<a href="#" update_id="'.$product_id.'" class="btn btn-primary update" style="margin-left:5px;"><span class="glyphicon glyphicon-ok-sign"></span></a>
+									</div>
+								</div>
 								</div>';
 				}
 				
 				echo '<div class="row">
-							<div class="col-md-9"></div>
-							<div class="col-md-3">
+							<div class="col-md-8"></div>
+							<div class="col-md-4">
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
 					?>
@@ -317,9 +320,12 @@ if (isset($_POST["Common"])) {
 					<input type="hidden" name="pro_desc" value="'.$product_desc.'">
 					<input type="hidden" name="pro_price" value="'.$product_price.'">';
 							}
-echo'
-					<button class="btn btn-primary"style="float:right; font-size:30px; width:20%;">Place Order</button>
-					</div></form>
+echo'<div class="row">
+<div class="col-md-8"></div>
+<div class="col-md-4">
+					<button class="btn btn-primary"style=" font-size:30px;">Place Order</button>
+					</div>
+					</div></div></form>
 					';
 					
 								

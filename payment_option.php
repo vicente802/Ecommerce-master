@@ -30,13 +30,37 @@ if(mysqli_num_rows($result)){
       .checkout{
         display: none;
       }
+
+.myButton {
+	box-shadow:inset 0px 5px 20px -2px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
     </style>
 </head>
 <body>
-    
 <br>
-<br>
-<br>
+
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -142,7 +166,6 @@ if(mysqli_num_rows($result)){
                 <select name="payment_option" id="payment_option" onchange="changeStatus()" style="width:470px; height:40px; font-size:20px;">
                   <option value="Status">Status</option>
                   <option name="gcash" value="Gcash" >Gcash</option>
-                  <option name="paymaya" value="Paymaya" >Paymaya</option>
                   <option name="paypal" value="Paypal" >Paypal</option>
                   <option value="cod" >Cash On Delivery</option>
                 </select>
@@ -156,13 +179,13 @@ if(mysqli_num_rows($result)){
                     ?></label>
             
            <table>
-             <div class="col-md-12">
+             <div class="col-md-10">
              <tr style="text-align:right; float:right; position:relative">
-              <td style="position:relative;"><button  type="submit" name="submit" id="gcash"style=" display:none; margin-left:257px; width:190px; backround:transparent; border:none; border-radius:10px; "><img src="imgs/gcash.jpeg" style="border-radius:10px;" width="200" height="40"></button></td>
-              <td style="position:relative;"> <button type="submit" name="submit" id="paymaya" class="btn btn-primary s" style="display:none;margin-left:370px;">Checkout</button></td>
+              <td style="position:relative;"><button  type="submit" name="submit" id="gcash"style=" display:none; margin-left:257px; width:190px; backround:transparent; border:none; border-radius:10px; "><img src="imgs/gcash.jpeg" style="border-radius:5px;" width="200" height="50"></button></td>
+              <td style="position:relative;"> <button type="submit" name="submit" id="paymaya" class="btn btn-primary " style="display:none;margin-left:370px;">Checkout</button></td>
           
            
-              <td style="position:relative;"> <button type="submit" name="submit" id="cashondeliver" class="btn btn-primary" style="display:none;margin-left:370px;">Checkout</button></td>
+              <td style="position:relative;"> <button type="submit" name="submit" id="cashondeliver" class="myButton" style="display:none;margin-left:270px; color:white; width:190px;">Cash On Delivery</button></td>
             
             
               
