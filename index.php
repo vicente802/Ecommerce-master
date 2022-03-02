@@ -147,7 +147,7 @@ font-size: 1.3em;
 <a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
-
+<div class="container-fluid"></div>
 <div class="container-fluid text-center">
   
 	<?php include 'include/products.php';?>
