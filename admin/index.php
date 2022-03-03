@@ -89,30 +89,14 @@ td {
     padding: 8px;
 }
 
-
-
-
-.side-menu li {
-    font-size: 24px;
-    padding: 10px 40px;
-    color: white;
-    display: flex;
-    align-items: center;
-}
-
-.side-menu li:hover {
-    background: white;
-    color: #f05462;
-}
-
 .container {
     position: absolute;
-    right: 0;
-    width: 80vw;
+    width: 1150px;
     height: 100vh;
     background: #f1f1f1;
     float:center;
     text-align:center;
+    margin-left: -30px;
 }
 
 .container .header {
@@ -129,69 +113,11 @@ td {
     z-index: 1;
 }
 
-.container .header .nav {
-    width: 90%;
-    display: flex;
-    align-items: center;
-}
-
-.container .header .nav .search {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-}
-
-.container .header .nav .search input[type=text] {
-    border: none;
-    background: #f1f1f1;
-    padding: 10px;
-    width: 50%;
-}
-
-.container .header .nav .search button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container .header .nav .search button img {
-    width: 30px;
-    height: 30px;
-}
-
-.container .header .nav .user {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .header .nav .user img {
-    width: 40px;
-    height: 40px;
-}
-
-.container .header .nav .user .img-case {
-    position: relative;
-    width: 50px;
-    height: 50px;
-}
-
-.container .header .nav .user .img-case img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
 .container .content {
     position: relative;
     margin-top: -5vh;
-    margin-left:-100px;
+    margin-left:-30px;
     min-height: 90vh;
     background: #f1f1f1;
 }
@@ -208,13 +134,13 @@ td {
 .container .content .cards .card {
     width: 250px;
     height: 150px;
-
-    background-size:250px;
-   
-    margin: 20px 10px;
+    
+    background-size:230px;
+    margin: 1px 1px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-left:10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

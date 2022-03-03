@@ -27,7 +27,7 @@ if(!isset($_SESSION["uid"])){
 				padding: 10px;
 				border-bottom:4px solid red;
 				
-				width:178px;
+				width:175px;
 				background: transparent;
 			}
 			.row a button:hover{

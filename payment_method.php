@@ -5,5 +5,8 @@ if(isset($_POST['submit'])){
     {
        header('location:paypal/paypal.php');
     }
+    if($payment_option =="Gcash"){
+        header('location:gcash.php');
+    }
 }
 ?>
