@@ -297,7 +297,7 @@ Tire Rotation & Balance</p>
                           <img src="imgs/G1.png" style="width:50px; margin-left:1px;">&nbsp;&nbsp;<u style="font-size: 20px; color:white;">09993827634 Ariel A.</u>
                           
                   </ul>  
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
