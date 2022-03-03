@@ -2,7 +2,6 @@
 session_start();
 include 'db.php';
 
-
 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
 $result = mysqli_query($con,$combine);
 if(mysqli_num_rows($result)){
@@ -111,11 +110,11 @@ if(mysqli_num_rows($result)){
             </div>
 
             <div class="modal-body">
-                <form action="payment_method.php" method="POST">
+                <form action="payment_success.php" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <form action="" method="POST">
+                                
 
                                     <label>Account Name: &nbsp;<input type="text" class="form-control"
                                             style="background:transparent; font-size:20px; line-height:200px; color:white; border:none; font-weight:bold;"
@@ -145,34 +144,33 @@ if(mysqli_num_rows($result)){
                                         <label>Account Number: &nbsp;<input type="text" class="form-control"
                                                 style="font-weight:bold; width:fit-content"
                                                 value="<?php echo $mobile ?>"></label>
-                                        <label>Reference Number: &nbsp;<input type="text" name="reference_number" class="form-control"
-                                                style="font-weight:bold; width:fit-content"
-                                                value="<?php echo $mobile ?>"></label>
-
+                                        <label>Reference Number: &nbsp;<input type="text" name="reference_number"
+                                                class="form-control" style="font-weight:bold; width:fit-content"
+                                                value=""></label>
+                                        <br> <input type="submit" class="btn btn-primary" value="Pay Now">
                                         <?php         
-                                      $reference_number = $_POST['reference_number'];
-                                      $p_status = "Processing";
-                                      $payment_method = "Gcash";
+                                      
+                                      $p_status = "Pending";
+                                    $payment_method = "Gcash";
+                                      $shipping = "Processing";
+                                      $cancel = "Cancel";
+                                      $receive="";
                                       $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
                                        $result = mysqli_query($con,$combine);
-                                       if(mysqli_num_rows($result)){
-                                           while($row = mysqli_fetch_array($result)){
-                                            $title = $row['product_title'];
-                                            $add = $row['address1'];
-                                            $street = $row['street'];
-                                            $add2 = $row['address2'];
-                                            $mobile = $row['mobile'];
-                                          
-                                 echo'<input type="text" value="'.$row['user_id'].'">
-                                 <input type="text" value="'.$row['p_id'].'">
-                                 <input type="text" value="'.$row['qty'].'">
-                                 <input type="text" value="'.$p_status.'">
-                                 <input type="text" value="'.$row['product_price'].'"><br/>
-                                 <input type="text" value="'.$payment_method.'"><br/>
-                                 <input type="text" value="'.$row[''].'"><br/>';
+                        
+                                       
+                            
+                                       $x=0;
+                                       $sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+                                       $query = mysqli_query($con,$sql);
+                                       while($row=mysqli_fetch_array($query)){
+                                           $x++;
+                                           echo  	
+                                               '<input type="text" name="item_name_'.$x.'" value="'.$row["product_title"].'">
+                                                  <input type="text" name="item_number_'.$x.'" value="'.$x.'">
+                                                <input type="text" name="amount_'.$x.'" value="'.$row["product_price"].'">
+                                                <input type="text"  name="quantity_'.$x.'" value="'.$row["qty"].'">';
                                            }
-                                       }
-                              
                                ?>
 
                                 </form>

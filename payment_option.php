@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE c.user_id='$_SESSION[uid]'";
 $result = mysqli_query($con,$combine);
 if(mysqli_num_rows($result)){
     while($row = mysqli_fetch_array($result)){
@@ -85,12 +85,12 @@ if(mysqli_num_rows($result)){
                <tr>
                  <td>
                    <?php
-                 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE c.user_id='$_SESSION[uid]'";
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
                       echo "<h4>",$row['product_title'],"</h4><hr>";
-                      echo'<input type="text" name="product_title" value="'.$row['product_title'].'">';
+                      echo'<input type="hidden" name="product_title" value="'.$row['product_title'].'">';
                      
                      }
                  }
@@ -99,13 +99,13 @@ if(mysqli_num_rows($result)){
                  <td>
                    <?php   
 
-                    $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                    $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id  WHERE c.user_id='$_SESSION[uid]'";
                  $result = mysqli_query($con,$combine);
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
                       ?><br><?php
                       echo "<h4 style='padding-left:145px;' >",$row['qty'],"<hr></h4>";
-                      echo'<input type="text" name="qty" value="'.$row['qty'].'">';
+                      echo'<input type="hidden" name="qty" value="'.$row['qty'].'">';
                      
                      }
                  } ?>
@@ -113,17 +113,17 @@ if(mysqli_num_rows($result)){
                  <td>
                    <?php
                    $total_price = 0;
-                     $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+                     $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id  WHERE c.user_id='$_SESSION[uid]'";
                      $result = mysqli_query($con,$combine);
                      if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                           $total_price = $total_price + $row['qty']*$row['product_price'];
                            $total = $row['qty']*$row['product_price'];
                           echo "<br/><h4 style='padding-left:10px;' >".$total."</h4><hr>";
-                          echo'<input type="text" name="total" value="'.$total.'">';
+                          echo'<input type="hidden" name="total" value="'.$total.'">';
                        
-                          echo'<input type="text" name="user" value="'.$row['user_id'].'">';
-                          echo'<input type="text" name="p_id" value="'.$row['p_id'].'">';
+                          echo'<input type="hidden" name="user" value="'.$row['user_id'].'">';
+                          echo'<input type="hidden" name="p_id" value="'.$row['p_id'].'">';
                        
                           
 
