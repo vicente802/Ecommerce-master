@@ -2,7 +2,8 @@
 session_start();
 include 'db.php';
 
-$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id";
+
+$combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
 $result = mysqli_query($con,$combine);
 if(mysqli_num_rows($result)){
     while($row = mysqli_fetch_array($result)){
@@ -69,7 +70,7 @@ if(mysqli_num_rows($result)){
 
     .modal-title {
         text-align: center;
-        margin-left: 185px;
+        margin-left: 145px;
         color: white;
     }
 
@@ -88,7 +89,9 @@ if(mysqli_num_rows($result)){
 
     label {
         color: white;
-        font-weight: 700;
+        margin-top: 10px;
+
+        font-weight: 400;
     }
     </style>
 </head>
@@ -100,7 +103,7 @@ if(mysqli_num_rows($result)){
         <div class="modal-content">
             <div class="modal-header">
 
-                <h2 class="modal-title" id="exampleModalLabel" style="text-align: center;">Gcash</h2>
+                <h2 class="modal-title" id="exampleModalLabel" style="text-align: center;">Pay via Gcash</h2>
 
                 <a href="payment_option.php"><button type="button" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -113,12 +116,68 @@ if(mysqli_num_rows($result)){
                         <div class="col-md-12">
                             <div class="form-group">
                                 <form action="" method="POST">
-                                    <label>Account Name: &nbsp;<input type="text" class="form-control" disabled
-                                            style="font-weight:bold; width:fit-content" value="Ariel A."></label>
-                                    <label>Account Number: &nbsp;<input type="text" class="form-control" disabled
-                                            style="font-weight:bold; width:fit-content" value="09993827634"></label>
+
+                                    <label>Account Name: &nbsp;<input type="text" class="form-control"
+                                            style="background:transparent; font-size:20px; line-height:200px; color:white; border:none; font-weight:bold;"
+                                            disabled style="font-weight:bold; width:fit-content"
+                                            value="Ariel A."></label>
+                                    <label>Account Number: &nbsp;<input type="text" class="form-control"
+                                            style="background:transparent; font-size:20px;line-height:200px; color:white;  border:none;  font-weight:bold;"
+                                            disabled style="font-weight:bold; width:fit-content"
+                                            value="09993827634"></label>
+                                    <div class="qr" style="text-align: center; margin-top:-180px; margin-left:250px">
+                                        <h4 style="color:white; font-weight:bold; font-size:15px;">SCAN TO PAY HERE</h4>
+                                        <img src="imgs/qr.jpg" width="150">
+                                    </div>
+                                    <hr style="background-color:white; width:auto; border:none; height:1px; ">
+                                    <center>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm">
+                                                <h4 style="text-align:center; color:white; margin-left:-30px;">Customer
+                                                    Details</h4>
+
+                                            </div>
+
+                                        </div>
+                                        <label>Account Name: &nbsp;<input type="text" class="form-control"
+                                                style="font-weight:bold; width:fit-content" value=""></label>
+                                        <label>Account Number: &nbsp;<input type="text" class="form-control"
+                                                style="font-weight:bold; width:fit-content"
+                                                value="<?php echo $mobile ?>"></label>
+                                        <label>Reference Number: &nbsp;<input type="text" name="reference_number" class="form-control"
+                                                style="font-weight:bold; width:fit-content"
+                                                value="<?php echo $mobile ?>"></label>
+
+                                        <?php         
+                                      $reference_number = $_POST['reference_number'];
+                                      $p_status = "Processing";
+                                      $payment_method = "Gcash";
+                                      $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
+                                       $result = mysqli_query($con,$combine);
+                                       if(mysqli_num_rows($result)){
+                                           while($row = mysqli_fetch_array($result)){
+                                            $title = $row['product_title'];
+                                            $add = $row['address1'];
+                                            $street = $row['street'];
+                                            $add2 = $row['address2'];
+                                            $mobile = $row['mobile'];
+                                          
+                                 echo'<input type="text" value="'.$row['user_id'].'">
+                                 <input type="text" value="'.$row['p_id'].'">
+                                 <input type="text" value="'.$row['qty'].'">
+                                 <input type="text" value="'.$p_status.'">
+                                 <input type="text" value="'.$row['product_price'].'"><br/>
+                                 <input type="text" value="'.$payment_method.'"><br/>
+                                 <input type="text" value="'.$row[''].'"><br/>';
+                                           }
+                                       }
+                              
+                               ?>
+
                                 </form>
                             </div>
+                            </center>
 </body>
 
 </html>

@@ -11,7 +11,8 @@ if(mysqli_num_rows($result)){
      $street = $row['street'];
      $add2 = $row['address2'];
      $mobile = $row['mobile'];
-    
+    $product_id = $row['p_id'];
+    $user = $row['user_id'];
     }
 }
 ?>
@@ -89,7 +90,7 @@ if(mysqli_num_rows($result)){
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
                       echo "<h4>",$row['product_title'],"</h4><hr>";
-                      
+                      echo'<input type="text" name="product_title" value="'.$row['product_title'].'">';
                      
                      }
                  }
@@ -103,8 +104,8 @@ if(mysqli_num_rows($result)){
                  if(mysqli_num_rows($result)){
                      while($row = mysqli_fetch_array($result)){
                       ?><br><?php
-                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"</h4><hr>";
-                      
+                      echo "<h4 style='padding-left:145px;' >",$row['qty'],"<hr></h4>";
+                      echo'<input type="text" name="qty" value="'.$row['qty'].'">';
                      
                      }
                  } ?>
@@ -118,8 +119,11 @@ if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                           $total_price = $total_price + $row['qty']*$row['product_price'];
                            $total = $row['qty']*$row['product_price'];
-                          echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
-                          echo '<input type="hidden" value="'.$total.'"';
+                          echo "<br/><h4 style='padding-left:10px;' >".$total."</h4><hr>";
+                          echo'<input type="text" name="total" value="'.$total.'">';
+                       
+                          echo'<input type="text" name="user" value="'.$row['user_id'].'">';
+                          echo'<input type="text" name="p_id" value="'.$row['p_id'].'">';
                        
                           
 
@@ -144,6 +148,7 @@ if(mysqli_num_rows($result)){
                 <label>Delivery Address </label>
                 <br>
                 <h4 style="text-transform:capitalize;"><?php echo $street," " ,$add, " ", $add2 ?></h4>
+             
                 <hr>
               </div>
             </div>
@@ -176,6 +181,7 @@ if(mysqli_num_rows($result)){
             <div class="col-md-12" style="text-align:right">
                <?php
                     echo ' Total Price <h4>PHP ',$total_price,'</h4>';
+                    echo'<input type="text" name="total_price" value="'.$total_price.'">';
                     ?></label>
             
            <table>
