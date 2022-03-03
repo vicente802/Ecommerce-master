@@ -118,15 +118,9 @@ if(mysqli_num_rows($result)){
                          while($row = mysqli_fetch_array($result)){
                           $total_price = $total_price + $row['qty']*$row['product_price'];
                            $total = $row['qty']*$row['product_price'];
-<<<<<<< HEAD
                           echo "<h4 style='padding-left:10px;' >",$total,"</h4>";
                           echo '<input type="text" value="'.$total.'"';
                        
-=======
-?><br><?php
-                          echo "<h4 style='padding-left:20px;' >",$total,"</h4><hr>";
-
->>>>>>> bbdb77c517811cef957b17b5e6e63705b31e654b
                           
 
                          }
