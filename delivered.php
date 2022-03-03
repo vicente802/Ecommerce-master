@@ -27,7 +27,7 @@ if(!isset($_SESSION["uid"])){
 				padding: 10px;
 				border-bottom:4px solid red;
 				
-				width:221px;
+				width:175px;
 				background: transparent;
 			}
 			.row a button:hover{
@@ -127,19 +127,19 @@ if(!isset($_SESSION["uid"])){
 													
 
 													<form action="action.php" method="POST">
-													<input type="text" name="order_id" value="<?php echo $order_id?>">
-													<input type="text" name="user_id" value="<?php echo $user_id?>">
-													<input type="text" name="product_price" value="<?php echo $product_price?>">
-													<input type="text" name="product_id" value="<?php echo $product_id?>">
-													<input type="text" name="qty" value="<?php echo $qty?>">
-													<input type="text" name="total" value="<?php echo $total?>">
-													<input type="text" name ="trx_id" value="<?php echo $trx_id?>">
-													<input type="text" name="product_title" value="<?php echo $product_title?>">
-													<input type="text" name="shipped" value="<?php echo $shipped?>">
-													<input type="text" name ="cancel" value="<?php echo $cancel?>">
-													<input type="text" name ="receive" value="<?php echo $receive?>">
-													<input type="text" name ="desc" value="<?php echo $desc?>">
-													<input type="text" name ="email" value="<?php echo $email?>">
+													<input type="hidden" name="order_id" value="<?php echo $order_id?>">
+													<input type="hidden" name="user_id" value="<?php echo $user_id?>">
+													<input type="hidden" name="product_price" value="<?php echo $product_price?>">
+													<input type="hidden" name="product_id" value="<?php echo $product_id?>">
+													<input type="hidden" name="qty" value="<?php echo $qty?>">
+													<input type="hidden" name="total" value="<?php echo $total?>">
+													<input type="hidden" name ="trx_id" value="<?php echo $trx_id?>">
+													<input type="hidden" name="product_title" value="<?php echo $product_title?>">
+													<input type="hidden" name="shipped" value="<?php echo $shipped?>">
+													<input type="hidden" name ="cancel" value="<?php echo $cancel?>">
+													<input type="hidden" name ="receive" value="<?php echo $receive?>">
+													<input type="hidden" name ="desc" value="<?php echo $desc?>">
+													<input type="hidden" name ="email" value="<?php echo $email?>">
 													
 
 													<tr><td>Product Name</td><td><b><?php echo $row["product_title"]; ?></b> </td></tr>
