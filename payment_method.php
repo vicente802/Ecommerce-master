@@ -24,5 +24,10 @@ $total = $_SESSION['total'];
         header('location:gcash.php');
 
     }
+    if($payment_option =="cod"){
+       
+                header('location:cashondelivery.php');
+        
+            }
 }
 ?>

@@ -181,7 +181,7 @@ if(mysqli_num_rows($result)){
             <div class="col-md-12" style="text-align:right">
                <?php
                     echo ' Total Price <h4>PHP ',$total_price,'</h4>';
-                    echo'<input type="text" name="total_price" value="'.$total_price.'">';
+                    echo'<input type="hidden" name="total_price" value="'.$total_price.'">';
                     ?></label>
             
            <table>

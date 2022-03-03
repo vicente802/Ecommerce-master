@@ -102,7 +102,7 @@ if (isset($_GET["register"])) {
 							<div class="col-md-12">
 								<label for="address2">Municipality/City</label>
 								<br>
-								<select value="Municipality" id="address2" name="address2" style="width:500px; height:40px; font-size:20px;"><option value="Select">Select</option><option value="Bulacan City">Bulacan</option><option value="Caloocan City">Caloocan</option><option value="Quezon city">Quezon</option></select>
+								<select value="Municipality" id="address2" name="address2" style="width:500px; height:40px; font-size:20px;"><option value="Select">Select</option><option value="Bulacan City">Bulacan</option><option value="Caloocan City">North Caloocan</option><option value="Quezon city">Quezon</option></select>
 							</div>
 						</div>
 						<p><br/></p>

@@ -9,7 +9,7 @@ $accname = $_POST['accname'];
 
 if(empty($trx_id) || empty($accname)){
 	echo '<script>alert("Input Account Name or Reference Number")</script>';
-	header('../gcash.php');
+	header('../cashondelivery.php');
 }
 else
 {
