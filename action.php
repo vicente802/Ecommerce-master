@@ -326,7 +326,7 @@ if (isset($_POST["Common"])) {
 echo'<div class="row">
 <div class="col-md-8"></div>
 <div class="col-md-4">
-					<button class="btn btn-primary"style=" font-size:30px;">Place Order</button>
+					<button type="submit" class="btn btn-primary"style=" font-size:30px;">Place Order</button>
 					</div>
 					</div></div></form>
 					';
