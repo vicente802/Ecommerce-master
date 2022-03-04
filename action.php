@@ -73,7 +73,7 @@ if(isset($_POST["getProduct"])){
 				<div class='col-md-4'>
 				<form action='viewcart.php' method='POST'>
 							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
+								<div class='panel-heading' >$pro_title</div>
 							
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:160px;'/>

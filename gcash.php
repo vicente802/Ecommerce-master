@@ -166,11 +166,7 @@ if(mysqli_num_rows($result)){
                                         <br> <input type="submit" name="submit" class="btn btn-danger" value="Pay Now">
                                         
                                         <?php         
-                                      if(isset($_POST['submit'])){
-                                          if(empty($_POST['accname'])){
-                                              echo'error';
-                                          }
-                                      }
+                                     
                                       $p_status = "Pending";
                                     $payment_method = "Gcash";
                                       $shipping = "Processing";
