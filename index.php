@@ -79,7 +79,7 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-
+  
 </style>
 </head>
 
@@ -88,6 +88,7 @@ font-size: 1.3em;
 <div class="loader"></div>
 </div>
 <div class="navbar navbar-inverse navbar-fixed-top">
+<<<<<<< HEAD
 <div class="container-fluid" style="background-color:black;">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -109,6 +110,8 @@ font-size: 1.3em;
 
 </ul>
 
+=======
+>>>>>>> 9cd12d4f9926a2917d565384ec9371a99bd89f4c
 <ul class="nav navbar-nav navbar-right">
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">

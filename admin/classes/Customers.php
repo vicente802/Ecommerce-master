@@ -96,6 +96,7 @@ mysqli_query($con, "UPDATE processing set shipping='$status', price='$total' whe
 	}
 	if($status == "Cancelled"){
 mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
+mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
 	}
 	if($status == "Preparing..."){
 		
