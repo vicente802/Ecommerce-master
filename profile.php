@@ -144,6 +144,31 @@ if(!isset($_SESSION["uid"])){
 		
 		<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 	</div>
+	<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+                <div class='modal-body' id="detailsModalBody">
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script>
+        $(document).on('click' , '.details-btn' ,function (){
+            var product_id = $(this).attr('id');
+            $.ajax({
+                url: "getProductDetails.php",
+                method: "POST",
+                data: { product_id: product_id },
+                success: function(data) {
+                    $('#detailsModalBody').html(data);
+                    $('#detailsModal').modal('show');
+                }
+            })
+        });
+    </script>
 </body>
 </html>
 

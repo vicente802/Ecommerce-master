@@ -124,7 +124,7 @@ if(mysqli_num_rows($result)){
             </div>
 
             <div class="modal-body">
-                <form action="sms/smsapi.php" method="POST">
+                <form action="gcash/payment_success.php" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -155,7 +155,7 @@ if(mysqli_num_rows($result)){
                                         </div>
                                         <label>Account Name: &nbsp;<input type="text" name="accname" class="form-control"
                                                 style="font-weight:bold; width:fit-content" value=""></label>
-                                        <label>Account Number: &nbsp;<input type="text" class="form-control"
+                                        <label>Account Number: &nbsp;<input type="text" name="number" class="form-control"
                                                 style="font-weight:bold; width:fit-content"
                                                 value="<?php echo $mobile ?>"></label>
                                         <label>Reference Number: &nbsp;<input type="text" minlength="13" name="reference_number"
@@ -166,31 +166,31 @@ if(mysqli_num_rows($result)){
                                         <br> <input type="submit" name="submit" class="btn btn-danger" value="Pay Now">
                                         
                                         <?php         
-                                        $p_status = "Pending";
-                                        $payment_method = "Gcash";
-                                          $shipping = "Processing";
-                                          $cancel = "Cancel";
-                                          $receive="";
-                                          $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
-                                           $result = mysqli_query($con,$combine);
-                            
-                                           
-                                
-                                           $x=0;
-                                           $sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
-                                           $query = mysqli_query($con,$sql);
-                                           while($row=mysqli_fetch_array($query)){
-                                               $x++;
-                                              
-                                          
-                                               echo  	
-                                                   '<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
-                                                      <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
-                                                    <input type="hidden" name="amount_'.$x.'" value="'.$row["product_price"].'">
-                                                    <input type="hidden"  name="quantity_'.$x.'" value="'.$row["qty"].'">
-                                                    <input type="hidden" name="p_status" value="'.$p_status.'">';
-                                               }
-                                   
+                                      
+                $p_status = "Pending";
+                $payment_method = "Gcash";
+              $shipping = "Processing";
+              $cancel = "Cancel";
+              $receive="";
+              $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE u.user_id=$_SESSION[uid]";
+               $result = mysqli_query($con,$combine);
+
+               
+               $x=0;
+               $sql = "SELECT a.product_id,a.product_title,a.product_price,a.product_image,b.id,b.qty FROM products a,cart b WHERE a.product_id=b.p_id AND b.user_id='$_SESSION[uid]'";
+               $query = mysqli_query($con,$sql);
+
+               while($row=mysqli_fetch_array($query)){
+                   $x++;
+                   echo
+                       '<input type="text" name="item_name_'.$x.'" value="'.$row["product_title"].'">
+                          <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
+                        <input type="hidden" name="amount_'.$x.'" value="'.$row["product_price"].'">
+                        <input type="hidden"  name="quantity_'.$x.'" value="'.$row["qty"].'">
+                        <input type="hidden"  name="p_status" value="'.$p_status.'">';
+                   }
+                
+        
                                ?>
 
                                 </form>
