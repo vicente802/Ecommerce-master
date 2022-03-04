@@ -19,9 +19,12 @@ if(!isset($_SESSION["uid"])){
 				#search{width:80%;}
 				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
 			}
+			body{
+				background-color: #c5d4cd;
+			}
 		</style>
 	</head>
-<body>
+<body style=" background-color: #c5d4cd;">
 <div class="wait overlay">
 	<div class="loader"></div>
 </div>
