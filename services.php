@@ -105,7 +105,7 @@ if(isset($_SESSION["uid"])){
 	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid" style="background-color:black;">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 					<span class="sr-only"> navigation toggle</span>
