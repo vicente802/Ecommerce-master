@@ -79,7 +79,7 @@ if(isset($_POST["getProduct"])){
 									<img src='product_images/$pro_image' style='width:160px; height:160px;'/>
 								</div>
 								<div class='panel-heading'>".CURRENCY." $pro_price.00
-								<input type='text' name='prod_id' value=$pro_id>	
+								<input type='hidden' name='prod_id' value=$pro_id>	
 							<input type='submit' style='float:right;' class='btn btn-danger btn-xs' value='Details'>
 								
 							
