@@ -158,7 +158,7 @@ if(mysqli_num_rows($result)){
                                         <label>Account Number: &nbsp;<input type="text" class="form-control"
                                                 style="font-weight:bold; width:fit-content"
                                                 value="<?php echo $mobile ?>"></label>
-                                        <label>Reference Number: &nbsp;<input type="text" name="reference_number"
+                                        <label>Reference Number: &nbsp;<input type="text" min="13" name="reference_number"
                                                 class="form-control" style="font-weight:bold; width:fit-content"
                                                 value=""></label>
                                                 <br>

@@ -80,7 +80,7 @@ if(isset($_POST["getProduct"])){
 								</div>
 								<div class='panel-heading'>".CURRENCY." $pro_price.00
 								<input type='text' name='prod_id' value=$pro_id>	
-							<input type='submit' style='float:right;' class='btn btn-danger btn-xs' value='Show'>
+							<input type='submit' style='float:right;' class='btn btn-danger btn-xs' value='Details'>
 								
 							
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>

@@ -1,6 +1,8 @@
 <?php
 include 'db.php';
+session_start();
 $pro_id = $_POST['prod_id'];
+$user_id = $_SESSION['uid'];
 
    
 
@@ -23,15 +25,15 @@ $pro_id = $_POST['prod_id'];
 <body>
 <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="background:black; color:white;">
         <h2 class="modal-title" id="exampleModalLabel">Order Details</h2>
-        <a href="cart.php"><button type="button" class="close"  aria-label="Close">
+        <a href="profile.php"><button type="button" class="close" style="color:white; opacity:1; margin-top:-15px;" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button></a>
       </div>
       
       <div class="modal-body">
-        <form action="" method="POST">
+        <form action="view.php" method="POST">
           <div class="row">
           <div class="col-md-12">
               <div class="form-group">
@@ -44,35 +46,50 @@ if(mysqli_num_rows($run_query) > 0){
     while($row = mysqli_fetch_array($run_query)){
       $pro_image = $row['product_image'];
       $title = $row['product_title'];
-    
+      $pro_desc = $row['product_desc'];
+      $qty = $row['product_qty'];
+     
      ?>
      <tr>
        
        <td><div class="row">
-         <div class="col-md-10"></div>
-         <div class="col-md">
-           <?php echo "<img src='product_images/$pro_image' style='width:160px; height:160px;'/>"; ?>
+         <div class="col-md-4"></div>
+         <div class="col-md-12" style="border:1px solid black;">
+           <?php echo "<img src='product_images/$pro_image' style='float:center; margin-left:150px; width:160px; height:160px;'/>"; ?>
          </div>
        </div>
-        </td>
-      </tr>
-     <tr>
-       <td><b>Product Name :</b> <?php echo $title ?></td>
-       <td><b>Product Name :</b> <?php echo $title ?></td>
+      </td>
      </tr>
-     <?php
-    echo"	<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>";
+     <tr>
+      <div class="row" >
+        <div class="col-md-1"></div>
+        <div class="col-md-7" >
+       <td><br><b>Product Name :</b><br> <?php echo $title ?></td>
+       <tr>
+       <td><br><b>Description :</b> <br><?php echo $pro_desc ?></td>
+       </tr>
+       </div>
+       </div>
+       </tr>
+       <tr>
+   <td><br><?php
+    echo"	<button pid='$pro_id' style='float:right; width:200px; height:50px; margin-top:10px;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>";
     }
 }
 
 ?>
-        </table>
-        </div>
+</td>
+</tr>
+<input type="text" name="pro_id" value="<?php echo $pro_id ?>">
+<input type="text" name="user_id" value="<?php echo $user_id ?>">
+             </table>
+              </div>
+          </div>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-  
-   
+</div>
 </body>
 
 </html>
