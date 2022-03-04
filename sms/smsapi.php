@@ -16,8 +16,7 @@ if($send==false){
     header('location:../gcash.php?error=itexmo:no response from server');
 }
 else if($send == true){
-    $p_status = $_SESSION['p_status'];
-$accname = $_SESSION['accname'];
+    
 mysqli_query($con,"UPDATE user_info SET verification='$random' WHERE user_id='$user_id'");
 header('location:verification.php');
 
