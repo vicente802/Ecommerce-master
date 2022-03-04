@@ -86,7 +86,7 @@ font-size: 1.3em;
 <div class="loader"></div>
 </div>
 <div class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid" style="background-color:#ce2029;">	
+<div class="container-fluid" style="background-color:green;">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 <span class="sr-only">navigation</span>
