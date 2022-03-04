@@ -21,7 +21,7 @@ if(isset($_SESSION["uid"])){
         /* Base CSS */
         
     
-        
+        }
         img {
             max-width: 100%;
             height: auto;
@@ -103,7 +103,7 @@ if(isset($_SESSION["uid"])){
 
     </style>
 	</head>
-<body>
+<body style=" background-color: #c5d4cd;">
 	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid" style="background-color:black;">	
 			<div class="navbar-header">

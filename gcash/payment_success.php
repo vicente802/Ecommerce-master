@@ -1,21 +1,15 @@
 <?php
-include '../db.php';
+
 session_start();
 $shipping = "Processing";
 $cm_user_id = $_SESSION['uid'];
 $p_st = $_POST['p_status'];
 $trx_id = $_POST['reference_number'];
 $accname = $_POST['accname'];
-$gcash = "SELECT * FROM orders WHERE trx_id='$trx_id'";
-$result = mysqli_query($con,$gcash);
-if(mysqli_num_rows($result)>0){
-echo"ERROR TRANSACTION NUMBER";
-header('location:../error/reference_error.php');
-}
-else{
+
 if(empty($trx_id) || empty($accname)){
 	echo '<script>alert("Input Account Name or Reference Number")</script>';
-	
+	header('location:../gcash.php');
 }
 else
 {
@@ -193,7 +187,7 @@ if(!isset($_SESSION["uid"])){
 			
 				header('../gcash.php');
 		}
-	}
+		
 	}
 ?>
 

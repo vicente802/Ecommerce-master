@@ -79,10 +79,10 @@ require "config/constants.php";
 						<br>
 						
 						
-							<div class="col-md col-xs-2"><b>Product </b></div>
-							<div class="col-md-2 col-xs-1"><b>Description</b></div>
+							<div class="col-md-2 col-xs-2"><b>Product </b></div>
+							<div class="col-md-2 col-xs-1"style="margin-left:41px;"><b>Description</b></div>
 							<div class="col-md-3 col-xs-1"><b>Quantity</b></div>
-							<div class="col-md-1 col-xs-1" style="margin-left:-40px;"><b>Price</b></div>
+							<div class="col-md-1 col-xs-1" style="margin-left:-50px;"><b>Price</b></div>
 							<br>
 							
 						</div>

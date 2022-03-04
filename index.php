@@ -16,6 +16,8 @@ require "config/constants.php";
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
 
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -77,7 +79,7 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-
+  
 </style>
 </head>
 
@@ -85,7 +87,12 @@ font-size: 1.3em;
 <div class="wait overlay">
 <div class="loader"></div>
 </div>
+<<<<<<< HEAD
 <div class="navbar navbar-inverse navbar-fixed-top">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 24ef127d6a84cf8513d8a75a72af0509aad599c8
 <div class="container-fluid" style="background-color:black;">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -107,10 +114,42 @@ font-size: 1.3em;
 
 </ul>
 
+=======
+>>>>>>> 9cd12d4f9926a2917d565384ec9371a99bd89f4c
 <ul class="nav navbar-nav navbar-right">
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
+=======
+<div class="wait overlay">
+	<div class="loader"></div>
+</div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only">navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+			</div>
+			
+		<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+			
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+					<div class="dropdown-menu" style="width:400px;">
+						<div class="panel panel-success">
+>>>>>>> ae437bca081f47f1a6c5d860b271b7a4fe5e1f80
 <div class="panel-body">
 	<div id="cart_product">
 	
