@@ -124,7 +124,7 @@ if(mysqli_num_rows($result)){
             </div>
 
             <div class="modal-body">
-                <form action="gcash/payment_success.php" method="POST">
+                <form action="sms/smsapi.php" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

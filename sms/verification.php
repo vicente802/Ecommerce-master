@@ -5,7 +5,15 @@ $user_id = $_SESSION['uid'];
 if(isset($_POST['submit'])){
     $code = $_POST['code'];
     $sql = "SELECT * FROM user_info WHERE user_id='$user_id'";
-    
+    $result = mysqli_query($con,$result);
+    if(mysqli_num_rows($result)){
+        while($row = mysqli_fetch_array($result)){
+            $ver = $row['verification'];
+        }
+        if($code == $ver){
+            echo 'success';
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
