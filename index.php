@@ -142,7 +142,6 @@ font-size: 1.3em;
 				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
->>>>>>> ae437bca081f47f1a6c5d860b271b7a4fe5e1f80
 <div class="panel-body">
 	<div id="cart_product">
 	
@@ -165,7 +164,7 @@ font-size: 1.3em;
 
 
 <div class="my-5" style="margin-top: 80px;">
-<v class="container">
+<div class="container">
 <div class="row-ml-4">
 <div class="col-md-7">
 <img class="logo" src="imgs/index-logo.PNG" alt="logo" width="650px">
