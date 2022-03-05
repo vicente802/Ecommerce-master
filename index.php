@@ -111,34 +111,6 @@ font-size: 1.3em;
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
-			</div>
-			
-		<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
-				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-			
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
 <div class="panel-body">
 	<div id="cart_product">
 	
@@ -161,7 +133,7 @@ font-size: 1.3em;
 
 
 <div class="my-5" style="margin-top: 80px;">
-<div class="container">
+<v class="container">
 <div class="row-ml-4">
 <div class="col-md-7">
 <img class="logo" src="imgs/index-logo.PNG" alt="logo" width="650px">
