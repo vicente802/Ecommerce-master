@@ -71,7 +71,6 @@ if (isset($_POST["getProduct"])) {
             $pro_desc = $row['product_desc'];
             echo "
 				<div class='col-md-4'>
-				<form action='viewcart.php' method='POST' style='background:#32fc9e; color:black'>
 							<div class='panel panel-info' >
 								<div class='panel-heading' style='background:#32fc9e; color:black' >$pro_title</div>
 		
@@ -82,8 +81,6 @@ if (isset($_POST["getProduct"])) {
 						
 								<div class='panel-heading'>".CURRENCY." $pro_price.00
 								<input type='hidden' name='prod_id' value=$pro_id>	
-						
-
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 									<button style='float:right;' id='$pro_id' class='btn btn-primary btn-xs details-btn' data-toggle='modal' data-target=''>details</button>
 								</div>
