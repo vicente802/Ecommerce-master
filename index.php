@@ -16,8 +16,6 @@ require "config/constants.php";
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
 
-
-
 html {
   scroll-behavior: smooth;
 }
@@ -79,7 +77,7 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-  
+
 </style>
 </head>
 
@@ -87,9 +85,8 @@ font-size: 1.3em;
 <div class="wait overlay">
 <div class="loader"></div>
 </div>
-
 <div class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid" style="background-color:black;">	
+<div class="container-fluid">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 <span class="sr-only">navigation</span>
@@ -97,52 +94,23 @@ font-size: 1.3em;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a href="#" class="navbar-brand" style="margin-left: 5px; color:block;">Hardcore Motorshop</a>
+<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
 </div>
 <div class="collapse navbar-collapse" id="collapse">
 <ul class="nav navbar-nav">
-<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 
-<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+<li><a href="services/services.php"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
+<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
 
 
 </ul>
 
 <ul class="nav navbar-nav navbar-right">
-<li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+<li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
-			</div>
-			
-		<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
-				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-			
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-
 <div class="panel-body">
 	<div id="cart_product">
 	
@@ -152,7 +120,7 @@ font-size: 1.3em;
 </div>
 </div>
 </li>
-<li><a href="login_form.php" ><span class="glyphicon glyphicon-user">&nbsp;</span>SignIn</a>
+<li><a href="login_form.php" ><span class="glyphicon glyphicon-user"></span>SignIn</a>
 
 </li>
 </ul>
@@ -179,7 +147,7 @@ font-size: 1.3em;
 <a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
-<div class="container-fluid"></div>
+
 <div class="container-fluid text-center">
   
 	<?php include 'include/products.php';?>
@@ -257,7 +225,7 @@ include "include/services.php";
 <br>
 <br>
 
-<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
 
 </body>
 </html>	
