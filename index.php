@@ -87,6 +87,7 @@ font-size: 1.3em;
 <div class="wait overlay">
 <div class="loader"></div>
 </div>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid" style="background-color:black;">	
 <div class="navbar-header">
@@ -141,6 +142,7 @@ font-size: 1.3em;
 				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
+>>>>>>> ae437bca081f47f1a6c5d860b271b7a4fe5e1f80
 <div class="panel-body">
 	<div id="cart_product">
 	
