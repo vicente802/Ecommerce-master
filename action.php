@@ -315,10 +315,18 @@ if (isset($_POST["Common"])) {
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
             ?>
-            <div class="col md-2"><?php
+            <div class="col md-5"><?php
             if (!isset($_SESSION["uid"])) {
-                echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
-							</form>';
+                
+                echo '
+                <div class="container">
+                <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-3"><input type="submit" style="float:center;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
+                </div></form>
+                </div>
+                </div>
+                </div>';
                 ?></div>
                 <?php
             } else if (isset($_SESSION["uid"])) {

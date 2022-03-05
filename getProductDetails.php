@@ -18,8 +18,8 @@ if (isset($_POST["product_id"])) {
             $pro_desc = $row['product_desc'];
             echo "
 			    <img src='product_images/$pro_image' style='width:100%; height:350px;'/>
-			      <h1>$pro_title</h1>
-                <p>$pro_desc</p>
+			    <label>Product Name </label><br> $pro_title<br><br>
+                <label>Description </label><br>$pro_desc<br><br>
 			";
 
         }
