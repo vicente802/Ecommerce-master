@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
             $ver = $row['verification'];
             
         }
-        if($code == $ver){
+        if($code == $ver){ 
             echo 'success';
 
         
@@ -26,16 +26,22 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Autofocus Field</title>
+	<link rel="stylesheet" type="text/css" href="verification.css">
 </head>
 <body>
-    <form action="" method="POST">
-    
-    Enter OTP CODE<input type="text" name="code">
-        <input type="submit" name="submit">
-    </form>
+	<div class="container">
+		<h1>ENTER OTP</h1>
+		<div class="userInput">
+			<input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+			<input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+			<input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+			<input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+			<input type="text" id="fifth" maxlength="1">
+		</div>
+		<button>CONFIRM</button>
+	</div>
 </body>
 </html>

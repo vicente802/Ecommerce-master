@@ -217,6 +217,19 @@ include "include/services.php";
 
 
 <div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
-
+<script>
+        $(document).on('click' , '.details-btn' ,function (){
+            var product_id = $(this).attr('id');
+            $.ajax({
+                url: "getProductDetails.php",
+                method: "POST",
+                data: { product_id: product_id },
+                success: function(data) {
+                    $('#detailsModalBody').html(data);
+                    $('#detailsModal').modal('show');
+                }
+            })
+        });
+    </script>
 </body>
 </html>	
