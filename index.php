@@ -148,8 +148,9 @@ font-size: 1.3em;
 </div>
 </div>				
 
+<div class="container-fluid"></div>
 <div class="container-fluid text-center">
-  
+ 
 	<?php include 'include/products.php';?>
 </div>
 
