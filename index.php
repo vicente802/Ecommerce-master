@@ -149,11 +149,13 @@ font-size: 1.3em;
 </div>				
 
 <div class="container-fluid text-center">
-  
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md-10">
 	<?php include 'include/products.php';?>
 </div>
-
-<div></div>
+</div>
+</div>
 
 
 <div class="container-fluid text-center" id="carousel" style="margin-top: 100px;">

@@ -21,7 +21,7 @@ if(isset($_SESSION["uid"])){
         /* Base CSS */
         
     
-        }
+        
         img {
             max-width: 100%;
             height: auto;
