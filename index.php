@@ -150,13 +150,7 @@ font-size: 1.3em;
 
 <div class="container-fluid"></div>
 <div class="container-fluid text-center">
-<<<<<<< HEAD
  
-=======
-  <div class="row">
-    <div class="col-md"></div>
-    <div class="col-md-10">
->>>>>>> ff0ac66c0f14ed75d5d403ac3b7a74aad796c4f8
 	<?php include 'include/products.php';?>
 </div>
 </div>
