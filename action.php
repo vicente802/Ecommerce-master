@@ -74,23 +74,15 @@ if (isset($_POST["getProduct"])) {
 				<form action='viewcart.php' method='POST' style='background:#32fc9e; color:black'>
 							<div class='panel panel-info' >
 								<div class='panel-heading' style='background:#32fc9e; color:black' >$pro_title</div>
-				<form action='viewcart.php' method='POST'>
-							<div class='panel panel-info'>
-								<div class='panel-heading' >$pro_title</div>
-							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
+		
 							
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:160px;'/>
 								</div>
-
-								<div class='panel-heading' style='background:#32fc9e; color:black'>".CURRENCY." $pro_price.00
-								<input type='text' name='prod_id' value=$pro_id>	
-							<input type='submit' style='float:right;' class='btn btn-danger btn-xs' value='Show'>
+						
 								<div class='panel-heading'>".CURRENCY." $pro_price.00
 								<input type='hidden' name='prod_id' value=$pro_id>	
-							<input type='submit' style='float:right;' class='btn btn-danger btn-xs' value='Details'>
-								<div class='panel-heading'>" . CURRENCY . " $pro_price.00
+						
 
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 									<button style='float:right;' id='$pro_id' class='btn btn-primary btn-xs details-btn' data-toggle='modal' data-target=''>details</button>
