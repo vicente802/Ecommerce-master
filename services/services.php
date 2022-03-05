@@ -1,4 +1,5 @@
 <?php
+require "../config/constants.php";
 session_start();
 if(!isset($_SESSION["uid"])){
 	
@@ -114,6 +115,46 @@ if (isset($_POST["count_item"])) {
     </style>
 	</head>
 <body>
+	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only"> navigation toggle</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+			</div>
+		<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="../index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="../index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="../contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="../cart1.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+					<div class="dropdown-menu" style="width:400px;">
+						<div class="panel panel-success">
+							
+							<div class="panel-body">
+								<div id="cart_product">
+								
+								</div>
+							</div>
+							<div class="panel-footer"></div>
+						</div>
+					</div>
+				</li>
+				
+                <li><a href="../login_form.php" ><span class="glyphicon glyphicon-user">&nbsp;</span>SignIn</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>	
 
 
     <div class="container">
@@ -130,16 +171,11 @@ if (isset($_POST["count_item"])) {
             <div class="col-md-8">
                 <div class="single-service">
                     <div class="service-bg
-                        service-bg-1" style=" background: url('./imgs/11.jpg');
+                        service-bg-1" style=" background: url('../imgs/11.jpg');
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center;">
-                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
-<div class="content">Testing
-  <ul>
-    <li>first</li>
-  </ul>
-</div>
+                    
                         <h2>BATTERY REPLACEMENT/INSTALL</h2>
                     </div>
                     <div class="service-text">
@@ -153,7 +189,7 @@ if (isset($_POST["count_item"])) {
                 <div class="single-service">
                     <div class="service-bg
                         service-bg-2" style="
-                        background: url('./imgs/2.jpg');
+                        background: url('../imgs/2.jpg');
                         -webkit-background-size: cover;
                              background-size: cover;
             background-position: center;
@@ -172,7 +208,7 @@ if (isset($_POST["count_item"])) {
                 <div class="single-service">
                     <div class="service-bg
                         service-bg-3" style="
-            background: url('./imgs/3.jpg');
+            background: url('../imgs/3.jpg');
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center;
@@ -191,7 +227,7 @@ if (isset($_POST["count_item"])) {
                 <div class="single-service">
                     <div class="service-bg
                         service-bg-4" style="
-            background: url('./imgs/4.jpg');
+            background: url('../imgs/4.jpg');
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center;
@@ -213,7 +249,7 @@ Tire Rotation & Balance</p>
                 <div class="single-service">
                     <div class="service-bg
                         service-bg-5" style="
-            background: url('./imgs/5.jpg');
+            background: url('../imgs/5.jpg');
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center;
@@ -247,7 +283,7 @@ Tire Rotation & Balance</p>
                           <br>
                           <a href="#"><i style="color:white; font-size:30px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;<u style="font-size: 20px;">09993827634</u></i></a>
                           <br>
-                          <img src="./imgs/G1.png" style="width:50px; margin-left:-15px;">&nbsp;&nbsp;<u style="font-size: 20px; color:white;">09993827634 Ariel A.</u>
+                          <img src="../imgs/G1.png" style="width:50px; margin-left:1px;">&nbsp;&nbsp;<u style="font-size: 20px; color:white;">09993827634 Ariel A.</u>
                           
                   </ul>  
                     </div>
