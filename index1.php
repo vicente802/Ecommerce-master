@@ -15,7 +15,15 @@ if(isset($_SESSION["uid"])){
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<style></style>
+		<style>
+				@media screen and (max-width:480px){
+				#search{width:80%;}
+				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
+			}
+			body{
+				background-color: #c5d4cd;
+			}
+		</style>
 	</head>
 <body>
 <div class="wait overlay">
@@ -95,8 +103,15 @@ if(isset($_SESSION["uid"])){
 					<div class="col-md-12 col-xs-12" id="product_msg">
 					</div>
 				</div>
-				<div class="panel panel-info">
-					<div class="panel-heading">Products</div>
+			
+				<div class="panel panel-info" id="scroll">
+					
+					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
+					<li style="float:right;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+			<li style="width:300px; float:right"><input type="text" class="form-control" id="search"></li>
+				
+		</ul></div>
+			
 					<div class="panel-body">
 						<dv id="get_product">
 							<!--Here we get product jquery Ajax Request-->
