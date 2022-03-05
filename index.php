@@ -111,7 +111,6 @@ font-size: 1.3em;
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart"></span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-<<<<<<< HEAD
 <div class="wait overlay">
 	<div class="loader"></div>
 </div>
@@ -140,8 +139,6 @@ font-size: 1.3em;
 				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
-=======
->>>>>>> 1b0a57d283d4bb37e27a8d1b3c59333a439f2d84
 <div class="panel-body">
 	<div id="cart_product">
 	
