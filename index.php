@@ -89,7 +89,6 @@ font-size: 1.3em;
 </div>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-
 <div class="container-fluid" style="background-color:black;">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -111,12 +110,10 @@ font-size: 1.3em;
 
 </ul>
 
-
 <ul class="nav navbar-nav navbar-right">
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-
 <div class="wait overlay">
 	<div class="loader"></div>
 </div>
