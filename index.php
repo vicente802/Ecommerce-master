@@ -87,9 +87,9 @@ font-size: 1.3em;
 <div class="wait overlay">
 <div class="loader"></div>
 </div>
-<<<<<<< HEAD
+
 <div class="navbar navbar-inverse navbar-fixed-top">
-<<<<<<< HEAD
+
 <div class="container-fluid" style="background-color:black;">	
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -111,13 +111,12 @@ font-size: 1.3em;
 
 </ul>
 
-=======
->>>>>>> 9cd12d4f9926a2917d565384ec9371a99bd89f4c
+
 <ul class="nav navbar-nav navbar-right">
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-=======
+
 <div class="wait overlay">
 	<div class="loader"></div>
 </div>
@@ -146,7 +145,7 @@ font-size: 1.3em;
 				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
->>>>>>> ae437bca081f47f1a6c5d860b271b7a4fe5e1f80
+
 <div class="panel-body">
 	<div id="cart_product">
 	
