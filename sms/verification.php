@@ -84,16 +84,14 @@ if(isset($_POST['submit'])){
    </div>
 
    <div class="input-container d-flex flex-row justify-content-center mt-2">
-       <input type="text" class="m-1 text-center form-control rounded" maxlength="1">
-       <input type="text" class="m-1 text-center form-control rounded" maxlength="1">
-       <input type="text" class="m-1 text-center form-control rounded" maxlength="1">
-       <input type="text" class="m-1 text-center form-control rounded" maxlength="1">
-       <input type="text" class="m-1 text-center form-control rounded" maxlength="1">
-   </div>
+   <div class="userInput">
+			<input type="number"style="width:200px;
+            "class="form-control"id='ist' min="1"maxlength="13" onkeyup="clickEvent(this,'sec')">
+
 
 <div>
     <small>
-        didn't get the otp
+        didn't get the OTP
        <a href="#" class="text-decoration-none">Resend</a>
     </small>
 </div>
