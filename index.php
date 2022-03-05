@@ -13,6 +13,7 @@ require "config/constants.php";
 <script src="js/bootstrap.min.js"></script>
 <script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
 
@@ -77,7 +78,39 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-
+.social-media ul{
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, 50%);
+  display: flex;
+  list-style-type: none;
+}
+.social-menu ul li {
+  list-style-type: none;
+  margin: 0 15px;
+  align-items: center;
+}
+.social-menu ul li .fa{
+  font-size: 30px;
+  line-height: 60px;
+  transition: .6s;
+  color: #000;
+}
+.social-menu ul li a{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  transition: .6s;
+  box-shadow:0 5px 4px rgba (0,0,0,.5);
+} 
+.social-menu ul li a:hover{
+  transform: translate(0, -10px);
+}
 </style>
 </head>
 
@@ -225,7 +258,13 @@ include "include/services.php";
 <br>
 <br>
 <br>
-
+<div class="social-menu " align="center">
+        <ul>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-phone"></i></a></li>
+            <li><a href=""><i class="fa fa-money"></i></a></li>
+        </ul>
+    </div>
 <div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <script>
         $(document).on('click' , '.details-btn' ,function (){
