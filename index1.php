@@ -74,11 +74,12 @@ if(isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
-	
 	<div class="container-fluid">
+		
 		<div class="row">
+			
 			<div class="col-md-1"></div>
-			<div class="col-md-2 col-xs-12">
+			<div class="col-md-2">
 				<div id="get_category">
 				</div>
 				<!--<div class="nav nav-pills nav-stacked">
@@ -98,12 +99,13 @@ if(isset($_SESSION["uid"])){
 					<li><a href="#">Categories</a></li>
 				</div> -->
 			</div>
-			<div class="col-md-8 col-xs-12">
+			<div class="col-md-8">	
 				<div class="row">
+					
 					<div class="col-md-12 col-xs-12" id="product_msg">
+						
 					</div>
 				</div>
-			
 				<div class="panel panel-info" id="scroll">
 					
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
@@ -111,20 +113,68 @@ if(isset($_SESSION["uid"])){
 			<li style="width:300px; float:right"><input type="text" class="form-control" id="search"></li>
 				
 		</ul></div>
-			
 					<div class="panel-body">
-						<dv id="get_product">
+						<div id="get_product">
 							<!--Here we get product jquery Ajax Request-->
-						</dv>
-						
+						</div>
+						<!--<div class="col-md-4">
+							<div class="panel panel-info">
+								<div class="panel-heading">Samsung Galaxy</div>
+								<div class="panel-body">
+									<img src="product_images/images.JPG"/>
+								</div>
+								<div class="panel-heading">$.500.00
+									<button style="float:right;" class="btn btn-danger btn-xs">AddToCart</button>
+								</div>
+							</div>
+						</div> -->
 					</div>
-					<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+					<div class="row">
+			<div class="col-md-16">
+				<center>
+					<ul class="pagination" id="pageno">
+						<li><a href="#">1</a></li>
+						
+					</ul>
+				</center>
+			
+		
+				
+			</div>
+		</div>
 				</div>
 			</div>
-			<div class="col-md-1"></div></div>
-			
+			<div class="col-md-1"></div>
 		</div>
+		
+		<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 	</div>
+	<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+                <div class='modal-body' id="detailsModalBody">
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script>
+        $(document).on('click' , '.details-btn' ,function (){
+            var product_id = $(this).attr('id');
+            $.ajax({
+                url: "getProductDetails.php",
+                method: "POST",
+                data: { product_id: product_id },
+                success: function(data) {
+                    $('#detailsModalBody').html(data);
+                    $('#detailsModal').modal('show');
+                }
+            })
+        });
+    </script>
+	
 </body>
 </html>
 
