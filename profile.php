@@ -2,7 +2,7 @@
 require "config/constants.php";
 session_start();
 if(!isset($_SESSION["uid"])){
-	header("location:index.php");
+	header("location:login_form.php");
 }
 ?>
 <!DOCTYPE html>
