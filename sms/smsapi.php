@@ -6,6 +6,7 @@ $user_id = $_SESSION['uid'];
 $p_status = $_POST['p_status'];
 $accname = $_POST['accname'];
 $reference_number = $_POST['reference_number'];
+$number = $_POST['number'];
 $random = rand();
     $receive = $_POST['number'];
     $message = $random;
@@ -17,13 +18,18 @@ if($send==false){
     header('location:../gcash.php?error=itexmo:no response from server');
 }
 else if($send == true){
-    $reference_number = $_SESSION['reference_number'];
+  $_SESSION['reference_number'] =   $reference_number ;
+  $_SESSION['number'] = $number ;
 mysqli_query($con,"UPDATE user_info SET verification='$random' WHERE user_id='$user_id'");
 header('location:verification.php');
 
 }
+else if(empty($_POST['accname']) || empty($_POST['reference_number']) || empty($_POST['number'])){
+    echo"<script>alert('fill up the form')</script>";
+    header('location: ../gcash.php');
+}
 else{
-    header('location: ../index.php?error=something went wrong');
+    header('location: ../gcash.php?error=something went wrong');
 }
 
 ?>
