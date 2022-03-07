@@ -1,23 +1,28 @@
 
 <?php
-if(!isset($_SESSION['uid'])){
-    header('location:../login_form.php');
-}
+
 session_start();
 include '../db.php';
+include '../sms/sms.php';
 $reference_number = $_SESSION['reference_number'];
 $number = $_SESSION['number'];
 $user_id = $_SESSION['uid'];
-$sql1 = "SELECT c.p_id,c.user_id,c.qty,p.product_id FROM cart c JOIN products p  on c.p_id=p.product_id WHERE user_id = $user_id";
+$p_status ="Pending";
+$payment_method = "Gcash";
+$shipping = "Processing";
+$cancel = "Cancel";
+$sql1 = "SELECT c.p_id,c.user_id,c.qty,p.product_id,p.product_price FROM cart c JOIN products p  on c.p_id=p.product_id WHERE user_id = $user_id";
 $result1 = mysqli_query($con,$sql1);
 if(mysqli_num_rows($result1)){
     while($row = mysqli_fetch_array($result1)){
         $pro_id = $row['product_id'];
         $qty = $row['qty'];
-        
+        $product_price = $row['product_price'];
     }
 }
-
+if(!isset($_SESSION['uid'])){
+    header('location:../login_form.php');
+}
 if(isset($_POST['submit'])){
     $code = $_POST['code'];
     $sql = "SELECT * FROM user_info WHERE user_id='$user_id'";
@@ -28,10 +33,25 @@ if(isset($_POST['submit'])){
             
         }
         if($code == $ver){ 
-            echo 'success';
-         mysqli_query($con, "INSERT INTO orders(user_id,product_id,qty,trx_id)values('$user_id','$pro_id','$qty','$reference_number')");
-            }
+          $total = 0;
+          $total = $total + $qty * $product_price;
+            
+         mysqli_query($con, "INSERT INTO orders(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)values('$user_id','$pro_id','$qty','$reference_number','$p_status','$total','$payment_method','$shipping','$cancel')");
+    
+             $receive = $number;
+             $message = "Your Order Has been processed wait 1 up to 3 days to be prepared";
+             $smsapicode = "TR-HARDC016566_XSHU1";
+             $passcode ="g!{#2!6%t5";
+                 $send = new ItextMoController();
+                 $send->itexmo($receive,$message,$smsapicode,$passcode);
         }
+        }
+       $sql2 =mysqli_query($con, "SELECT * FROM order where user_id=$user_id");
+       if(mysqli_num_rows($sql2)){
+           while($row1 = mysqli_fetch_array($sql2)){
+            
+           }
+       }
         else{
             echo 'Error';
         }
