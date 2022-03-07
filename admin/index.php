@@ -239,7 +239,7 @@ if(mysqli_num_rows($count)){
     echo $total;
 }
 
-?>.0</h1><hr style="color : green; border:2px solid black;">
+?>.0</h1><hr style="color:green; border:2px solid black;">
 
                         <h3>Total Sales</h3>
                     </div>
@@ -340,7 +340,7 @@ if(mysqli_num_rows($count)){
 </body>
 
 </html>
-<div class="panel-footer" style="text-align: center;"> Hardcore Motorshop &copy; 2022</div>
+<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <?php include "./templates/footer.php"; ?>
 
 

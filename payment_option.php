@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include 'db.php';
 
 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE c.user_id='$_SESSION[uid]'";

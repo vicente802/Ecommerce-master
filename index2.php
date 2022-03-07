@@ -81,13 +81,12 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-
 </style>
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
-		<div class="container-fluid" style="background-color:black;">	
+<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top" >
+		<div class="container-fluid" style="background-color:lightblue">	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 					<span class="sr-only"> navigation toggle</span>
@@ -95,11 +94,11 @@ font-size: 1.3em;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-        <a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+        <a href="#" class="navbar-brand" >Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a class="Home" href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
