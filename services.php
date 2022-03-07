@@ -124,7 +124,7 @@ if(isset($_SESSION["uid"])){
 			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
