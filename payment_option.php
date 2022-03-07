@@ -1,4 +1,7 @@
 <?php 
+if(!isset($_SESSION['uid'])){
+	header('location:login_form.php');
+}
 session_start();
 
 include 'db.php';

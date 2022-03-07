@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['uid'])){
+	header('location:../login_form.php');
+}
 
 session_start();
 $shipping = "Processing";
@@ -15,9 +18,8 @@ else
 {
 
 
-	
-if(!isset($_SESSION["uid"])){
-	header("location:./index1.php");
+
+
 }
 
 	if ($p_st == "Pending") {
