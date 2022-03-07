@@ -33,10 +33,11 @@ if(mysqli_num_rows($result)){
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 	
-		<script src="js/jquery2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="main.js"></script>
-
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<script src="js/jquery2.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +82,7 @@ if(mysqli_num_rows($result)){
 
     .modal-title {
         text-align: center;
-        margin-left: 145px;
+        margin-left:120px;
         color: white;
     }
 
@@ -108,26 +109,64 @@ if(mysqli_num_rows($result)){
 </head>
 
 <body>
+<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only"> navigation toggle</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        <a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+			</div>
+		<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+				</li>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+					<ul class="dropdown-menu">
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li class="divider"></li>
+						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+</div>
     <br>
     <div class="wait overlay">
 	<div class="loader"></div>
 </div>
+<div class="container">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
 
                 <h2 class="modal-title" id="exampleModalLabel" style="text-align: center;">Pay via Gcash</h2>
 
-                <a href="payment_option.php"><button type="button" class="close" aria-label="Close">
+                <a href="payment_option.php"><button type="button" style="margin-left: 100px;;" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button></a>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body" >
                 <form action="sms/smsapi.php" method="POST">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div class="form-group" >
                                 
 
                                     <label>Account Name: &nbsp;<input type="text" class="form-control"
@@ -138,7 +177,7 @@ if(mysqli_num_rows($result)){
                                             style="background:transparent; font-size:20px;line-height:200px; color:white;  border:none;  font-weight:bold;"
                                             disabled style="font-weight:bold; width:fit-content"
                                             value="09993827634"></label>
-                                    <div class="qr" style="text-align: center; margin-top:-180px; margin-left:250px">
+                                    <div class="qr" style="text-align: center; margin-top:-150px; margin-left:250px">
                                         <h4 style="color:white; font-weight:bold; font-size:15px;">SCAN TO PAY HERE</h4>
                                         <img src="imgs/qr.jpg" width="150">
                                     </div>
@@ -154,10 +193,10 @@ if(mysqli_num_rows($result)){
 
                                         </div>
                                         <label>Account Name: &nbsp;<input type="text" name="accname" class="form-control"
-                                                style="font-weight:bold; width:fit-content" value=""></label>
+                                                style="font-weight:bold; width:fit-content" value=""></label><br>
                                         <label>Account Number: &nbsp;<input type="text" name="number" class="form-control"
                                                 style="font-weight:bold; width:fit-content"
-                                                value="<?php echo $mobile ?>"></label>
+                                                value="<?php echo $mobile ?>"></label><br>
                                         <label>Reference Number: &nbsp;<input type="text" minlength="13" name="reference_number"
                                                 class="form-control" style="font-weight:bold; width:fit-content"
                                                 value=""></label>
@@ -176,7 +215,10 @@ if(mysqli_num_rows($result)){
 
                                 </form>
                             </div>
-                            </center>
+                            </center></div>
+    </div>
+</div>
+
 </body>
 
 </html>

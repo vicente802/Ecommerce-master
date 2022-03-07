@@ -36,7 +36,6 @@ if(isset($_POST['submit'])){
 		<script src="../main.js"></script>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Autofocus Field</title>
 	<link rel="stylesheet" type="text/css" href="verification.css">
@@ -76,10 +75,11 @@ if(isset($_POST['submit'])){
 <div class="card text-center">
 
    <div class="card-header p-5">
-       <img src="mobile.png">
+       <img src=".img.png">
        <h5 class="mb-2">OTP VERIFICATION</h5>
        <div>
-           <small>code has been send to ******1258</small>
+           <small>code has been sent successfully</small>
+     
        </div>
    </div>
 
