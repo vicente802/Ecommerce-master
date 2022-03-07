@@ -175,12 +175,7 @@ if (isset($_POST["count_item"])) {
             -webkit-background-size: cover;
             background-size: cover;
             background-position: center;">
-                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
-<div class="content">Testing
-  <ul>
-    <li>first</li>
-  </ul>
-</div>
+                    
                         <h2>BATTERY REPLACEMENT/INSTALL</h2>
                     </div>
                     <div class="service-text">

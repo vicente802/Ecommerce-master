@@ -13,10 +13,9 @@ require "config/constants.php";
 <script src="js/bootstrap.min.js"></script>
 <script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
-
-
 
 html {
   scroll-behavior: smooth;
@@ -79,7 +78,39 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
-  
+.social-media ul{
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, 50%);
+  display: flex;
+  list-style-type: none;
+}
+.social-menu ul li {
+  list-style-type: none;
+  margin: 0 15px;
+  align-items: center;
+}
+.social-menu ul li .fa{
+  font-size: 30px;
+  line-height: 60px;
+  transition: .6s;
+  color: #000;
+}
+.social-menu ul li a{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  transition: .6s;
+  box-shadow:0 5px 4px rgba (0,0,0,.5);
+} 
+.social-menu ul li a:hover{
+  transform: translate(0, -10px);
+}
 </style>
 </head>
 
@@ -87,13 +118,16 @@ font-size: 1.3em;
 <div class="wait overlay">
 <div class="loader"></div>
 </div>
-<<<<<<< HEAD
 <div class="navbar navbar-inverse navbar-fixed-top">
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 24ef127d6a84cf8513d8a75a72af0509aad599c8
 <div class="container-fluid" style="background-color:black;">	
+=======
+<div class="container-fluid">	
+>>>>>>> 4c57d34472c37adfda042e562b3a67289b1b8eae
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 <span class="sr-only">navigation</span>
@@ -101,7 +135,7 @@ font-size: 1.3em;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a href="#" class="navbar-brand" style="margin-left: 5px; color:block;">Hardcore Motorshop</a>
+<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
 </div>
 <div class="collapse navbar-collapse" id="collapse">
 <ul class="nav navbar-nav">
@@ -114,42 +148,10 @@ font-size: 1.3em;
 
 </ul>
 
-=======
->>>>>>> 9cd12d4f9926a2917d565384ec9371a99bd89f4c
 <ul class="nav navbar-nav navbar-right">
 <li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 <div class="dropdown-menu" style="width:400px;">
 <div class="panel panel-success">
-=======
-<div class="wait overlay">
-	<div class="loader"></div>
-</div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
-			</div>
-			
-		<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
-				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-			
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
->>>>>>> ae437bca081f47f1a6c5d860b271b7a4fe5e1f80
 <div class="panel-body">
 	<div id="cart_product">
 	
@@ -186,13 +188,14 @@ font-size: 1.3em;
 <a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
+
 <div class="container-fluid"></div>
 <div class="container-fluid text-center">
-  
+ 
 	<?php include 'include/products.php';?>
 </div>
-
-<div></div>
+</div>
+</div>
 
 
 <div class="container-fluid text-center" id="carousel" style="margin-top: 100px;">
@@ -263,8 +266,27 @@ include "include/services.php";
 <br>
 <br>
 <br>
-
+<div class="social-menu " align="center">
+        <ul>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-phone"></i></a></li>
+            <li><a href=""><i class="fa fa-money"></i></a></li>
+        </ul>
+    </div>
 <div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
-
+<script>
+        $(document).on('click' , '.details-btn' ,function (){
+            var product_id = $(this).attr('id');
+            $.ajax({
+                url: "getProductDetails.php",
+                method: "POST",
+                data: { product_id: product_id },
+                success: function(data) {
+                    $('#detailsModalBody').html(data);
+                    $('#detailsModal').modal('show');
+                }
+            })
+        });
+    </script>
 </body>
 </html>	

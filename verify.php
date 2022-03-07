@@ -28,7 +28,7 @@ $unit = $_POST['unit'];
 		$ip_add = getenv("REMOTE_ADDR");
 		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
 		if(mysqli_query($con,$sql)){
-			header('location:profile.php');
+			header('location:Welcome.php');
 			exit();
 		}
         else{
