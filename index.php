@@ -85,7 +85,9 @@ font-size: 1.3em;
 
 <body>
 <div class="wait overlay">
-	<div class="loader"></div>
+	<div class="loader">
+
+  </div>
 </div>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">	
@@ -145,7 +147,7 @@ font-size: 1.3em;
 <p class="mt-4">
 
 </p>
-<a href="profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+<a href="index1.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
 <div class="container-fluid"></div>

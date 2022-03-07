@@ -22,7 +22,7 @@ if(isset($_SESSION["uid"])){
 				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
 			}
 			body{
-				background-color: #c5d4cd;
+				background-color: smokewhite;
 			}
 		</style>
 	</head>

@@ -103,7 +103,7 @@ if(isset($_SESSION["uid"])){
 
     </style>
 	</head>
-<body style=" background-color: #c5d4cd;">
+<body style=" background-color: smokewhite;">
 	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
 		<div class="container-fluid" style="background-color:black;">	
 			<div class="navbar-header">
@@ -277,7 +277,7 @@ Tire Rotation & Balance</p>
       
 </div>
 <br>
-<div class="panel-footer " style="background:black; color:white;"><p></p>
+<div class="panel-footer " style="background:gray; color:blue;"><p></p>
       <footer class="footer">
           <div class="container">
               <div class="row">
@@ -285,11 +285,11 @@ Tire Rotation & Balance</p>
                       <h4>Follow Us !</h4>
                       <ul>
                           
-                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:30px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u style="font-size: 20px;">https://www.facebook.com/HardcoreMotor</u></i></a>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:blue; font-size:30px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 22px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>
                           <br>
-                          <a href="#"><i style="color:white; font-size:30px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;<u style="font-size: 20px;">09993827634</u></i></a>
+                          <a href="#"><i style="color:green; font-size:30px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 24px; color: white;">09993827634</u></i></a>
                           <br>
-                          <img src="imgs/G1.png" style="width:50px; margin-left:1px;">&nbsp;&nbsp;<u style="font-size: 20px; color:white;">09993827634 Ariel A.</u>
+                          <img src="imgs/G1.png" style="width:50px; margin-left:-20px;">&nbsp;&nbsp;</style><u style="font-size: 22px; color:white; margin-left:15px;">09993827634 Ariel A.</u>
                           
                   </ul>  
                     </div> 
