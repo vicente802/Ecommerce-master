@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['uid'])){
+	header('location:login_form.php');
+}
 $payment_option = $_POST['payment_option'];
 $user_id = $_POST['user'];
 $product_id = $_POST['p_id'];

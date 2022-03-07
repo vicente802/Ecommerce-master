@@ -2,7 +2,7 @@
 
 session_start();
 if(!isset($_SESSION["uid"])){
-	header("location:index1.php");
+	header("location:login_form.php");
 }
 if (isset($_GET["st"])) {
 
