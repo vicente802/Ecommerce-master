@@ -147,7 +147,7 @@ font-size: 1.3em;
 <p class="mt-4">
 
 </p>
-<a href="profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+<a href="index1.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
 <div class="container-fluid"></div>
