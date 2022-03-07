@@ -85,7 +85,9 @@ font-size: 1.3em;
 
 <body>
 <div class="wait overlay">
-	<div class="loader"></div>
+	<div class="loader">
+
+  </div>
 </div>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">	

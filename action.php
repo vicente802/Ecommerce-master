@@ -72,7 +72,7 @@ if (isset($_POST["getProduct"])) {
             echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info' >
-								<div class='panel-heading' style='background:#32fc9e; color:black' >$pro_title</div>
+								<div class='panel-heading' style='background:#lightblue; color:black' >$pro_title</div>
 		
 							
 								<div class='panel-body'>
