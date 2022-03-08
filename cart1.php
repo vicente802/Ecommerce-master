@@ -20,7 +20,7 @@ require "config/constants.php";
 	<div class="loader"></div>
 </div>
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid" style="background-color:black;"> 	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 					<span class="sr-only">navigation</span>
@@ -90,7 +90,7 @@ require "config/constants.php";
 			<div class="col-md-2"></div>
 			
 		</div>
-
+		<div class="panel-footer" style="text-align: center; "><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <script>var CURRENCY = '<?php echo CURRENCY; ?>';</script>
 </body>	
 </html>

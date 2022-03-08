@@ -14,6 +14,8 @@ if(!isset($_SESSION["uid"])){
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		
 		<style>
 			@media screen and (max-width:480px){
 				#search{width:80%;}
@@ -52,7 +54,7 @@ if(!isset($_SESSION["uid"])){
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
@@ -141,6 +143,28 @@ if(!isset($_SESSION["uid"])){
 			</div>
 			<div class="col-md-1"></div>
 		</div>
+
+		<div class="panel-footer " style="background:tomato; color:white; margin-top:15px;"><p></p>
+      <footer class="footer">
+          <div class="container">
+              <div class="row" style="background:tomato;">
+                  <div class="footer-col">
+                      
+                      <ul style="text-align:center;">
+                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
+                          
+                  </ul>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
 		
 		<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 	</div>
