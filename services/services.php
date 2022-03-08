@@ -271,7 +271,7 @@ Tire Rotation & Balance</p>
       
 </div>
 <br>
-<div class="panel-footer " style="background:gray; color:yellow;"><p></p>
+<div class="panel-footer " style="background:tomato; color:white;"><p></p>
       <footer class="footer">
           <div class="container">
               <div class="row">
@@ -279,9 +279,9 @@ Tire Rotation & Balance</p>
                       
                       <ul style="text-align:center;">
                       <h4 style="font-size:20px;">Follow and Contact Us !</h4>
-                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:blue; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a href="#"><i style="color:green; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <img src="../imgs/G1.png" style="width:45px; margin-left:-20px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;<img src="../imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
                           
                   </ul>  
                     </div>
