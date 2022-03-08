@@ -94,13 +94,13 @@ if(!isset($_SESSION["uid"])){
 					<li><a href="#">Categories</a></li>
 				</div> -->
 			</div>
-			<div class="col-md-8">	
+		`	<div class="col-md-8">	
 				<div class="row">
 					
 					<div class="col-md-12 col-xs-12" id="product_msg">
 						
 					</div>
-				</div>
+				</div>`
 				<div class="panel panel-info" id="scroll">
 					
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">

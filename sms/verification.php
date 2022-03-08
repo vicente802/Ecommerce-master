@@ -3,7 +3,7 @@
 
 session_start();
 include '../db.php';
-include '../sms/sms.php';
+include '../sms/message.php';
 $reference_number = $_SESSION['reference_number'];
 $number = $_SESSION['number'];
 $user_id = $_SESSION['uid'];
@@ -11,7 +11,20 @@ $p_status ="Pending";
 $payment_method = "Gcash";
 $shipping = "Processing";
 $cancel = "Cancel";
-
+$sql1=mysqli_query($con, "SELECT * FROM orders");
+if(mysqli_num_rows($sql1)){
+    while($row1 = mysqli_fetch_array($sql1)){
+        $trx_id = $row1['trx_id'];
+    }
+}
+if($reference_number == $trx_id){
+    ?>
+    <script type="text/javascript">
+    alert("Reference Number already exist");
+    location="../gcash.php";
+    </script>
+    <?php
+}
 if(!isset($_SESSION['uid'])){
     header('location:../login_form.php');
 }
@@ -25,6 +38,14 @@ if(isset($_POST['submit'])){
             
         }
         if($code == $ver){ 
+            
+
+    $receive = $number;
+    $message = "Your product has been on process!, Thank you purchasing our product";
+    $smsapicode = "TR-HARDC016566_XSHU1";
+    $passcode ="g!{#2!6%t5";
+        $send = new ItextMoController1();
+        $send->itexmo($receive,$message,$smsapicode,$passcode);
            $sql = "SELECT c.user_id,c.p_id,c.qty,p.product_price,p.product_id FROM cart c join products p on c.p_id = p.product_id";
            $result=mysqli_query($con,$sql);
            if(mysqli_num_rows($result)){
@@ -33,6 +54,7 @@ if(isset($_POST['submit'])){
                while($row = mysqli_fetch_array($result)){
                    $price = $row['product_price'];
                    mysqli_query($con ,"INSERT INTO orders(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)values('".$row['user_id']."','".$row['p_id']."','".$row['qty']."','".$reference_number."','".$p_status."','".$price."','".$payment_method."','".$shipping."','".$cancel."')");
+                   mysqli_query($con ,"INSERT INTO processing(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)values('".$row['user_id']."','".$row['p_id']."','".$row['qty']."','".$reference_number."','".$p_status."','".$price."','".$payment_method."','".$shipping."','".$cancel."')");
                    include '../sms/sms.php';
                
                 $qty = $row['qty'];
@@ -44,6 +66,7 @@ if(isset($_POST['submit'])){
                 }
            }
         }
+       
         }
     }
     
