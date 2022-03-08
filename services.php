@@ -277,19 +277,17 @@ Tire Rotation & Balance</p>
       
 </div>
 <br>
-<div class="panel-footer " style="background:gray; color:blue;"><p></p>
+<div class="panel-footer " style="background:orange; color:white;">
       <footer class="footer">
-          <div class="container">
+          <div class="container" style="height:90px;">
               <div class="row">
                   <div class="footer-col">
-                      <h4>Follow Us !</h4>
-                      <ul>
-                          
-                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:blue; font-size:30px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 22px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>
-                          <br>
-                          <a href="#"><i style="color:green; font-size:30px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 24px; color: white;">09993827634</u></i></a>
-                          <br>
-                          <img src="imgs/G1.png" style="width:50px; margin-left:-20px;">&nbsp;&nbsp;</style><u style="font-size: 22px; color:white; margin-left:15px;">09993827634 Ariel A.</u>
+                      
+                  <ul style="text-align:center;">
+                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
                           
                   </ul>  
                     </div> 

@@ -16,13 +16,24 @@ if (isset($_POST["product_id"])) {
             $pro_price = $row['product_price'];
             $pro_image = $row['product_image'];
             $pro_desc = $row['product_desc'];
+
             echo "
-			    <img src='product_images/$pro_image' style='width:100%; height:350px;'/>
+            <div class='col-md-8'>	
+            <div class='row'>
+                
+                <div class='col-md-12 col-xs-12' id='product_msg'>
+                    
+                </div>
+            </div>
+            <img src='product_images/$pro_image'style='width:90%; height:400px;'/>
 			    <label>Product Name </label><br> $pro_title<br><br>
                 <label>Description </label><br>$pro_desc<br><br>
+                <button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
+
 			";
 
         }
+        
     }
 }
 
