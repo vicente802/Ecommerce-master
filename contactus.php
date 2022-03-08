@@ -13,6 +13,8 @@ require "config/constants.php";
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		
 		<style></style>
 	</head>
 <body>
@@ -104,7 +106,30 @@ require "config/constants.php";
 
 	<br>
     
-	
+
+	<div class="panel-footer " style="background:tomato; color:white; margin-top:15px;"><p></p>
+      <footer class="footer">
+          <div class="container">
+              <div class="row" style="background:tomato;">
+                  <div class="footer-col">
+                      
+                      <ul style="text-align:center;">
+                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
+                          
+                  </ul>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+		
+
 	<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 				</div>
 			</div>
