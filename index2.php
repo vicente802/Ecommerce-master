@@ -215,7 +215,7 @@ include "include/services.php";
 
 
 
-<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+<div class="panel-footer" style="text-align: center; margin-top:50px;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <script>
         $(document).on('click' , '.details-btn' ,function (){
             var product_id = $(this).attr('id');

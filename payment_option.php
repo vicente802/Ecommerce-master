@@ -5,13 +5,6 @@ include 'db.php';
 if(!isset($_SESSION['uid'])){
 	header('location:login_form.php');
 }
-<<<<<<< HEAD
-=======
-session_start();
-
-include 'db.php';
-
->>>>>>> 2b58c0ff2431c4479a67e67466cb9a31e1837e85
 $combine = "SELECT p.product_id,p.product_title,p.product_qty,p.product_desc,p.product_price,c.p_id,c.user_id,c.qty,u.user_id,u.address1,u.street,u.address2,u.mobile FROM products p join cart c on p.product_id=c.p_id join user_info u on c.user_id=u.user_id WHERE c.user_id='$_SESSION[uid]'";
 $result = mysqli_query($con,$combine);
 if(mysqli_num_rows($result)){
@@ -101,7 +94,7 @@ if(mysqli_num_rows($result)){
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>

@@ -82,11 +82,10 @@ if(isset($_SESSION["uid"])){
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
-				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
+				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>Cart<span class="badge">0</span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
@@ -113,7 +112,7 @@ if(isset($_SESSION["uid"])){
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">View Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
