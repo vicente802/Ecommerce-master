@@ -209,6 +209,8 @@ if(isset($_SESSION["uid"])){
   </div>
 </div>
 <hr>
+
+<div class="panel-footer" style=" text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 </body>
 </html>
 
