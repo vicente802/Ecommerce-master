@@ -25,8 +25,12 @@ header('location:verification.php');
 
 }
 else if(empty($_POST['accname']) || empty($_POST['reference_number']) || empty($_POST['number'])){
-    echo"<script>alert('fill up the form')</script>";
-    header('location: ../gcash.php');
+    ?>
+    <script type="text/javascript">
+    alert("Please Kindly fill up the form");
+    location="../gcash.php";
+    </script>
+    <?php
 }
 else{
     header('location: ../gcash.php?error=something went wrong');

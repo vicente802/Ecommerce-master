@@ -98,9 +98,11 @@ mysqli_query($con, "UPDATE processing set shipping='$status', price='$total' whe
 mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
 	}
-	if($status == "Preparing..."){
-		
+	if($status == "Preparing"){
+	
 		mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
+		mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
+
 		$user_id =  $_SESSION['user_id']=$_POST['user_id'];
 		$email =  $_SESSION['email']=$_POST['email'];
 	$product_id =$_SESSION['product_id']= $_POST['product_id'];

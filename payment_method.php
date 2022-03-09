@@ -29,7 +29,7 @@ $total = $_SESSION['total'];
     }
     if($payment_option =="cod"){
        
-                header('location:cashondelivery.php');
+                header('location:cod.php');
         
             }
 }
