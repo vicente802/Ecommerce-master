@@ -14,7 +14,7 @@
 <div class="welcome">
 <div class="text-center"><img src="imgs/index-logo.png" alt="" width="600px"></div>
 <h1 class="text-center">Welcome</h1>
-<div class="text-center"><a class="btn btn-primary btn-lg" href="index.php" role="button">Home</a></div>
+<div class="text-center"><a class="btn btn-primary btn-lg" href="index2.php" role="button">Home</a></div>
 
 </div>
 </body>

@@ -442,17 +442,45 @@ if (isset($_POST['cancel'])) {
     header('location:customer_order.php');
 }
 if (isset($_POST['receive'])) {
+   echo' <input type="hidden" name="order_id" value="<?php echo $order_id?>">
+    <input type="hidden" name="user_id" value="<?php echo $user_id?>">
+    <input type="hidden" name="product_price" value="<?php echo $product_price?>">
+    <input type="hidden" name="product_id" value="<?php echo $product_id?>">
+    <input type="hidden" name="qty" value="<?php echo $qty?>">
+    <input type="hidden" name="total" value="<?php echo $total?>">
+    <input type="hidden" name="trx_id" value="<?php echo $trx_id?>">
+    <input type="hidden" name="product_title" value="<?php echo $product_title?>">
+    <input type="hidden" name="shipped" value="<?php echo $shipped?>">
+    <input type="hidden" name="cancel" value="<?php echo $cancel?>">
+    <input type="hidden" name="receive" value="<?php echo $receive?>">
+    <input type="hidden" name="desc" value="<?php echo $desc?>">
+    <input type="hidden" name="email" value="<?php echo $email?>">';
+
+    $user_id1 = $_POST['user_id'];
+    $product_price1 = $_POST['product_price'];
+    $product_id1 = $_POST['product_id'];
+    $shipping = "Order has been delivered successfully";
+    $email = $_POST['email'];
+    $qty = $_POST['qty'];
+    $price =$_POST['total'];
+
     $trx_id = $_POST['trx_id'];
     $canceled = $_POST['canceled'];
     $canceled = "Order Received...";
     $canceled1 = "Purchased Has Been deliver successfully";
     $success = "";
     $trx = $_POST['trx1'];
+
+    $history= "INSERT INTO history (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method,price) VALUES ('$order_id1','$user_id1','$email','".$product_id1."','".$qty."','$trx_id','$p_status','$shipping','$cancel','$payment_method','$price')";
+    mysqli_query($con,$history);
     mysqli_query($con, "UPDATE orders set shipping ='$canceled' where order_id='$trx'");
     mysqli_query($con, "UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
     mysqli_query($con, "UPDATE delivered set receive ='$success' where order_id='$trx'");
     mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
-    header('location:delivered.php');
+    
+    
+
+    header('location:history.php');
 
 
 }
