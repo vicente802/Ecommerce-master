@@ -99,7 +99,7 @@ mysqli_query($con, " DELETE FROM orders WHERE order_id='$order'");
 mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
 	}
 	if($status == "Preparing"){
-	
+		mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
 		mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
 	
 
