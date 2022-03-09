@@ -99,7 +99,11 @@ if(!isset($_SESSION["uid"])){
 			<div class="col-md-8">	
 				
 				<div class="panel panel-info" id="scroll">
+				<div class="row">
 					
+					<div class="col-md-12 col-xs-12" id="product_msg">
+						
+					</div>
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
 					<li style="float:right;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			<li style="width:300px; float:right"><input type="text" class="form-control" id="search"></li>
@@ -173,11 +177,7 @@ if(!isset($_SESSION["uid"])){
 		</div>
 		</div>
             <div class='modal-content'>
-			<div class="row">
-					
-					<div class="col-md-12 col-xs-12" id="product_msg">
-						
-					</div>
+			
 				</div>
                 <div class='modal-body' id="detailsModalBody">
                 </div>

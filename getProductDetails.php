@@ -38,7 +38,7 @@ if (isset($_POST["product_id"])) {
               
                 <h3 style='margin-right:40px; float:right;'>Price: &#8369; $pro_price </h3>
                 
-               <button pid='$pro_id' style='width:80%; float:right'  id='product'  class='btn btn-danger'>AddToCart</button>
+               <button pid='$pro_id' style='width:80%; float:right'  id='product'  data-dismiss='modal'  class='btn btn-danger'>AddToCart</button>
                 </div>
                
             </div>
