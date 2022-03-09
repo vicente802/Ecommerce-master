@@ -127,17 +127,17 @@ input[type=number] {
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+				<li><a href="../cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
+						<li><a href="../cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li><a href="../customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
 						<li class="divider"></li>
-						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li><a href="../manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
 						<li class="divider"></li>
-						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+						<li><a href="../logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
           </ul>
         </li>
       </ul>
