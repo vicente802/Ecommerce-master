@@ -101,7 +101,7 @@ mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
 	if($status == "Preparing"){
 	
 		mysqli_query($con, " UPDATE orders set cancel='$cancel' WHERE order_id='$order'");
-		mysqli_query($con, " DELETE FROM processing WHERE order_id='$order'");
+	
 
 		$user_id =  $_SESSION['user_id']=$_POST['user_id'];
 		$email =  $_SESSION['email']=$_POST['email'];
