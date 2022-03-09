@@ -16,7 +16,7 @@ if(mysqli_num_rows($sql1)){
     while($row1 = mysqli_fetch_array($sql1)){
         $trx_id = $row1['trx_id'];
     }
-}
+
 if($reference_number == $trx_id){
     ?>
     <script type="text/javascript">
@@ -24,6 +24,7 @@ if($reference_number == $trx_id){
     location="../gcash.php";
     </script>
     <?php
+}
 }
 if(!isset($_SESSION['uid'])){
     header('location:../login_form.php');
@@ -59,10 +60,14 @@ if(isset($_POST['submit'])){
                
                 $qty = $row['qty'];
                    $total = $row['qty']*$row['product_price'];
-                
+                   ?>
+                   <script type="text/javascript">
+                   alert("Your ordered product has been processed!");
+                   location="../profile.php";
+                   </script>
+                   <?php
                      
-                   echo ' success';
-
+                  
                 }
            }
         }
@@ -146,7 +151,7 @@ input[type=number] {
 </div>
 
 <div>
-<div class="container d-flex justify-content-center align-items-center" style="margin-left:100px;">
+<div class="container d-flex justify-content-center align-items-center" style="margin-left:100px; margin-top:150px;">
 <div class="row">
 <div class="col-md-12">    
 <div class="card text-center">

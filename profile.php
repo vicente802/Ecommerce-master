@@ -96,13 +96,8 @@ if(!isset($_SESSION["uid"])){
 					<li><a href="#">Categories</a></li>
 				</div> -->
 			</div>
-		`	<div class="col-md-8">	
-				<div class="row">
-					
-					<div class="col-md-12 col-xs-12" id="product_msg">
-						
-					</div>
-				</div>`
+			<div class="col-md-8">	
+				
 				<div class="panel panel-info" id="scroll">
 					
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
@@ -170,11 +165,24 @@ if(!isset($_SESSION["uid"])){
 	</div>
 	<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
+			<div class="row" style="text-align: right; margin-right:1px">
+				<div class="col-md-1"></div>
+<div class="col-md">
+	
+		<a href="profile.php"><button type='button' class='btn btn-secondary' data-dismiss=''>&times;</button></a>
+		</div>
+		</div>
             <div class='modal-content'>
+			<div class="row">
+					
+					<div class="col-md-12 col-xs-12" id="product_msg">
+						
+					</div>
+				</div>
                 <div class='modal-body' id="detailsModalBody">
                 </div>
                 <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                   
                 </div>
             </div>
         </div>

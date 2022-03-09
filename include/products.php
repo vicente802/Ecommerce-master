@@ -11,25 +11,19 @@ if (!$con) {
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title></title>-->
+<!--</head>-->
+<!--<body>-->
     <div class="container-fluid" >
     <div class="col-md">	
 				
-				<div class="panel panel-info" style="margin-top: 100px;" id="scroll">
-				<div class="row">
-					<br>
-				<div class="col-md-12 col-xs-12" id="product_msg">
-					</div>
-					
-				</div>
+			
 					<div class="panel-heading"><label>Best Seller</label> </div>
 					<div class="panel-body">
 					<?php
@@ -75,6 +69,6 @@ if (!$con) {
                 </div>
     
     </div>
-
-</body>
-</html>
+<!---->
+<!--</body>-->
+<!--</html>-->

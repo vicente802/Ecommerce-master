@@ -101,12 +101,7 @@ if(isset($_SESSION["uid"])){
 				</div> -->
 			</div>
 			<div class="col-md-8">	
-				<div class="row">
-					
-					<div class="col-md-12 col-xs-12" id="product_msg">
-						
-					</div>
-				</div>
+				
 				<div class="panel panel-info" id="scroll">
 					
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
@@ -171,15 +166,28 @@ if(isset($_SESSION["uid"])){
 
 
 		
-		<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+	<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 	</div>
 	<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
+			<div class="row" style="text-align: right; margin-right:1px">
+				<div class="col-md-1"></div>
+<div class="col-md">
+	
+		<a href="index1.php"><button type='submit' class='btn btn-secondary' data-dismiss=''>&times;</button></a>
+		</div>
+		</div>
             <div class='modal-content'>
+			<div class="row">
+					
+					<div class="col-md-12 col-xs-12" id="product_msg">
+						
+					</div>
+				</div>
                 <div class='modal-body' id="detailsModalBody">
                 </div>
                 <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                   
                 </div>
             </div>
         </div>
@@ -198,7 +206,6 @@ if(isset($_SESSION["uid"])){
             })
         });
     </script>
-	
 </body>
 </html>
 
