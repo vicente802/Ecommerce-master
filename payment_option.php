@@ -297,6 +297,12 @@ if(mysqli_num_rows($result)){
                
              }
            }
+
+
           </script>
+<br>
+<br>
+<br>
+<div class="panel-footer" style="position:fixed; left:0; bottom:0; width:100%; background-color:tomato; color:black; text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 </body>
 </html>

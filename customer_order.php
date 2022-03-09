@@ -148,7 +148,10 @@ if(!isset($_SESSION["uid"])){
 						?>
 						
 					</div>
-					<div class="panel-footer"></div>
+					<br>
+<br>
+<br>
+<div class="panel-footer" style=" text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 				</div>
 			</div>
 			<div class="col-md-2"></div>
