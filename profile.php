@@ -104,6 +104,7 @@ if(!isset($_SESSION["uid"])){
 					<div class="col-md-12 col-xs-12" id="product_msg">
 						
 					</div>
+				</div>
 					<div class="panel-heading">Products <ul style="list-style:none; margin-top:-8px; float:right;">
 					<li style="float:right;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			<li style="width:300px; float:right"><input type="text" class="form-control" id="search"></li>
@@ -173,12 +174,11 @@ if(!isset($_SESSION["uid"])){
 				<div class="col-md-1"></div>
 <div class="col-md">
 	
-		<a href="profile.php"><button type='button' class='btn btn-secondary' data-dismiss=''>&times;</button></a>
+		<button type='button' class='btn btn-secondary' data-dismiss='modal'>&times;</button>
 		</div>
 		</div>
             <div class='modal-content'>
-			
-				</div>
+		
                 <div class='modal-body' id="detailsModalBody">
                 </div>
                 <div class='modal-footer'>

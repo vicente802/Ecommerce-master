@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -22,8 +23,14 @@ if (!$con) {
     <div class="container-fluid" >
     <div class="col-md">	
 				
-			
-					<div class="panel-heading"><label>Best Seller</label>
+				<div class="panel panel-info" style="margin-top: 100px;" id="scroll">
+				<div class="row">
+					<br>
+				<div class="col-md-12 col-xs-12" id="product_msg">
+					</div>
+					
+				</div>
+					<div class="panel-heading"><label>Best Seller</label> </div>
 					<div class="panel-body">
 					<?php
 
@@ -55,7 +62,7 @@ if (!$con) {
 								</div>
 								<div class='panel-heading'>".CURRENCY." $pro_price.00
                                 <input type='hidden' name='prod_id' value=$pro_id>	
-								
+									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 									<button style='float:right;' id='$pro_id' class='btn btn-primary btn-xs details-btn' data-toggle='modal' data-target=''>details</button>
 									</div>
 							</div>
@@ -66,8 +73,7 @@ if (!$con) {
                     ?>
 					</div>
                 </div>
-    </div>
-	</div>
+    
     </div>
 <!---->
 <!--</body>-->

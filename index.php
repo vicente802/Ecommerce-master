@@ -150,8 +150,9 @@ font-size: 1.3em;
 
 <div class="container-fluid"></div>
 <div class="container-fluid text-center">
+ <br>
  
-	<?php include 'include/products.php';?>
+	<?php include 'include/products.php'?>
 </div>
 </div>
 </div>
@@ -232,7 +233,7 @@ include "include/services.php";
     <div class="col-md-1"></div>
 <div class="col-md">
 	
-		<a href="index.php"><button type='button' class='btn btn-secondary' data-dismiss=''>&times;</button></a>
+	<button type='button' class='btn btn-secondary' data-dismiss='modal'>&times;</button>
 		</div>
 		</div>
             <div class='modal-content'>
