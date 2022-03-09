@@ -2,15 +2,11 @@
 session_start();
 include 'db.php';
 $ran = rand(0,10000000000000);
+$user_id = $_SESSION['uid'];
 if(!isset($_SESSION['uid'])){
     header('location: index.php');
 }
-$sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
-if(mysqli_num_rows($sql)){
-    while($row=mysqli_fetch_array($sql)){
-        
-    }
-}
+
 ?>
       <!DOCTYPE html>
 
@@ -33,22 +29,49 @@ if(mysqli_num_rows($sql)){
         </head>
 
         <body>
-        <div class="wait overlay">
-        <div class="loader"></div>
-        </div>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-        <div class="navbar-header">
-        <a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
-        </div>
-        <ul class="nav navbar-nav">
-        <li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-        <li><a href="index.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
-        <li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-        <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-        </ul>
-        </div>
-        </div>
+      
+<body style=" background-color: smokewhite;">
+<div class="wait overlay">
+	<div class="loader"></div>
+</div>
+	<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+		<div class="container-fluid" style="background-color:black;">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only"> navigation toggle</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
+			</div>
+		<div class="collapse navbar-collapse" id="collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+				</li>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
+					<ul class="dropdown-menu">
+						<li><a href="cart.php" style="text-decoration:none; color:blue;">&nbsp;<span class="">View Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:blue;"> Orders</a></li>
+						<li class="divider"></li>
+						<li><a href="manage.php" style="text-decoration:none; color:blue;">Manage</a></li>
+						<li class="divider"></li>
+						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	</div>
         <p><br/></p>
         <p><br/></p>
         <p><br/></p>
@@ -72,7 +95,7 @@ if(mysqli_num_rows($sql)){
             <div class="col-md-6">
                 <label for="f_name">Full Name :</label>
                 <h4  style="text-transform:capitalize"><?php
-                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
+                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id=$user_id");
 if(mysqli_num_rows($sql)){
     while($row=mysqli_fetch_array($sql)){
        $lastname= $row['last_name'];
@@ -88,7 +111,7 @@ if(mysqli_num_rows($sql)){
         <div class="col-md-6">
                 <label for="f_name">Email :</label>
                 <h4><?php    
-$sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
+$sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id=$user_id");
 if(mysqli_num_rows($sql)){
     while($row=mysqli_fetch_array($sql)){
        $email= $row['email'];
@@ -105,7 +128,7 @@ if(mysqli_num_rows($sql)){
         <div class="row">
             <div class="col-md-12">
                 <label for="password">Phone Number :</label>
-                <h4><?php $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
+                <h4><?php $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id=$user_id");
 if(mysqli_num_rows($sql)){
     while($row=mysqli_fetch_array($sql)){
        $number= $row['mobile'];
@@ -118,7 +141,7 @@ if(mysqli_num_rows($sql)){
             <div class="col-md-12">
                 <label for="repassword">Delivery Address</label>
                 <h4 style="text-transform:capitalize"><?php
-                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
+                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_title,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id=$user_id");
                 if(mysqli_num_rows($sql)){
                     while($row=mysqli_fetch_array($sql)){
                        $address1= $row['address1'];
@@ -147,20 +170,19 @@ if(mysqli_num_rows($sql)){
   $x=0;
 $total = 0;
 $total1=0;
-                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_desc,p.product_title,p.product_price,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id='".$_SESSION['uid']."'");
+                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_desc,p.product_title,p.product_price,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE c.user_id=$user_id");
                 if(mysqli_num_rows($sql)){
-                    while($row=mysqli_fetch_array($sql)){
-                    $total = $row['qty'] * $row['product_price'];
                     $x++;
-                    $total1 =$total1+ $row['qty'] * $row['product_price'];
+                    while($row=mysqli_fetch_array($sql)){
+                    $total = $row['qty']*$row['product_price'];
+                    $total1= $total1 + $row['qty']*$row['product_price'];
                  echo'<tbody><form action="include/del.php" method="POST"><tr>
-                
                  <td>'.$x.'</td>
                  <td>'.$row['product_title'].'</td>
                  <td >'.$row['product_desc'].'</td>
                  <td>'.$row['qty'].'</td>
                  <td>'.$total.'</td>
-                 <td><input type="hidden" name="del" value='.$row['product_id'].'><input type="submit" name="submit" value="Delete"></td>
+                 <td><input type="hidden" name="del" value='.$row['product_id'].'><button type="submit" name="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button></td>
                  </tr></form> </tbody>'
                  ;   
                     }
