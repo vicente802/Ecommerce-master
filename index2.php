@@ -17,6 +17,7 @@ if(!isset($_SESSION['uid'])){
 <script src="js/bootstrap.min.js"></script>
 <script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
 
