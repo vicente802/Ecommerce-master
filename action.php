@@ -463,6 +463,7 @@ if (isset($_POST['receive'])) {
     $email = $_POST['email'];
     $qty = $_POST['qty'];
     $price =$_POST['total'];
+    $order_id1 =['order_id'];
 
     $trx_id = $_POST['trx_id'];
     $canceled = $_POST['canceled'];
@@ -470,13 +471,16 @@ if (isset($_POST['receive'])) {
     $canceled1 = "Purchased Has Been deliver successfully";
     $success = "";
     $trx = $_POST['trx1'];
-
+echo $trx_id;
     $history= "INSERT INTO history (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method,price) VALUES ('$order_id1','$user_id1','$email','".$product_id1."','".$qty."','$trx_id','$p_status','$shipping','$cancel','$payment_method','$price')";
     mysqli_query($con,$history);
+    mysqli_query($con, "DELETE FROM delivered");
     mysqli_query($con, "UPDATE orders set shipping ='$canceled' where order_id='$trx'");
     mysqli_query($con, "UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
+  
     mysqli_query($con, "UPDATE delivered set receive ='$success' where order_id='$trx'");
     mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
+   
     
     
 

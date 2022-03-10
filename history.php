@@ -105,7 +105,7 @@ if(!isset($_SESSION["uid"])){
                         <?php
 							include_once("db.php");
 							$user_id = $_SESSION["uid"];
-							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM history o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id";
+							$orders_list = "SELECT o.order_id,o.user_id,o.product_id,o.qty,o.trx_id,o.shipping,o.cancel,o.receive,o.p_status,p.product_title,p.product_price,p.product_image,product_desc FROM history o,products p WHERE o.user_id='$user_id' AND o.product_id=p.product_id order by datetime desc";
 							$query = mysqli_query($con,$orders_list);
 							if (mysqli_num_rows($query) > 0) {
 								while ($row=mysqli_fetch_array($query)) {
