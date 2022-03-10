@@ -22,15 +22,21 @@
                     <div class="card-header text-center">
                         <h4>Sales Report</h4>
                         	
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-2 border-bottom">
-        <h1 class="h2"></h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary"  style="background:transparent; color:black; font-size:15px; font-weight:bold;">Print <i class="fa-solid fa-print" style="font-size: 20px;"></i></button>
-           
-        </div>
-      </div>
-
+      
+      <style>
+          @media print{
+              body *{
+                    visibility: hidden;
+              } 
+              .printer-container, .printer-container *{
+                    visibility: visible;
+              }
+          }
+      </style>
+      <button onclick="window.print();">
+          Print
+      </button>
+                    <div class="row print-container">
                     </div>
                     <div class="card-body">
                     
@@ -58,7 +64,7 @@
                         </form>
                     </div>
                 </div>
-
+                    </div>
                 <div class="card mt-4">
                     <div class="card-body">
                         <table class="table table-borderd">

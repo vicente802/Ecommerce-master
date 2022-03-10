@@ -293,7 +293,7 @@ $cancel = "Cancel";
         <div class="row">
             <div class="col-md-12" style="text-align: right;">
             <button  type="button" name="submit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalLong">Checkout</button>
-            <button  type="button" class="btn btn-danger">Cancel</button>
+            <a href="cart.php" button  type="button" class="btn btn-danger">Cancel</a></button>
             </div>
         </div>
 
