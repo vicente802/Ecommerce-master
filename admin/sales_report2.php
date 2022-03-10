@@ -31,6 +31,11 @@
               .printer-container, .printer-container *{
                     visibility: visible;
               }
+              .print-container {
+                    position: absolute;
+                    left: 0px;
+                    top:0px;
+              }
           }
       </style>
       <button onclick="window.print();">
