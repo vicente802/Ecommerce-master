@@ -33,7 +33,7 @@
               }
               .print-container {
                     position: absolute;
-                    left: 0px;
+                        left: 0px;
                     top:0px;
               }
           }
@@ -42,6 +42,7 @@
           Print
       </button>
                     <div class="row print-container">
+                        </div>
                     </div>
                     <div class="card-body">
                     

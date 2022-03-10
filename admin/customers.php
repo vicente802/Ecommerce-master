@@ -91,7 +91,7 @@
         		</div>
         		<div class="col-12">
         			<div class="form-group">
-		        		<label>Product Keywords <small>(eg: apple, iphone, mobile)</small></label>
+		        		<label>Product Keywords <small>(eg: Aerox, Sniper, N-Max)</small></label>
 		        		<input type="text" name="product_keywords" class="form-control" placeholder="Enter Product Keywords">
 		        	</div>
         		</div>
