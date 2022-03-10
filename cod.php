@@ -1,14 +1,15 @@
       <?php
 session_start();
 include 'db.php';
+include 'sms/cashondelivery.php';
 $ran = rand(0,10000000000000);
 $user_id = $_SESSION['uid'];
 if(!isset($_SESSION['uid'])){
     header('location: index.php');
 }
 
+$res = mysqli_query($con, "SELECT * FROM cart WHERE user_id='$user_id'");
 
-$res = mysqli_query($con, "SELECT * FROM cart WHERE user_id=$user_id");
 
 if(isset($_POST['submit'])){
     $user_id = $_POST['user_id'];
@@ -22,8 +23,19 @@ $cancel = $_POST['cancel'];
 $ran = $_POST['ran'];
 $qty = $_POST['qty'];
 $total = $_POST['total'];
-	if(mysqli_num_rows($res)){
+$number = $_POST['number'];
+
+$receive = $number;
+$message = "Your product has been on process!, Thank you purchasing our product";
+$smsapicode = "TR-HARDC016566_XSHU1";
+$passcode ="g!{#2!6%t5";
+    $send = new ItextMoController2();
+    $send->itexmo($receive,$message,$smsapicode,$passcode);
+
+	if(mysqli_num_rows($res) > 0){
 		while($row = mysqli_fetch_array($res)){
+        
+$qty = $row['qty'];
 mysqli_query($con, "INSERT INTO  orders(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)
 values('".$row['user_id']."','".$row['p_id']."','$qty','$ran','$p_status','$total','$payment_method','$shipping','$cancel')");
 mysqli_query($con, "INSERT INTO  processing(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)
@@ -32,6 +44,22 @@ mysqli_query($con, "DELETE FROM cart WHERE user_id=$user_id");
 header('location:profile.php');
 }
 }
+$sql2 = mysqli_query($con, "SELECT * FROM orders WHERE user_id='$user_id'");
+if(mysqli_num_rows($sql2) > 0){
+    while($row2 = mysqli_fetch_array($sql2)){
+        $pro_qty = $row2['qty'];
+       
+    }
+}
+$sql1 = mysqli_query($con, "SELECT * FROM products");
+if(mysqli_num_rows($sql1) > 0){
+    while($row1 = mysqli_fetch_array($sql1)){
+        $product_qty = $row1['product_qty'];
+       
+    }
+}
+$total = $product_qty-$pro_qty;
+mysqli_query($con, "UPDATE products SET product_qty='$total' WHERE product_id='$p_id'");
 }
 ?>
       <!DOCTYPE html>
@@ -250,6 +278,7 @@ $cancel = "Cancel";
              <td><input type="hidden" name="ran" value="'.$ran.'"></td>
              <td><input type="hidden" name="qty" value="'.$row['qty'].'"></td>
              <td><input type="hidden" name="total" value="'.$total.'"></td>
+             <td><input type="hidden" name="number" value="'.$number.'"></td>
              </tr>
              ';
                       
