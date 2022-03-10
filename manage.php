@@ -207,7 +207,7 @@ if(isset($_SESSION["uid"])){
   </div>
 </div>
 <div class="panel-footer " style="background:tomato ; color:white; margin-top:15px; margin: bottom 15px;" ><p></p>
-      <footer class="footer" style=">
+      <footer class="footer" style="">
           <div class="container">
               <div class="row" style="background:tomato;">
                   <div class="footer-col">

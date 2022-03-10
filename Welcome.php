@@ -27,7 +27,7 @@
         <img src="imgs/index-logo.png" alt="" width="600px">
         <h1 style="font-family: 'Poppins', sans-serif; text-align: center;">Welcome!</h1>
         <div style="text-align: center;">
-		<a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Continue</a>
+		<a href="index2.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Continue</a>
         </div>
     </div>
 
