@@ -93,7 +93,7 @@ require "config/constants.php";
 						</div> 
 						</div>
 					</div>
-					<div class="panel-footer"></div>
+					
 					
 				</div>
 			</div>
