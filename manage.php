@@ -164,13 +164,8 @@ if(isset($_SESSION["uid"])){
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Contact Number: </label>
-<<<<<<< HEAD
             <div class="col-lg-8">
              <input class="form-control" type="text" name="contact" maxlength="15" value="+63 <?php echo $mobile ?> ">
-=======
-            <div class="col-md-8">
-             <input class="form-control" type="text" name="contact" maxlength="15" value="<?php echo $mobile ?> ">
->>>>>>> 9d48478ce1b0c6f1f31bd0fc1c73e89ee407321c
             </div>
           </div>
           <div class="form-group">

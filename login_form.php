@@ -43,7 +43,7 @@ if (isset($_POST["login_user_with_product"])) {
 	<div class="loader"></div>
 </div>
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid" style="background-color:black;">	
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
 			</div>
@@ -97,10 +97,14 @@ if (isset($_POST["login_user_with_product"])) {
 							<!--If user dont have an account then he/she will click on create account button-->
 							<div><a href="customer_registration.php?register=1">Create a new account?</a></div>						
 						</form>
+						
 				</div>
 				
+				
 			</div>
+			<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 		</div>
+		
 		<div class="col-md-4"></div>
 	</div>
 	<script async src="https://www.google.com/recaptcha/api.js"></script>
@@ -124,6 +128,7 @@ if (isset($_POST["login_user_with_product"])) {
           });
         });
       }
+	  
  </script>
 
  <br>
@@ -304,7 +309,9 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">In order to resol
     </div>
   </div>
 </div>
+
  </div>
+ 
 </body>
 </html>
 
