@@ -464,7 +464,7 @@ if (isset($_POST['receive'])) {
     $qty = $_POST['qty'];
     $price =$_POST['total'];
     $order_id1 =['order_id'];
-
+    $p_status = "Completed";
     $trx_id = $_POST['trx_id'];
     $canceled = $_POST['canceled'];
     $canceled = "Order Received...";
@@ -474,16 +474,14 @@ if (isset($_POST['receive'])) {
 echo $trx_id;
     $history= "INSERT INTO history (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method,price) VALUES ('$order_id1','$user_id1','$email','".$product_id1."','".$qty."','$trx_id','$p_status','$shipping','$cancel','$payment_method','$price')";
     mysqli_query($con,$history);
-    mysqli_query($con, "DELETE FROM delivered");
     mysqli_query($con, "UPDATE orders set shipping ='$canceled' where order_id='$trx'");
     mysqli_query($con, "UPDATE delivered set shipping ='$canceled1' where order_id='$trx'");
-  
-    mysqli_query($con, "UPDATE delivered set receive ='$success' where order_id='$trx'");
-    mysqli_query($con, "DELETE FROM orders WHERE order_id='$trx'");
+  mysqli_query($con,"INSERT INTO settled (`product_id`, `email`, `order`,  `trx`, `p_status`, `shipping`, `payment_method`, `price`,`qty`) VALUES ('$product_id1','$email','$order_id1','$trx_id','$p_status','$shipping','$payment_method','$price','$qty')");
+    mysqli_query($con, "UPDATE delivered set receive ='$success' where order_id='$order_id1'");
+    mysqli_query($con, "DELETE FROM orders WHERE product_id='$product_id1'");
+    mysqli_query($con, "DELETE FROM delivered WHERE product_id='$product_id1'");
    
     
-    
-
     header('location:history.php');
 
 
