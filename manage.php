@@ -85,31 +85,8 @@ if(isset($_SESSION["uid"])){
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge">0</span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-md-3 col-xs-3">Sl.No</div>
-									<div class="col-md-3 col-xs-3">Product Image</div>
-									<div class="col-md-3 col-xs-3">Product Name</div>
-									<div class="col-md-3 col-xs-3">Price in <?php echo CURRENCY; ?></div>
-								</div>
-							</div>
-							<div class="panel-body">
-								<div id="cart_product">
-								<!--<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>-->
-								</div>
-							</div>
-							<div class="panel-footer"></div>
-						</div>
-					</div>
-				</li>
+				<li><a href="cart.php" id="cart_container"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge">0</span></a>
+				
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user">&nbsp;</span><?php $user=$_SESSION['name'];  echo "".$user; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;">View Cart</a></li>
@@ -167,7 +144,7 @@ if(isset($_SESSION["uid"])){
           <div class="form-group">
             <label class="col-lg-3 control-label">Contact Number: </label>
             <div class="col-md-8">
-             <input class="form-control" type="text" name="contact" maxlength="15" value="+63 <?php echo $mobile ?> ">
+             <input class="form-control" type="text" name="contact" maxlength="15" value="<?php echo $mobile ?> ">
             </div>
           </div>
           <div class="form-group">
@@ -209,6 +186,8 @@ if(isset($_SESSION["uid"])){
   </div>
 </div>
 <hr>
+
+<div class="panel-footer" style=" text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 </body>
 </html>
 

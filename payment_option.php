@@ -31,8 +31,7 @@ if(mysqli_num_rows($result)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardcore Motorshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<script src="js/jquery2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		
 		<script src="main.js"></script>
     <style>
       .checkout{
@@ -110,7 +109,7 @@ if(mysqli_num_rows($result)){
 	</div>
 <br>
 
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="position:relative;">
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title" id="exampleModalLabel">Order Details</h2>
@@ -256,6 +255,7 @@ if(mysqli_num_rows($result)){
       </div>
     </div>
   </div>
+
           <script>
               
            function changeStatus(){
@@ -297,6 +297,14 @@ if(mysqli_num_rows($result)){
                
              }
            }
+
+
           </script>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<div class="panel-footer" style="position:relative; margin-left:-50px; bottom:0; width:120%; background-color:white; color:black; text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+</div>
 </body>
 </html>

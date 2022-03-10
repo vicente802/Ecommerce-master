@@ -1,9 +1,5 @@
 <?php
 require "config/constants.php";
-session_start();
-if(isset($_SESSION['uid'])){
-  header('location: index2.php'); 
-}
 
 ?>
 
@@ -87,55 +83,54 @@ font-size: 1.3em;
 
 <body>
 <div class="wait overlay">
-	<div class="loader">
-
-  </div>
+<div class="loader"></div>
 </div>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid" style="background-color:black;">	
-			<div class="navbar-header"> 
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
-			</div>
-			
-		<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
-				<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
-				<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
-				<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-			
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="cart1.php" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
-					<div class="dropdown-menu" style="width:400px;">
-						<div class="panel panel-success">
-							
-							<div class="panel-body">
-								<div id="cart_product">
-								
-								</div>
-							</div>
-							<div class="panel-footer"></div>
-						</div>
-					</div>
-				</li>
-				<li><a href="login_form.php" ><span class="glyphicon glyphicon-user">&nbsp;</span>SignIn</a>
-					
-				</li>
-			</ul>
-		</div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">	
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+<span class="sr-only">navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="#" class="navbar-brand" style="margin-left: 5px; color:white;">Hardcore Motorshop</a>
+</div>
+<div class="collapse navbar-collapse" id="collapse">
+<ul class="nav navbar-nav">
+<li><a href="index.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+<li><a href="index1.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
+
+<li><a href="services/services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
+<li><a href="contact/contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
+
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+<li><a href="cart1.php"><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
+<div class="dropdown-menu" style="width:400px;">
+<div class="panel panel-success">
+<div class="panel-body">
+	<div id="cart_product">
+	
 	</div>
+</div>
+<div class="panel-footer"></div>
+</div>
+</div>
+</li>
+<li><a href="login_form.php" ><span class="glyphicon glyphicon-user">&nbsp;</span>SignIn</a>
+
+</li>
+</ul>
+</div>
+</div>
 </div>	
-  <p><br/></p>
-	<p><br/></p>
-	<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+
 
 <div class="my-5" style="margin-top: 80px;">
 <v class="container">
@@ -149,16 +144,18 @@ font-size: 1.3em;
 <p class="mt-4">
 
 </p>
-<a href="index1.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
+
 <div class="container-fluid"></div>
 <div class="container-fluid text-center">
+ <br>
  
-	<?php include 'include/products.php';?>
+	<?php include 'include/products.php'?>
 </div>
-
-<div></div>
+</div>
+</div>
 
 
 <div class="container-fluid text-center" id="carousel" style="margin-top: 100px;">
@@ -206,12 +203,10 @@ font-size: 1.3em;
 <?php
 include "include/services.php";
 ?>
-<div>
-  <br>
+<div><br>
 <br>
 <br>
-<br>
-</div>
+<br></div>
 <div class="container-fluid text-center">
   <h2>Come to Our Physical Store</h2>
   <p><b>Address:</b> Langit Rd, Phase 1 Package 3, Caloocan, Metro Manila</p>
@@ -222,37 +217,47 @@ include "include/services.php";
   <div class="container-fluid text-center">
     <p><iframe class="location" src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d226.59636996729037!2d121.04636301825435!3d14.774423646662418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d14.7744393!2d121.0464118!5e1!3m2!1sen!2sph!4v1645036947055!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
   </div>
-  
 </div>
-  
-<div class="panel-footer " style="background:tomato; color:white; margin-top:15px;"><p></p>
-      <footer class="footer">
-          <div class="container">
-              <div class="row" style="background:tomato;">
-                  <div class="footer-col">
-                      
-                      <ul style="text-align:center;">
-                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
-                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
-                          
-                  </ul>  
-                    </div>
-                </div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+    <div class='modal-dialog' role='document'>
+    <div class="row" style="text-align: right; margin-right:1px">
+    <div class="col-md-1"></div>
+<div class="col-md">
+	
+	<button type='button' class='btn btn-secondary' data-dismiss='modal'>&times;</button>
+		</div>
+		</div>
+            <div class='modal-content'>
+			<div class="row">
+					
+					<div class="col-md-12 col-xs-12" id="product_msg">
+						
+					</div>
+				</div>
+    <div class='modal-content'>
+            <div class='modal-body' id="detailsModalBody">
+            </div>
+            <div class='modal-footer'>
+           
             </div>
         </div>
-
-
     </div>
-
-
-
-
+    </div>
+</div>
 
 <div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <script>
         $(document).on('click' , '.details-btn' ,function (){
+
             var product_id = $(this).attr('id');
             $.ajax({
                 url: "getProductDetails.php",

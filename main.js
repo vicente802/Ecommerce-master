@@ -170,6 +170,7 @@ $(document).ready(function() {
                 }
             })
         })
+        
         //Add Product into Cart End Here
         //Count user cart items funtion
     count_item();

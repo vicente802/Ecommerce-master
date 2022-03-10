@@ -1,12 +1,66 @@
       <?php
 session_start();
 include 'db.php';
+include 'sms/cashondelivery.php';
 $ran = rand(0,10000000000000);
 $user_id = $_SESSION['uid'];
 if(!isset($_SESSION['uid'])){
     header('location: index.php');
 }
 
+$res = mysqli_query($con, "SELECT * FROM cart WHERE user_id='$user_id'");
+
+
+if(isset($_POST['submit'])){
+    $user_id = $_POST['user_id'];
+$p_id = $_POST['p_id'];
+$product_title = $_POST['product_title'];
+$product_desc = $_POST['product_desc'];
+$p_status = $_POST['p_status'];
+$payment_method = $_POST['payment_method'];
+$shipping = $_POST['shipping'];
+$cancel = $_POST['cancel'];
+$ran = $_POST['ran'];
+$qty = $_POST['qty'];
+$total = $_POST['total'];
+$number = $_POST['number'];
+
+$receive = $number;
+$message = "Your product has been on process!, Thank you purchasing our product";
+$smsapicode = "TR-HARDC016566_XSHU1";
+$passcode ="g!{#2!6%t5";
+    $send = new ItextMoController2();
+    $send->itexmo($receive,$message,$smsapicode,$passcode);
+
+	if(mysqli_num_rows($res) > 0){
+		while($row = mysqli_fetch_array($res)){
+        
+$qty = $row['qty'];
+mysqli_query($con, "INSERT INTO  orders(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)
+values('".$row['user_id']."','".$row['p_id']."','$qty','$ran','$p_status','$total','$payment_method','$shipping','$cancel')");
+mysqli_query($con, "INSERT INTO  processing(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)
+values('".$row['user_id']."','".$row['p_id']."','$qty','$ran','$p_status','$total','$payment_method','$shipping','$cancel')");
+mysqli_query($con, "DELETE FROM cart WHERE user_id=$user_id");
+header('location:profile.php');
+}
+}
+$sql2 = mysqli_query($con, "SELECT * FROM orders WHERE user_id='$user_id'");
+if(mysqli_num_rows($sql2) > 0){
+    while($row2 = mysqli_fetch_array($sql2)){
+        $pro_qty = $row2['qty'];
+       
+    }
+}
+$sql1 = mysqli_query($con, "SELECT * FROM products");
+if(mysqli_num_rows($sql1) > 0){
+    while($row1 = mysqli_fetch_array($sql1)){
+        $product_qty = $row1['product_qty'];
+       
+    }
+}
+$total = $product_qty-$pro_qty;
+mysqli_query($con, "UPDATE products SET product_qty='$total' WHERE product_id='$p_id'");
+}
 ?>
       <!DOCTYPE html>
 
@@ -25,6 +79,26 @@ if(!isset($_SESSION['uid'])){
               text-overflow: ellipsis;
     
           }
+          .modal{
+              margin-top: 120px;
+          }
+          .modal-body{
+         
+
+  
+
+  height: 150px;
+
+  width: 100%;
+
+  border: 1px solid #DDD;
+
+  padding: 10px;
+
+
+          }
+          
+        
       </style>
         </head>
 
@@ -90,7 +164,7 @@ if(!isset($_SESSION['uid'])){
         <div class="panel-heading">Cash on Delivery Form</div>
         <div class="panel-body">
 
-        <form id="" onsubmit="">
+
         <div class="row">
             <div class="col-md-6">
                 <label for="f_name">Full Name :</label>
@@ -154,9 +228,9 @@ if(mysqli_num_rows($sql)){
             </div>
         </div>
         
-
-        <table class="table table-striped table-responsive" style="text-overflow: ellipsis;">
-  <thead>
+<form action="" method="POST">
+        <table class="table table-striped table-hover table-responsive" style="margin-left:50px;  text-align:left; overflow: ellipsis;">
+  <thead class=" bg-primary">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Product Name</th>
@@ -166,48 +240,135 @@ if(mysqli_num_rows($sql)){
     </tr>
   
   </thead>
+  <tbody>
   <?php
-  $x=0;
+  $x=1;
 $total = 0;
 $total1=0;
-                $sql = mysqli_query($con, "SELECT c.user_id,c.p_id,c.qty,p.product_id,p.product_desc,p.product_title,p.product_price,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE c.user_id=$user_id");
+$p_status ="Pending";
+$payment_method = "Cash On Delivery";
+$shipping ="Processing";
+$cancel = "Cancel";
+                $sql = mysqli_query($con, "SELECT c.id,c.user_id,c.p_id,c.qty,p.product_id,p.product_desc,p.product_title,p.product_price,u.first_name,u.last_name,u.email,u.mobile,u.address1,u.address2,u.street FROM cart c join products p on c.p_id=p.product_id JOIN user_info u WHERE u.user_id=$user_id");
                 if(mysqli_num_rows($sql)){
-                    $x++;
                     while($row=mysqli_fetch_array($sql)){
                     $total = $row['qty']*$row['product_price'];
                     $total1= $total1 + $row['qty']*$row['product_price'];
-                 echo'<tbody><form action="include/del.php" method="POST"><tr>
-                 <td>'.$x.'</td>
-                 <td>'.$row['product_title'].'</td>
-                 <td >'.$row['product_desc'].'</td>
-                 <td>'.$row['qty'].'</td>
-                 <td>'.$total.'</td>
-                 <td><input type="hidden" name="del" value='.$row['product_id'].'><button type="submit" name="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button></td>
-                 </tr></form> </tbody>'
-                 ;   
-                    }
-                }    
+                    $pro_id = $row['p_id'];
+                    $user_id = $row['user_id'];
+                    $id = $row['id'];
+                
+                    echo'<tr> 
+                    <td>'.$x++.'</td>
+                    <td>'.$row['product_title'].'</td>
+                    <td >'.$row['product_desc'].'</td>
+                    <td>'.$row['qty'].'</td>
+                    <td>'.$total.'</td>
+             </tr>';
+
+             echo'<tr>
+             <td><input type="hidden" name="user_id" value="'.$row['user_id'].'"></td>
+             <td><input type="hidden" name="p_id" value="'.$row['p_id'].'"></td>
+             <td><input type="hidden" name="product_title" value="'.$row['product_title'].'"></td>
+             <td><input type="hidden" name="product_desc" value="'.$row['product_desc'].'"></td>
+             <td><input type="hidden" name="p_status" value="'.$p_status.'"></td>
+             <td><input type="hidden" name="payment_method" value="'.$payment_method.'"></td>
+             <td><input type="hidden" name="shipping" value="'.$shipping.'"></td>
+             <td><input type="hidden" name="cancel" value="'.$cancel.'"></td>
+             <td><input type="hidden" name="ran" value="'.$ran.'"></td>
+             <td><input type="hidden" name="qty" value="'.$row['qty'].'"></td>
+             <td><input type="hidden" name="total" value="'.$total.'"></td>
+             <td><input type="hidden" name="number" value="'.$number.'"></td>
+             </tr>
+             ';
+                      
+                }    }
              
                  ?>
+                 </tbody>
 
  
 </table>
 <h3 style="text-align: right;">Total : <?php echo $total1 ?></h3>
         <div class="row">
             <div class="col-md-12" style="text-align: right;">
-            <button  type="button" class="btn btn-primary">Checkout</button>
+            <button  type="button" name="submit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalLong">Checkout</button>
             <button  type="button" class="btn btn-danger">Cancel</button>
             </div>
         </div>
 
         </div>
-        </form>
+      
         <div class="panel-footer"></div>
         </div>
         </div>
         <div class="col-md-2"></div>
         </div>
         </div>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><strong><span style="line-height: 22.5px; font-size: 26px;"><bdt class="block-component"></bdt><bdt class="question">REMINDER</bdt><bdt class="statement-end-if-in-editor"></bdt></span></strong></h5><strong>Last updated <bdt class="block-container question question-in-editor" data-id="e2088df5-25ea-aec9-83d4-6284f5a7e043" data-type="question">March 09, 2022</bdt></strong>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+      <h3>WE ONLY ACCEPT REPLACEMENT</h3>
+<h5>A replacement order, with the same shipping speed that was used on your original item, will be created. Use the CONTACT US provided to send your original item back. You'll need to return the original item within 5-7 days to avoid being charged for both the original and replacement items.</h5>
+    </div>
+      <div class="modal-footer">
+      <label style="font-weight:100; float:left; text-align:left; margin-left:0px;" > <input type="checkbox" id="check" onclick="terms_changed(this)">&nbsp;Agree with terms</label>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="btn" class="btn btn-primary" disabled  data-dismiss="modal" data-toggle="modal" data-target="#exampleModalLong1">Next</button>
+        
+
+        
+        <script>
+       
+       function terms_changed(termsCheckBox){
+   
+    if(termsCheckBox.checked){
+       
+        document.getElementById("btn").disabled = false;
+    } else{
+        
+        document.getElementById("btn").disabled = true;
+    }
+}
+
+        </script>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="modal fade" style="margin-top:100px" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="height:300px;">
+          <center>
+       <img src="imgs/check1.png" style="width:100px; background:white; text-align:center;">
+       <h3>Your product has been on processed</h3>
+       <div class="modal-footer" style="float:center; text-align:center">
+       
+        <button type="submit" name="submit" class="btn btn-primary">Continue Shopping</button>
+      </div>
+       </center>
+       </form>
+    
+      </div>
+      
+    </div>
+  </div>
+</div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         </body>
 

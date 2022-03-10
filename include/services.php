@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Hardcore Motorshop</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-		<script src="../js/jquery2.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../main.js"></script>
-		<link rel="stylesheet" type="text/css" href="../style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-		
-        <style>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--	<head>-->
+<!--		<meta charset="UTF-8">-->
+<!--		<title>Hardcore Motorshop</title>-->
+<!--		<link rel="stylesheet" href="../css/bootstrap.min.css"/>-->
+<!--		<script src="../js/jquery2.js"></script>-->
+<!--		<script src="../js/bootstrap.min.js"></script>-->
+<!--		<script src="../main.js"></script>-->
+<!--		<link rel="stylesheet" type="text/css" href="../style.css">-->
+<!--		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">-->
+<!--		-->
+<!---->
+<!--	</head>-->
+<!--<body>-->
+<style>
         /* Base CSS */
         
     
@@ -95,9 +98,6 @@
 }
 
     </style>
-	</head>
-<body>
-
 
     <div class="container-fluid">
         <div class="row">
@@ -210,8 +210,8 @@ Tire Rotation & Balance</p>
                     </div>
                 </div></div></div></div></div>
 
-        <script src="../js/bootstrap.min.js"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-	
-</body>
-</html>
+<!--        <script src="../js/bootstrap.min.js"></script>-->
+<!--	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>-->
+<!--	-->
+<!--</body>-->
+<!--</html>-->

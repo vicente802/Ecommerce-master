@@ -11,12 +11,21 @@ $p_status ="Pending";
 $payment_method = "Gcash";
 $shipping = "Processing";
 $cancel = "Cancel";
-$sql1=mysqli_query($con, "SELECT * FROM orders");
+$sql1=mysqli_query($con, "SELECT * FROM orders WHERE user_id='$user_id'");
 if(mysqli_num_rows($sql1)){
     while($row1 = mysqli_fetch_array($sql1)){
         $trx_id = $row1['trx_id'];
+        $quantity = $row1['qty'];
+        $product_id = $row1['product_id'];
     }
-}
+    $products = mysqli_query($con, "SELECT * FROM products");
+           
+    if(mysqli_num_rows($products)){
+        while($productrows = mysqli_fetch_array($products)){
+         $product_qty =$productrows['product_qty'];
+       
+        }
+    }
 if($reference_number == $trx_id){
     ?>
     <script type="text/javascript">
@@ -24,6 +33,7 @@ if($reference_number == $trx_id){
     location="../gcash.php";
     </script>
     <?php
+}
 }
 if(!isset($_SESSION['uid'])){
     header('location:../login_form.php');
@@ -37,16 +47,19 @@ if(isset($_POST['submit'])){
             $ver = $row['verification'];
             
         }
+
         if($code == $ver){ 
             
-
+            
     $receive = $number;
     $message = "Your product has been on process!, Thank you purchasing our product";
     $smsapicode = "TR-HARDC016566_XSHU1";
     $passcode ="g!{#2!6%t5";
         $send = new ItextMoController1();
         $send->itexmo($receive,$message,$smsapicode,$passcode);
-           $sql = "SELECT c.user_id,c.p_id,c.qty,p.product_price,p.product_id FROM cart c join products p on c.p_id = p.product_id";
+          
+        
+        $sql = "SELECT c.user_id,c.p_id,c.qty,p.product_price,p.product_id FROM cart c join products p on c.p_id = p.product_id";
            $result=mysqli_query($con,$sql);
            if(mysqli_num_rows($result)){
             $total = 0;
@@ -59,16 +72,23 @@ if(isset($_POST['submit'])){
                
                 $qty = $row['qty'];
                    $total = $row['qty']*$row['product_price'];
-                
+                   ?>
+                   <script type="text/javascript">
+                   alert("Your ordered product has been processed!");
+                   location="../profile.php";
+                   </script>
+                   <?php
                      
-                   echo ' success';
-
+                  
                 }
            }
-        }
-       
+          
+         
+           $total = $product_qty - $quantity;
+           mysqli_query($con, "UPDATE products set product_qty='$total' WHERE product_id='$product_id'");
         }
     }
+}
     
 
 ?>
@@ -146,7 +166,7 @@ input[type=number] {
 </div>
 
 <div>
-<div class="container d-flex justify-content-center align-items-center" style="margin-left:100px;">
+<div class="container d-flex justify-content-center align-items-center" style="margin-left:100px; margin-top:150px;">
 <div class="row">
 <div class="col-md-12">    
 <div class="card text-center">
@@ -164,7 +184,7 @@ input[type=number] {
    <div class="userInput">
 			<input type="number" style="text-align:center; width:200px;
             "class="form-control"id='ist' min="1"maxlength="13" name="code" onkeyup="clickEvent(this,'sec')">
-
+        
 
 <div>
     <small>

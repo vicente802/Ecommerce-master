@@ -190,7 +190,7 @@ else
 				header('../gcash.php');
 		}
 		
-	}
+	
 ?>
 
 

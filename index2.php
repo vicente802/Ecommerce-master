@@ -33,11 +33,11 @@ html {
   background-color: whitesmoke;
   margin-top: 500px;
   width:100%;
-  
+
   float: center;
   height:500px;
 
-  
+
 }
 .carousel-inner{
 	padding: -10px;
@@ -51,7 +51,7 @@ html {
 .item img{
 	position: relative;
 	width: 110%;
-	margin-top: -70px;	
+	margin-top: -70px;
 	padding: -50px;
 }
 
@@ -81,12 +81,13 @@ p {
 font-family: 'Poppins', sans-serif;
 font-size: 1.3em;
 }
+
 </style>
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top" >
-		<div class="container-fluid" style="background-color: black;">	
+<div class="navbar navbar-inverse navbar-expand-lg navbar-fixed-top">
+		<div class="container-fluid" style="background-color: black;">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 					<span class="sr-only"> navigation toggle</span>
@@ -94,15 +95,15 @@ font-size: 1.3em;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-        <a href="#" class="navbar-brand" >Hardcore Motorshop</a>
+        <a href="#" class="navbar-brand" style="margin-left: 5px;color:white;">Hardcore Motorshop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a class="Home" href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+				<li><a href="index2.php"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
 				<li><a href="profile.php"><span class="glyphicon glyphicon-modal-window">&nbsp;</span>Product</a></li>
 				<li><a href="services.php"><span class="glyphicon glyphicon-globe">&nbsp;</span>Services</a></li>
 				<li><a href="contactus.php"><span class="glyphicon glyphicon-earphone">&nbsp;</span>Contact Us</a></li>
-				
+
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="cart.php" id="cart_container" ><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span>View Cart<span class="badge"></span></a>
@@ -126,8 +127,8 @@ font-size: 1.3em;
 	<p><br/></p>
 	<p><br/></p>
 
-<div class="my-5" style="margin-top: 80px;">
-<v class="container">
+  <div class="my-5" style="margin-top: 80px;">
+
 <div class="row-ml-4">
 <div class="col-md-7">
 <img class="logo" src="imgs/index-logo.PNG" alt="logo" width="650px">
@@ -138,16 +139,17 @@ font-size: 1.3em;
 <p class="mt-4">
 
 </p>
-<a href="profile.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
+<a href="login_form.php" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-lg">Shop Now</button></a>
 </div>
 </div>				
+
 <div class="container-fluid"></div>
 <div class="container-fluid text-center">
  
 	<?php include 'include/products.php';?>
 </div>
-
-<div></div>
+</div>
+</div>
 
 
 <div class="container-fluid text-center" id="carousel" style="margin-top: 100px;">
@@ -195,12 +197,10 @@ font-size: 1.3em;
 <?php
 include "include/services.php";
 ?>
-<div>
-  <br>
+<div><br>
 <br>
 <br>
-<br>
-</div>
+<br></div>
 <div class="container-fluid text-center">
   <h2>Come to Our Physical Store</h2>
   <p><b>Address:</b> Langit Rd, Phase 1 Package 3, Caloocan, Metro Manila</p>
@@ -213,31 +213,45 @@ include "include/services.php";
   </div>
 </div>
 
-<div class="panel-footer " style="background:tomato; color:white; margin-top:15px;"><p></p>
-      <footer class="footer">
-          <div class="container">
-              <div class="row" style="background:tomato;">
-                  <div class="footer-col">
-                      
-                      <ul style="text-align:center;">
-                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
-                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
-                          
-                  </ul>  
-                    </div>
-                </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class='modal fade' id='detailsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+    <div class='modal-dialog' role='document'>
+    <div class="row" style="text-align: right; margin-right:1px">
+    <div class="col-md-1"></div>
+<div class="col-md">
+	
+		<a href="index2.php"><button type='button' class='btn btn-secondary' data-dismiss=''>&times;</button></a>
+		</div>
+		</div>
+            <div class='modal-content'>
+			<div class="row">
+					
+					<div class="col-md-12 col-xs-12" id="product_msg">
+						
+					</div>
+				</div>
+    <div class='modal-content'>
+            <div class='modal-body' id="detailsModalBody">
+            </div>
+            <div class='modal-footer'>
+           
             </div>
         </div>
-
-
     </div>
+    </div>
+</div>
 
-
-<div class="panel-footer" style="text-align: center; margin-top:40px;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
+<div class="panel-footer" style="text-align: center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 <script>
         $(document).on('click' , '.details-btn' ,function (){
+
             var product_id = $(this).attr('id');
             $.ajax({
                 url: "getProductDetails.php",
@@ -251,4 +265,4 @@ include "include/services.php";
         });
     </script>
 </body>
-</html>	
+</html>

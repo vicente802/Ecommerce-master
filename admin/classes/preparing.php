@@ -26,6 +26,6 @@ $user_id =  $_SESSION['user_id'];
 $cancel = "";
 $sql1 = "INSERT INTO preparing (order_id,user_id,email,product_id,qty,trx_id,p_status,shipping,cancel,payment_method) VALUES ('$order','$user_id','$email','".$product_id."','".$qty."','$trx','$p_status','$shipping','$cancel','$payment_method')";
 				mysqli_query($con,$sql1);
-               
+              
                 header('location:../customer_orders.php');
 ?>
