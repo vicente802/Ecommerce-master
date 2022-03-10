@@ -292,51 +292,14 @@ if(mysqli_num_rows($count)){
                    
                 </div>
             </div>
-            <div class="content-2">
-                <div class="recent-payments">
-                    <div class="title">
-                        <h2>Recent Payments</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-                    <div class="table-responsive" style="margin-top:-45px;">
-        <table class="table table-striped table-sm">
-            <br>
-            <br>
-          <thead>
-            <tr>
-			<th>Consumer</th>
-			<th>Address</th>
-			  <th>Trx Id</th>
-              <th>Quantity</th>
-			  <th>Price</th>
-			  <th>Payment Status</th>
-              <th>Payment Method</th>
-			  <th>Action</th>
-            </tr>
-			
-          </thead>
-          <tbody>
+           <div class="container-fluid" style="margin-top:80px;">
          <?php
-         $sql1 = mysqli_query($con, "SELECT u.first_name,u.last_name,u.address1,u.address2,o.price,o.trx,o.p_status,o.qty,o.payment_method FROM user_info u JOIN settled o on u.email=o.email");
-         if(mysqli_num_rows($sql1)>0){
-             
-            while($row = mysqli_fetch_array($sql1)){
-                echo '<tr><td>',$row["first_name"] ," ", $row["last_name"],'</td>';
-                echo '<td>',$row["address1"] ," ", $row["address2"],'</td>';
-                echo '<td>',$row["trx"] ,'</td>';
-                echo '<td>',$row["qty"] ,'</td>';
-                echo '<td>',$row["price"] ,'</td>';
-                echo '<td>',$row["p_status"] ,'</td>';
-                echo '<td>',$row["payment_method"] ,'</td></tr>';
-            }
-         }
+         include 'sales_report2.php';
          ?>
-         
-          </tbody>
-        </table>
-      </div>
+         </div>
         </div>
     </div>
+
 </body>
 
 </html>

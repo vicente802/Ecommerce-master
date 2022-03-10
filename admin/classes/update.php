@@ -153,7 +153,7 @@ $sql = mysqli_query($con, "SELECT o.order_id,o.user_id,o.product_id,o.datetime,p
             <input type="hidden" name="email" value='<?php echo $email ?>'>
             <input type="hidden" name="user_id" value='<?php echo $user_id ?> '>
             <input type="hidden" name="product_id" value='<?php echo $product_id ?>'>
-            <input type="text" name="order" value=' <?php echo $order ?> '>
+            <input type="hidden" name="order" value=' <?php echo $order ?> '>
             <input type="hidden" name="trx" value=' <?php echo $trx ?> '>
             <input type="hidden" name="p_status" value='<?php echo $p_status ?>'>
             <input type="hidden" name="shipping" value='<?php echo $shipping ?> '>

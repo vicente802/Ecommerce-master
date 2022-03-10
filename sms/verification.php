@@ -18,6 +18,7 @@ if(mysqli_num_rows($sql1)){
         $quantity = $row1['qty'];
         $product_id = $row1['product_id'];
     }
+
     $products = mysqli_query($con, "SELECT * FROM products");
            
     if(mysqli_num_rows($products)){
@@ -49,8 +50,6 @@ if(isset($_POST['submit'])){
         }
 
         if($code == $ver){ 
-            
-            
     $receive = $number;
     $message = "Your product has been on process!, Thank you purchasing our product";
     $smsapicode = "TR-HARDC016566_XSHU1";
@@ -69,8 +68,8 @@ if(isset($_POST['submit'])){
                    mysqli_query($con ,"INSERT INTO orders(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)values('".$row['user_id']."','".$row['p_id']."','".$row['qty']."','".$reference_number."','".$p_status."','".$price."','".$payment_method."','".$shipping."','".$cancel."')");
                    mysqli_query($con ,"INSERT INTO processing(user_id,product_id,qty,trx_id,p_status,price,payment_method,shipping,cancel)values('".$row['user_id']."','".$row['p_id']."','".$row['qty']."','".$reference_number."','".$p_status."','".$price."','".$payment_method."','".$shipping."','".$cancel."')");
                    include '../sms/sms.php';
-               
                 $qty = $row['qty'];
+                header('location: insert.php');
                    $total = $row['qty']*$row['product_price'];
                    ?>
                    <script type="text/javascript">
@@ -82,10 +81,14 @@ if(isset($_POST['submit'])){
                   
                 }
            }
-          
-         
-           $total = $product_qty - $quantity;
-           mysqli_query($con, "UPDATE products set product_qty='$total' WHERE product_id='$product_id'");
+        }
+        else{
+            ?>
+                   <script type="text/javascript">
+                   alert("Your OTP code is Wrong try again");
+                   location="verification.php";
+                   </script>
+                   <?php
         }
     }
 }

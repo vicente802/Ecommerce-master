@@ -56,11 +56,32 @@ if(isset($_SESSION["uid"])){
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 		<style>
 			@media screen and (max-width:480px){
 				#search{width:80%;}
 				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
 			}
+      .col-md-8{
+        color: #fff;
+            
+            border: 1px solid tomato;
+            font-size: 17px;
+            text-align: center;
+            padding: 15px;
+            margin: 0;
+            border-radius: 50px;
+            text:black;
+           
+      }
+      .form-group{
+        color : black;
+      }
+      .form-group:hover{
+        background: tomato;
+            transition: .9s;
+      }
 		</style>
 	</head>
 <body>
@@ -107,7 +128,7 @@ if(isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	<div class="container bootstrap snippets bootdey">
-    <h1 class="text-primary">Edit Profile</h1>
+    <h1 class="text-primary text-center">Edit Profile</h1>
       <hr>
 	<div class="row">
       <!-- left column -->
@@ -118,12 +139,12 @@ if(isset($_SESSION["uid"])){
       </div>
       
       <!-- edit form column -->
-      <div class="col-md-8 personal-info text-center">
+      <div class="col-md-8 personal-info text-center ">
         
-        <h3>Personal info</h3>
+        <h3><u><text style="color: black">Personal info</u></h3>
         <br>
         <form class="form-horizontal" action="" method="POST">
-          <div class="form-group">
+          <div class="form-group" >
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="firstname" value="<?php echo $firstname;?>">
@@ -143,8 +164,8 @@ if(isset($_SESSION["uid"])){
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Contact Number: </label>
-            <div class="col-md-8">
-             <input class="form-control" type="text" name="contact" maxlength="15" value="<?php echo $mobile ?> ">
+            <div class="col-lg-8">
+             <input class="form-control" type="text" name="contact" maxlength="15" value="+63 <?php echo $mobile ?> ">
             </div>
           </div>
           <div class="form-group">
@@ -179,13 +200,30 @@ if(isset($_SESSION["uid"])){
             </div>
           </div>
           <div class="col text-right" style="margin-right: 60px;">
-          <input type="submit" class="btn btn-primary " name="submit" value="Submit">
+          <input type="submit"  class="btn btn-primary " name="submit" value="Submit">
           </div>
           </div>
         </form>
   </div>
 </div>
-<hr>
+<div class="panel-footer " style="background:tomato ; color:white; margin-top:15px; margin: bottom 15px;" ><p></p>
+      <footer class="footer" style=">
+          <div class="container">
+              <div class="row" style="background:tomato;">
+                  <div class="footer-col">
+                      
+                      <ul style="text-align:center;">
+                      <h4 style="font-size:20px;">Follow and Contact Us !</h4>
+                          <a href="https://www.facebook.com/HardcoreMotor"><i style="color:white; font-size:20px;" class="fa fa-facebook-f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color:white;">https://www.facebook.com/HardcoreMotor</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#"><i style="color:white; font-size:25px;" class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</style><u style="font-size: 18px; color: white;">09993827634</u></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;<img src="./imgs/GCASH.png" style="width:70px; margin-left:-20px; margin-top: -9px;">&nbsp;&nbsp;</style><u style="font-size: 18px; color:white; margin-left:5px;">09993827634 Ariel A.</u>
+                          
+                  </ul>  
+                    </div>
+                </div>
+            </div>
+      
+
 
 <div class="panel-footer" style=" text-align:center;"><strong> Hardcore Motorshop All Copyright Reserved &copy; 2022 Team Singertunado</strong></div>
 </body>
