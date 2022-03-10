@@ -228,7 +228,7 @@ td {
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>Php <?php
+                        <h1> &#8369; <?php
 $select = "SELECT SUM(price) as sum FROM settled ";
 $count = mysqli_query($con,$select);
 

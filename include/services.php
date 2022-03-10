@@ -161,7 +161,7 @@
             background-position: center;
         ">
                         <h2>TIRE
-                            <br> SALES</h2>
+                            <br> REPLACEMENT</h2>
                     </div>
                     <div class="service-text">
                         <p>our Best Choice For All Major Brands of New Tires For Your Vehicle! The tire specialists at (shop) proudly offer all major brands of new tires for our customers. We keep a variety of popular tire brands for motorcycle tires at

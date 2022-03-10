@@ -39,7 +39,7 @@ border-radius: 10px 10px 10px 10px;
 <br>
 	<img src="imgs/check.png" width="130px;">
 	 <?php echo "<h3>Hello ", $_SESSION['name']," " , $_SESSION['l_name'], " You're almost ready to start enjoying Hardcore Motorshop. 
-Simply click the big button below to verify your email address.</h3>"?>
+Simply insert your verification code and click the big button below to verify your email address.</h3>"?>
 
 <input type="hidden" name="fname" value="<?php echo $_SESSION['name'] ?>">
 <input type="hidden" name="lname" value="<?php echo $_SESSION['l_name'] ?>">

@@ -26,7 +26,7 @@
       <style>
           @media print{
               body *{
-                    visibility: hidden;
+                    visibility: visible;
               } 
               .printer-container, .printer-container *{
                     visibility: visible;
@@ -42,8 +42,7 @@
           Print
       </button>
                     <div class="row print-container">
-                        </div>
-                    </div>
+                      
                     <div class="card-body">
                     
                         <form action="" method="GET">
@@ -123,7 +122,7 @@
             echo 'No record';
         }
          ?>
-                            
+                         
                             </tbody>
                         </table>
                     </div>
@@ -131,6 +130,7 @@
 
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
