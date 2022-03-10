@@ -48,6 +48,12 @@
               Customers
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($page == 'sales_report2.php') ? 'active' : ''; ?>" href="sales_report2.php q ">
+              <span data-feather="users"></span>
+              Sales Report
+            </a>
+          </li>
         </ul>
 
        
