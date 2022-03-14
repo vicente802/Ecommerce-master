@@ -1,0 +1,47 @@
+<?php 
+include('connect.php');
+
+	$id = $_GET['id'];
+
+    $semquer = mysqli_query($conn, "SELECT * from semester where status = 'Active' ");
+    $semRow = mysqli_fetch_array($semquer);     
+
+	$sq=mysqli_query($conn,"SELECT * from enrollment where student_id ='$id' ");
+	$srow=mysqli_fetch_array($sq);
+
+	if(isset($_POST['updateInfo3'])){
+
+		$student_id = $_POST['student_id'];
+		$lastname = $_POST['lastname'];
+		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
+		$age = $_POST['age'];
+		$sex = $_POST['sex'];
+		$civil_status = $_POST['civil_status'];
+		$religion = $_POST['religion'];
+		$date_of_birth = $_POST['date_of_birth'];
+		$place_of_birth = $_POST['place_of_birth'];
+		$permanent_address = $_POST['permanent_address'];
+		$name_of_parent = $_POST['name_of_parent'];
+		$parent_occupation = $_POST['parent_occupation'];
+		$parent_contact_no = $_POST['parent_contact_no'];
+		$name_of_guardian = $_POST['name_of_guardian'];
+		$guardian_occupation = $_POST['guardian_occupation'];
+		$guardian_contact_no = $_POST['guardian_contact_no'];
+		$if_married_spouse_name = $_POST['if_married_spouse_name'];
+		$spouse_occupation = $_POST['spouse_occupation'];
+		$email_address = $_POST['email_address'];
+		$dateapplied = $_POST['dateapplied'];
+		$type = $_POST['type'];
+		$date = time();
+		$id = $_GET['id'];
+
+	mysqli_query($conn,"update app_for_admission set student_id='$student_id', lastname='$lastname', firstname='$firstname', middlename='$middlename', age='$age', sex='$sex', civil_status='$civil_status', religion='$religion', date_of_birth='$date_of_birth', place_of_birth='$place_of_birth', permanent_address='$permanent_address', name_of_parent='$name_of_parent', name_of_guardian='$name_of_guardian', parent_occupation='$parent_occupation', parent_contact_no='$parent_contact_no', guardian_occupation='$guardian_occupation', guardian_contact_no='$guardian_contact_no', if_married_spouse_name='$if_married_spouse_name', spouse_occupation='$spouse_occupation',email_address='$email_address',dateapplied='$dateapplied', type='$type' where userid='$id'" );
+
+
+	mysqli_query($conn, "date_registered='".date('D, m/d/Y', $date)."', where student_id='$id'");
+
+	?>	
+		<script> alert('Updated successfully!!')</script>
+      	<script>window.location = 'admission.php'</script>
+	<?php } ?>

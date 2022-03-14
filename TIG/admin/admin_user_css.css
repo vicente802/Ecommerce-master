@@ -1,0 +1,51 @@
+<head>
+  <style>
+  #pic {
+    height: 30px; width: 30px;
+  }
+  .hid {
+    visibility: hidden;
+  }
+  .modal {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 600px;
+    max-width: 610px;
+    min-width: 300px;
+    right: 0;
+    top: 0;
+  }
+  .bgimg4 .regBox4 label{
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    padding: 10px 0;
+    font-size: 15px;
+    color: black;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .bgimg4 .regBox4 input:focus ~ label,
+  .bgimg4 .regBox4 input:valid ~ label{
+    top: -30px;
+    left: 4px;
+    color: #0066cc;
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .inputbox4{
+    width: calc(70% - 30px);
+    height: 30px;
+    display: block;
+    margin: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    border-color: #d6e0f5;
+
+  }
+  </style>
+</head>

@@ -1,0 +1,328 @@
+<?php 
+session_start();
+include('add_student.php'); 
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Graduate School - Tagudin Campus</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/FF.png">
+    <script src="jquery.js"></script>
+
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="assets/bootstrap-table.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="dist/css/fs-modal.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<style type="text/css">
+          .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+</style>
+<body>
+<!-- Page Content Holder -->
+<img class="wave" src="">
+         <div class="container">
+               <div class="img">
+               <div class="row">
+                <div id="demo" class="carousel slide" data-ride="carousel" style="border-radius: 5px; box-shadow: grey 0px 0px 10px 0.2px;">
+                  <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                  </ul>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="../img/gss.jpg" alt="nana" width="500" height="340" style="border-radius: 5px;">
+                      <div class="carousel-caption">
+                        <h3>Enrollment is now on going!</h3>
+                        <p>Register now and create your own account.</p>
+                      </div>   
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/gsss.jpg" alt="nene" width="500" height="340" style="border-radius: 5px;">
+                      <div class="carousel-caption">
+                        <h3>Online Enrollment</h3>
+                        <p>You can now experience Online Enrolling @ ISPSC Tagudin Graduate School.</p>
+                      </div>   
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/1.jpg" alt="nini" width="500" height="340" style="border-radius: 5px;">
+                      <div class="carousel-caption">
+                        <h3>Master's Study</h3>
+                        <p>Be part of ISPSC Tagudin Graduate School.</p>
+                      </div>   
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
+                </div>
+              </div>
+              </div> 
+            <div class="signup-content">
+                 <form method="post" action="add_new_student.php" id="register_form">
+                  <img src="../img/gs.png"style="width: 30%;">
+                     <h2 class="title">SIGN UP</h2>
+
+                     <div <?php if (isset($name_error)): ?> class="form_error" <?php endif ?> >
+                       <input class="form-control" id="form_uname" required="" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>"><center><span class="error_form" id="uname_error_message"></span></center>
+                       <?php if (isset($name_error)): ?>
+                       <center><span><?php echo $name_error; ?></span></center>
+                       
+                       <?php endif ?>
+                     </div>
+
+                      <div>
+                        <input type="text"  placeholder="Fullname" name="fullname" class="form-control input" id="form_fname" required="" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}">
+                        <center><span class="error_form" id="fname_error_message"></span></center>
+                     </div>
+                     <div>
+                        <input type="contact_number" placeholder="Contact number" name="contact_number" pattern="[0-9]{11,}" title="Contact number must only contain 11 digits" class="form-control input" id="form_contact_number" required="">
+                        <center><span class="error_form" id="contact_number_error_message"></span></center>
+                     </div>               
+                     <div>
+                        <input type="password"  placeholder="Password" name="password" class="form-control input" pattern=".{8,}" title="Password must be 8 characters long." id="form_password" required="">
+                        <center><span class="error_form" id="password_error_message"></span></center>
+                     </div>
+                     <div>
+                        <input type="password"  placeholder="Confirm Password" name="cpassword" class="form-control input" id="form_cpassword" required="">
+                           <center><span class="error_form" id="cpassword_error_message"></span></center>
+                     </div>
+                     <br>
+                     <div>
+                        <button type="submit" name="register" id="reg_btn">Submit</button>
+                     </div>
+                 </form>         
+            </div>
+         </div>
+
+
+      <!--
+            <img class="wave" src="../img/w2.png">
+            <div class="container"> 
+
+            <div class="img"> 
+               <img src="../img/Cap.png">
+            </div>
+            <div class="login-content">
+                 <form method="post" action="add_new_student.php" id="register_form">
+                     <img src="../img/gs.png">
+                     <h2 class="title"><i class="fas fa-key"></i> Sign UP</h2>
+                     <div class="input-div one">
+                           <div class="i">
+                                 <i class="fas fa-user"></i>
+                           </div>
+                        <div <?php if (isset($name_error)): ?> class="form_error div" <?php endif ?> >
+                           <h5>Username</h5>
+                           <input class="form-control" id="form_uname" required=" type="text" name="username" value="<?php echo $username; ?>">
+                           <span class="error_form" id="uname_error_message">
+                              <?php if (isset($name_error)): ?>
+                                 <span><?php echo $name_error; ?></span>
+                              <?php endif ?>
+                        </div>      
+                     </div>
+                     <div class="input-div fname">
+                           <div class="i"> 
+                                 <i class="fas fa-lock"></i>
+                                 </div>      
+                           <div class="div">
+                              <h5>Fullname</h5>
+                              <input type="fullname" name="fullname" class="form-control input" id="form_fname" required="">
+                               <center><span class="error_form" id="fname_error_message"></span></center>
+                           </div>
+                     </div>
+                     <div class="input-div num">
+                           <div class="i"> 
+                                 <i class="fas fa-lock"></i>
+                           </div>      
+                           <div class="div">
+                              <h5>Contact number</h5>
+                              <input type="contact_number" name="contact_number" class="form-control input" id="form_contact_number" required="">
+                               <center><span class="error_form" id="contact_number_error_message"></span></center>
+                           </div>
+                     </div>
+                     <div class="input-div pw">
+                           <div class="i"> 
+                                 <i class="fas fa-lock"></i>
+                           </div>      
+                           <div class="div">
+                              <h5>Password</h5>
+                              <input type="password"  name="password" class="form-control input" id="form_password" required="">
+                              <center><span class="error_form" id="password_error_message"></span></center>
+                           </div>
+                     </div>   
+                     <div class="input-div cpw">
+                           <div class="i"> 
+                                 <i class="fas fa-lock"></i>
+                           </div>      
+                           <div class="div">
+                              <h5>Confirm Password</h5>
+                           <input type="password"  name="cpassword" class="form-control input" id="form_cpassword" required="">
+                           <center><span class="error_form" id="cpassword_error_message"></span></center>
+                           </div>
+                     </div>                                                                             
+                     <div>
+                        <button type="submit" name="register" id="reg_btn"><i class="fa fa-plus-circle btn"></i> Sign Up</button>
+                     </div>
+                 </form>         
+            </div>
+         </div>
+-->
+
+</body>
+</html>
+<script type="text/javascript">
+      $(function() {
+
+         $("#uname_error_message").hide();
+         $("#fname_error_message").hide();
+         $("#contact_number_error_message").hide();
+         $("#password_error_message").hide();
+         $("#cpassword_error_message").hide();
+
+         var error_uname = false;
+         var error_fname = false;
+         var error_contact_number = false;
+         var error_password = false;
+         var error_cpassword = false;
+
+         $("#form_uname").focusout(function() {
+            check_uname();
+         });
+         $("#form_fname").focusout(function() {
+            check_fname();
+         });
+         $("#form_contact_number").focusout(function() {
+            check_contact_number();
+         });
+         $("#form_password").focusout(function() {
+            check_password();
+         });
+         $("#cpassword_error_message").focusout(function() {
+            check_cpassword();
+         });
+
+         function check_uname() {
+            var uname = $("#form_uname").val();
+            if (!uname.length == 0) {
+               $("#uname_error_message").hide();
+               $("#form_uname").css("border-bottom","2px solid #34F458  ");
+            } else {
+               $("#uname_error_message").show();
+               $("#form_uname").css("border-bottom","2px solid #F90A0A");
+               error_uname = true;
+            }
+         }
+
+         function check_fname() {
+            var fname = $("#form_fname").val()
+            if (!fname.length == 0) {
+               $("#fname_error_message").hide();
+               $("#form_fname").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#fname_error_message").show();
+               $("#form_fname").css("border-bottom","2px solid #F90A0A");
+               error_fname = true;
+            }
+         }
+
+         function check_password() {
+            var password_length = $("#form_password").val().length;
+            if (password_length < 6) {
+               $("#password_error_message").show();
+               $("#form_password").css("border-bottom","2px solid #F90A0A");
+               error_password = true;
+            } else {
+               $("#password_error_message").hide();
+               $("#form_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_cpassword() {
+            var password = $("#form_password").val();
+            var cpassword = $("#form_cpassword").val();
+            if (password !== cpassword) {
+               $("#cpassword_error_message").html("Passwords did not matched");
+               $("#cpassword_error_message").show();
+               $("#form_cpassword").css("border-bottom","2px solid #F90A0A");
+               error_cpassword = true;
+            } else {
+               $("#cpassword_error_message").hide();
+               $("#form_cpassword").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_contact_number() {
+            var pattern = /^[0-9]{11}$/;
+            var contact_number = $("#form_contact_number").val();
+            if (pattern.test(contact_number) && contact_number !== '') {
+               $("#contact_number_error_message").hide();
+               $("#form_contact_number").css("border-bottom","2px solid #34F458");
+            } 
+            else if (contact_number.length != 11) {
+               $("#contact_number_error_message").show();
+               $("#form_contact_number").css("border-bottom","2px solid #F90A0A");
+               error_contact_number = true;             
+            }
+            else if(contact_number.match(/^[A-Za-z]*$/)){
+               $("#contact_number_error_message").show();
+               $("#form_contact_number").css("border-bottom","2px solid #F90A0A");
+               error_contact_number = true;           
+            }
+            else {
+               $("#contact_number_error_message").html("Invalid Contact number");
+               $("#contact_number_error_message").show();
+               $("#form_contact_number").css("border-bottom","2px solid #F90A0A");
+               error_contact_number = true;
+            }
+         }
+
+         $("#register_form").submit(function() {
+            error_uname = false;
+            error_fname = false;
+            error_contact_number = false;
+            error_password = false;
+            error_cpassword = false;
+
+            check_uname();
+            check_fname();
+            check_contact_number();
+            check_password();
+            check_cpassword();
+
+            if (error_uname === false && error_fname === false && error_contact_number === false && error_password === false && error_cpassword === false) {
+               return true;
+            } else {
+               alert("All forms must be valid before submitting");
+               return false;
+            }
+
+
+         });
+      });
+   </script>
